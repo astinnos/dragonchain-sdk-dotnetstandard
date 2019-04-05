@@ -11,14 +11,12 @@ namespace dragonchain_sdk.Framework.Web
     internal class HttpService : IHttpService
     {
         private ICredentialService _credentialService;
-        private HttpClient _httpClient;
-        private string _endpoint;
+        private HttpClient _httpClient;        
         const string DefaultContentType = "application/json";
 
         public HttpService(ICredentialService credentialService, string endpoint)
         {
-            _credentialService = credentialService;
-            _endpoint = endpoint;
+            _credentialService = credentialService;            
             _httpClient = CreateHttpClient(endpoint);
         }
 
@@ -51,27 +49,7 @@ namespace dragonchain_sdk.Framework.Web
         public void SetEndpoint(string endpoint)
         {            
             _httpClient.BaseAddress = new Uri(endpoint);
-        }
-
-        private HttpClient CreateHttpClient(string method, string path, string body = "", string contentType = DefaultContentType, string callbackURL = "")
-        {
-            var timeStamp = DateTime.UtcNow.ToString("yyyy-MM-ddTHH:mm:ss.fffZ");
-            var client = new HttpClient
-            {
-                BaseAddress = new Uri(_endpoint)
-            };
-            client.DefaultRequestHeaders.TryAddWithoutValidation("Content-Type", contentType);
-            client.DefaultRequestHeaders.TryAddWithoutValidation("dragonchain", _credentialService.DragonchainId);
-            client.DefaultRequestHeaders.TryAddWithoutValidation("X-Callback-URL", callbackURL);
-            client.DefaultRequestHeaders.TryAddWithoutValidation("Authorization", _credentialService.GetAuthorizationHeader(method, 
-                path,
-                timeStamp, 
-                contentType, 
-                body
-                ));
-            client.DefaultRequestHeaders.TryAddWithoutValidation("timestamp", timeStamp);            
-            return client;
-        }
+        }               
 
         private HttpClient CreateHttpClient(string endpoint)
         {            
