@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using NUnit.Framework;
 using dragonchain_sdk.Credentials;
 using dragonchain_sdk.Status;
@@ -31,7 +28,7 @@ namespace dragonchain_sdk.tests
             if (IsTestConfigured())
             {                
                 var result = await _dragonchainClient.GetStatus();                
-                Assert.AreEqual("200", result.Status);
+                Assert.AreEqual(200, result.Status);
                 Assert.IsTrue(result.Ok);
                 Assert.IsInstanceOf<L1DragonchainStatusResult>(result.Response);
             }            

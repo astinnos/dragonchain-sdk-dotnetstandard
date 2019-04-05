@@ -26,7 +26,7 @@ namespace dragonchain_sdk
     {
         private readonly ILogger _logger;
         private static readonly IConfiguration _config;
-        private string _endpoint;        
+        //private string _endpoint;        
         private ICredentialService _credentialService;
         private IHttpService _httpService;
 
@@ -44,10 +44,10 @@ namespace dragonchain_sdk
             {
                 _logger.LogDebug("Dragonchain ID not explicitly provided, will search env/disk");
                 dragonchainId = CredentialService.GetDragonchainId();
-            }            
-            _endpoint = $"https://{dragonchainId}.api.dragonchain.com";
+            }                        
             _credentialService = credentialService ?? new CredentialService(dragonchainId);
-            _httpService = httpService ?? new HttpService(_credentialService);
+            var endpoint = $"https://{dragonchainId}.api.dragonchain.com";
+            _httpService = httpService ?? new HttpService(_credentialService, endpoint);
         }
 
         #region -- IDragonchainClient Members --
@@ -59,7 +59,7 @@ namespace dragonchain_sdk
         /// <returns></returns>
         public async Task<ApiResponse<DragonchainTransactionCreateResponse>> CreateBulkTransaction(DragonchainBulkTransactions transactionBulkObject)
         {
-            return await _httpService.PostAsync<DragonchainTransactionCreateResponse>(ConstructUrl("/transaction_bulk"), transactionBulkObject);
+            return await _httpService.PostAsync<DragonchainTransactionCreateResponse>("/transaction_bulk", transactionBulkObject);
         }
 
         /// <summary>
@@ -69,7 +69,7 @@ namespace dragonchain_sdk
         /// <returns></returns>
         public async Task<ApiResponse<DragonchainContractCreateResponse>> CreateContract(ContractCreationSchema body)
         {
-            return await _httpService.PostAsync<DragonchainContractCreateResponse>(ConstructUrl("/contract"), body);            
+            return await _httpService.PostAsync<DragonchainContractCreateResponse>("/contract", body);            
         }
                 
         /// <summary>
@@ -81,7 +81,7 @@ namespace dragonchain_sdk
         /// <returns></returns>
         public async Task<ApiResponse<DragonchainTransactionCreateResponse>> CreateTransaction(DragonchainTransactionCreatePayload transactionObject)
         {
-            return await _httpService.PostAsync<DragonchainTransactionCreateResponse>(ConstructUrl("/transaction"), transactionObject);            
+            return await _httpService.PostAsync<DragonchainTransactionCreateResponse>("/transaction", transactionObject);            
         }
 
         /// <summary>
@@ -91,7 +91,7 @@ namespace dragonchain_sdk
         /// <returns></returns>
         public async Task<ApiResponse<UpdateResponse>> DeleteSmartContract(string contractId)
         {
-            return await _httpService.DeleteAsync<UpdateResponse>(ConstructUrl($"/contract/{contractId}"));
+            return await _httpService.DeleteAsync<UpdateResponse>($"/contract/{contractId}");
         }
 
         /// <summary>
@@ -101,7 +101,7 @@ namespace dragonchain_sdk
         /// <returns></returns>
         public async Task<ApiResponse<UpdateResponse>> DeleteTransactionType(string transactionType)
         {
-            return await _httpService.DeleteAsync<UpdateResponse>(ConstructUrl($"/transaction-type/{transactionType}"));            
+            return await _httpService.DeleteAsync<UpdateResponse>($"/transaction-type/{transactionType}");            
         }
 
         /// <summary>
@@ -111,7 +111,7 @@ namespace dragonchain_sdk
         /// <returns></returns>
         public async Task<ApiResponse<L1DragonchainTransactionFull>> GetBlock(string blockId)
         {
-            return await _httpService.GetAsync<L1DragonchainTransactionFull>(ConstructUrl($"/block/{blockId}"));            
+            return await _httpService.GetAsync<L1DragonchainTransactionFull>($"/block/{blockId}");            
         }
 
         /// <summary>
@@ -131,7 +131,7 @@ namespace dragonchain_sdk
         /// <returns></returns>
         public async Task<ApiResponse<SmartContractAtRest>> GetSmartContract(string contractId)
         {
-            return await _httpService.GetAsync<SmartContractAtRest>(ConstructUrl($"/contract/{contractId}"));            
+            return await _httpService.GetAsync<SmartContractAtRest>($"/contract/{contractId}");            
         }
 
         /// <summary>
@@ -144,7 +144,7 @@ namespace dragonchain_sdk
         /// <returns></returns>
         public async Task<ApiResponse<string>> GetSmartContractHeap(string key, string scName, bool jsonParse = false)
         {
-            return await _httpService.GetAsync<string>(ConstructUrl($"/get/{scName}/{key}"));            
+            return await _httpService.GetAsync<string>($"/get/{scName}/{key}");            
         }
 
         /// <summary>
@@ -153,7 +153,7 @@ namespace dragonchain_sdk
         /// <returns></returns>
         public async Task<ApiResponse<L1DragonchainStatusResult>> GetStatus()
         {
-            return await _httpService.GetAsync<L1DragonchainStatusResult>(ConstructUrl("/status"));
+            return await _httpService.GetAsync<L1DragonchainStatusResult>("/status");
         }
 
         /// <summary>
@@ -163,7 +163,7 @@ namespace dragonchain_sdk
         /// <returns></returns>
         public async Task<ApiResponse<L1DragonchainTransactionFull>> GetTransaction(string transactionId)
         {
-            return await _httpService.GetAsync<L1DragonchainTransactionFull>(ConstructUrl($"/transaction/{transactionId}"));            
+            return await _httpService.GetAsync<L1DragonchainTransactionFull>($"/transaction/{transactionId}");            
         }
 
         /// <summary>
@@ -176,11 +176,11 @@ namespace dragonchain_sdk
         {            
             if (level > 0)
             {
-                var levelresponse = await _httpService.GetAsync<LevelVerifications>(ConstructUrl($"/verifications/{blockId}?level={level}"));
+                var levelresponse = await _httpService.GetAsync<LevelVerifications>($"/verifications/{blockId}?level={level}");
                 var levelVerifications = new ApiResponse<IVerifications> { Ok = levelresponse.Ok, Status = levelresponse.Status, Response = levelresponse.Response };
                 return levelVerifications;
             }
-            var response = await _httpService.GetAsync<Verifications>(ConstructUrl($"/verifications/{blockId}"));
+            var response = await _httpService.GetAsync<Verifications>($"/verifications/{blockId}");
             var verifications = new ApiResponse<IVerifications> { Ok = response.Ok, Status = response.Status, Response = response.Response };
             return verifications;            
         }
@@ -207,7 +207,7 @@ namespace dragonchain_sdk
         /// <returns></returns>
         public async Task<ApiResponse<IEnumerable<TransactionTypeResponse>>> ListTransactionTypes()
         {
-            return await _httpService.GetAsync<IEnumerable<TransactionTypeResponse>>(ConstructUrl("/transaction-types"));            
+            return await _httpService.GetAsync<IEnumerable<TransactionTypeResponse>>("/transaction-types");            
         }
 
         /// <summary>
@@ -232,7 +232,7 @@ namespace dragonchain_sdk
         public async Task<ApiResponse<DragonchainBlockQueryResult>> QueryBlocks(string luceneQuery = "", string sort = "", int offset = 0, int limit = 10)
         {
             var queryParams = LuceneHelper.GetLuceneParams(luceneQuery, sort, offset, limit);
-            return await _httpService.GetAsync<DragonchainBlockQueryResult>(ConstructUrl($"/block{queryParams}"));            
+            return await _httpService.GetAsync<DragonchainBlockQueryResult>($"/block{queryParams}");            
         }
 
         /// <summary>
@@ -247,7 +247,7 @@ namespace dragonchain_sdk
         public async Task<ApiResponse<SmartContractAtRest>> QuerySmartContracts(string luceneQuery = "", string sort = "", int offset = 0, int limit = 10)
         {
             var queryParams = LuceneHelper.GetLuceneParams(luceneQuery, sort, offset, limit);
-            return await _httpService.GetAsync<SmartContractAtRest>(ConstructUrl($"/contract{queryParams}"));
+            return await _httpService.GetAsync<SmartContractAtRest>($"/contract{queryParams}");
         }
 
         /// <summary>
@@ -262,7 +262,7 @@ namespace dragonchain_sdk
         public async Task<ApiResponse<L1DragonchainTransactionQueryResult>> QueryTransactions(string luceneQuery = "", string sort = "", int offset = 0, int limit = 10)
         {
             var queryParams = LuceneHelper.GetLuceneParams(luceneQuery, sort, offset, limit);
-            return await _httpService.GetAsync<L1DragonchainTransactionQueryResult>(ConstructUrl($"/transaction{queryParams}"));
+            return await _httpService.GetAsync<L1DragonchainTransactionQueryResult>($"/transaction{queryParams}");
         }
 
         /// <summary>
@@ -272,7 +272,7 @@ namespace dragonchain_sdk
         /// <returns></returns>
         public async Task<ApiResponse<UpdateResponse>> RegisterTransactionType(TransactionTypeStructure txnTypeStructure)
         {
-            return await _httpService.PostAsync<UpdateResponse>(ConstructUrl("/transaction-type"), txnTypeStructure);            
+            return await _httpService.PostAsync<UpdateResponse>("/transaction-type", txnTypeStructure);            
         }
 
         /// <summary>
@@ -291,8 +291,8 @@ namespace dragonchain_sdk
         /// Change the endpoint for this DragonchainClient instance.
         /// </summary>
         /// <param name="endpoint">The endpoint of the dragonchain you want to set</param>
-        public void SetEndpoint(string endpoint) {
-            _endpoint = endpoint;
+        public void SetEndpoint(string endpoint) {            
+            _httpService.SetEndpoint(endpoint);
         }
 
         /// <summary>
@@ -369,7 +369,7 @@ namespace dragonchain_sdk
                 Auth = !string.IsNullOrWhiteSpace(auth) ? auth : null
             };           
 
-            return await _httpService.PutAsync<UpdateResponse>(ConstructUrl($"/contract/{contractId}"), body);            
+            return await _httpService.PutAsync<UpdateResponse>($"/contract/{contractId}", body);            
         }
                 
         /// <summary>
@@ -381,14 +381,14 @@ namespace dragonchain_sdk
         public async Task<ApiResponse<UpdateResponse>> UpdateTransactionType(string transactionType, IEnumerable<CustomIndexStructure> customIndexes)
         {
             var @params = new { Version = "1", Custom_indexes = customIndexes };
-            return await _httpService.PutAsync<UpdateResponse>(ConstructUrl($"/transaction-type/{transactionType}"), @params);            
+            return await _httpService.PutAsync<UpdateResponse>($"/transaction-type/{transactionType}", @params);            
         }
 
-        #endregion  
+        #endregion   
         
-        private string ConstructUrl(string path)
+        private string CreateEndpoint(string dragonchainId)
         {
-            return $"{_endpoint}{path}";
+            return $"https://{dragonchainId}.api.dragonchain.com";
         }
     }
 }

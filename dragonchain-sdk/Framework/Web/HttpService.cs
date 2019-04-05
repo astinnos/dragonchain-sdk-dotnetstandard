@@ -5,24 +5,32 @@ using System.Threading.Tasks;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
 using dragonchain_sdk.Credentials;
+using System.Net.Http.Headers;
 
 namespace dragonchain_sdk.Framework.Web
 {
     internal class HttpService : IHttpService
     {
         private ICredentialService _credentialService;
+        private string _endpoint;
         const string DefaultContentType = "application/json";
 
-        public HttpService(ICredentialService credentialService)
+        public HttpService(ICredentialService credentialService, string endpoint)
         {
             _credentialService = credentialService;
+            _endpoint = endpoint;
         }
 
         public async Task<ApiResponse<T>> GetAsync<T>(string path)
         {
             using (var httpClient = CreateHttpClient("GET", path))
-            {                
-                return await HandleResponseAsync<T>(await httpClient.GetAsync(path));                
+            {
+                var request = new HttpRequestMessage(HttpMethod.Get, path)
+                {
+                    Content = new StringContent("")
+                };
+                request.Content.Headers.ContentType = new MediaTypeHeaderValue(DefaultContentType);                                
+                return await HandleResponseAsync<T>(await httpClient.SendAsync(request));
             }
         }
 
@@ -54,16 +62,28 @@ namespace dragonchain_sdk.Framework.Web
             }            
         }
 
-        private HttpClient CreateHttpClient(string method, string path, string body = "", string contentType = DefaultContentType)
+        public void SetEndpoint(string endPoint)
         {
-            var client = new HttpClient();            
+            _endpoint = endPoint;
+        }
+
+        private HttpClient CreateHttpClient(string method, string path, string body = "", string contentType = DefaultContentType, string callbackURL = "")
+        {
+            var timeStamp = DateTime.UtcNow.ToString("yyyy-MM-ddTHH:mm:ss.fffZ");
+            var client = new HttpClient
+            {
+                BaseAddress = new Uri(_endpoint)
+            };
+            client.DefaultRequestHeaders.TryAddWithoutValidation("Content-Type", contentType);
             client.DefaultRequestHeaders.TryAddWithoutValidation("dragonchain", _credentialService.DragonchainId);
+            client.DefaultRequestHeaders.TryAddWithoutValidation("X-Callback-URL", callbackURL);
             client.DefaultRequestHeaders.TryAddWithoutValidation("Authorization", _credentialService.GetAuthorizationHeader(method, 
-                path, 
-                DateTime.UtcNow.ToString("yyyy-MM-ddTHH:mm:ss.fffZ"), 
+                path,
+                timeStamp, 
                 contentType, 
                 body
                 ));
+            client.DefaultRequestHeaders.TryAddWithoutValidation("timestamp", timeStamp);            
             return client;
         }               
 
@@ -75,14 +95,16 @@ namespace dragonchain_sdk.Framework.Web
                 var jsonBody = JsonConvert.DeserializeObject<T>(json, CreateJsonSerializerSettings());
                 return new ApiResponse<T> { Ok = true, Status = (int)response.StatusCode, Response = jsonBody };
             }
-            return new ApiResponse<T> { Ok = false, Status = (int)response.StatusCode, Response = default(T) };
+            var errorJson = await response.Content.ReadAsStringAsync();
+            var errorResponse = JsonConvert.DeserializeObject<DragonchainApiErrorResponse>(errorJson, CreateJsonSerializerSettings());
+            throw new DragonchainApiException(errorResponse.Error);             
         }
 
         private JsonSerializerSettings CreateJsonSerializerSettings()
         {
             var contractResolver = new DefaultContractResolver
             {
-                NamingStrategy = new SnakeCaseNamingStrategy()                
+                NamingStrategy = new CamelCaseNamingStrategy()                
             };
             var settings = new JsonSerializerSettings
             {
@@ -90,6 +112,6 @@ namespace dragonchain_sdk.Framework.Web
             };
             settings.Converters.Add(new Newtonsoft.Json.Converters.StringEnumConverter());
             return settings;
-        }
+        }                 
     }
 }
