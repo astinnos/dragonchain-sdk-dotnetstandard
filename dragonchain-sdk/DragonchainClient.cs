@@ -384,11 +384,6 @@ namespace dragonchain_sdk
             return await _httpService.PutAsync<UpdateResponse>($"/transaction-type/{transactionType}", @params);            
         }
 
-        #endregion   
-        
-        private string CreateEndpoint(string dragonchainId)
-        {
-            return $"https://{dragonchainId}.api.dragonchain.com";
-        }
+        #endregion           
     }
 }

@@ -1,17 +1,17 @@
 ﻿using System;
 using System.Net.Http;
-using System.Text;
 using System.Threading.Tasks;
+using System.Net.Http.Headers;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
 using dragonchain_sdk.Credentials;
-using System.Net.Http.Headers;
 
 namespace dragonchain_sdk.Framework.Web
 {
     internal class HttpService : IHttpService
     {
         private ICredentialService _credentialService;
+        private HttpClient _httpClient;
         private string _endpoint;
         const string DefaultContentType = "application/json";
 
@@ -19,52 +19,38 @@ namespace dragonchain_sdk.Framework.Web
         {
             _credentialService = credentialService;
             _endpoint = endpoint;
+            _httpClient = CreateHttpClient(endpoint);
         }
 
         public async Task<ApiResponse<T>> GetAsync<T>(string path)
         {
-            using (var httpClient = CreateHttpClient("GET", path))
-            {
-                var request = new HttpRequestMessage(HttpMethod.Get, path)
-                {
-                    Content = new StringContent("")
-                };
-                request.Content.Headers.ContentType = new MediaTypeHeaderValue(DefaultContentType);                                
-                return await HandleResponseAsync<T>(await httpClient.SendAsync(request));
-            }
+            var request = CreateRequest(HttpMethod.Get, path);
+            return await HandleResponseAsync<T>(await _httpClient.SendAsync(request));            
         }
 
         public async Task<ApiResponse<T>> PostAsync<T>(string path, object body)
         {
             var jsonBody = JsonConvert.SerializeObject(body, CreateJsonSerializerSettings());
-            using (var httpClient = CreateHttpClient("POST", path, jsonBody))
-            {                
-                var content = new StringContent(jsonBody, Encoding.UTF8, DefaultContentType);                
-                return await HandleResponseAsync<T>(await httpClient.PostAsync(path, content));                
-            }            
+            var request = CreateRequest(HttpMethod.Post, path, jsonBody);                           
+            return await HandleResponseAsync<T>(await _httpClient.SendAsync(request));                                        
         }
 
         public async Task<ApiResponse<T>> PutAsync<T>(string path, object body)
         {
             var jsonBody = JsonConvert.SerializeObject(body, CreateJsonSerializerSettings());
-            using (var httpClient = CreateHttpClient("PUT", path, jsonBody))            {
-                
-                var content = new StringContent(jsonBody, Encoding.UTF8, DefaultContentType);
-                return await HandleResponseAsync<T>(await httpClient.PutAsync(path, content));
-            }            
+            var request = CreateRequest(HttpMethod.Put, path, jsonBody);
+            return await HandleResponseAsync<T>(await _httpClient.SendAsync(request));            
         }
 
         public async Task<ApiResponse<T>> DeleteAsync<T>(string path)
-        {
-            using (var httpClient = CreateHttpClient("DELETE", path))
-            {                
-                return await HandleResponseAsync<T>(await httpClient.DeleteAsync(path));
-            }            
+        {            
+            var request = CreateRequest(HttpMethod.Delete, path);
+            return await HandleResponseAsync<T>(await _httpClient.SendAsync(request));            
         }
 
-        public void SetEndpoint(string endPoint)
-        {
-            _endpoint = endPoint;
+        public void SetEndpoint(string endpoint)
+        {            
+            _httpClient.BaseAddress = new Uri(endpoint);
         }
 
         private HttpClient CreateHttpClient(string method, string path, string body = "", string contentType = DefaultContentType, string callbackURL = "")
@@ -85,7 +71,35 @@ namespace dragonchain_sdk.Framework.Web
                 ));
             client.DefaultRequestHeaders.TryAddWithoutValidation("timestamp", timeStamp);            
             return client;
-        }               
+        }
+
+        private HttpClient CreateHttpClient(string endpoint)
+        {            
+            return new HttpClient
+            {
+                BaseAddress = new Uri(endpoint)
+            };                        
+        }
+
+        private HttpRequestMessage CreateRequest(HttpMethod method, string path, string body = "", string contentType = DefaultContentType, string callbackURL = "")
+        {
+            var timeStamp = DateTime.UtcNow.ToString("yyyy-MM-ddTHH:mm:ss.fffZ");
+            var request = new HttpRequestMessage(method, path)
+            {
+                Content = new StringContent(body)
+            };            
+            request.Content.Headers.ContentType = new MediaTypeHeaderValue(DefaultContentType);            
+            request.Headers.TryAddWithoutValidation("dragonchain", _credentialService.DragonchainId);
+            request.Headers.TryAddWithoutValidation("X-Callback-URL", callbackURL);
+            request.Headers.TryAddWithoutValidation("Authorization", _credentialService.GetAuthorizationHeader(method.ToString(),
+                path,
+                timeStamp,
+                contentType,
+                body
+                ));
+            request.Headers.TryAddWithoutValidation("timestamp", timeStamp);
+            return request;
+        }
 
         private async Task<ApiResponse<T>> HandleResponseAsync<T>(HttpResponseMessage response)
         {            
