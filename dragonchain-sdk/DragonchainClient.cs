@@ -30,9 +30,11 @@ namespace dragonchain_sdk
         /// <summary>
         /// Create an Instance of a DragonchainClient.
         /// </summary>
-        /// <param name="dragonchainId">id of a target dragonchain</param>
-        /// <param name="verify">verify SSL Certs when talking to local dragonchains</param>
-        /// <param name="injected">used only for testing</param>
+        /// <param name="dragonchainId">dragonchainId associated with these credentials</param>
+        /// <param name="credentialService">service to retrieve Dragonchain credentials for use in API requests</param>
+        /// <param name="credentialManager">manager to retrieve Dragonchain credentials from config provider</param>
+        /// <param name="httpService">API request service</param>
+        /// <param name="logger">Microsoft.Extensions.Logging implementation</param>
         public DragonchainClient(string dragonchainId = "", ICredentialService credentialService = null, ICredentialManager credentialManager = null, IHttpService httpService = null, ILogger logger = null)
         {
             logger = logger ?? NullLogger.Instance;           

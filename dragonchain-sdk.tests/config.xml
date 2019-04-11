@@ -3,4 +3,8 @@
   <dragonchainId>configTestId</dragonchainId>
   <AUTH_KEY>configAuthKey</AUTH_KEY>
   <AUTH_KEY_ID>configAuthKeyId</AUTH_KEY_ID>
+  <fakeDragonchainId>
+    <AUTH_KEY>fakeDragonchainIdConfigAuthKey</AUTH_KEY>
+    <AUTH_KEY_ID>fakeDragonchainIdConfigAuthKeyId</AUTH_KEY_ID>  
+  </fakeDragonchainId>
 </configuration>

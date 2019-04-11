@@ -2,7 +2,7 @@
 {
     public interface ICredentialManager
     {
-        DragonchainCredentials GetDragonchainCredentials();
+        DragonchainCredentials GetDragonchainCredentials(string dragonchainId = null);
         string GetDragonchainId();
     }
 }

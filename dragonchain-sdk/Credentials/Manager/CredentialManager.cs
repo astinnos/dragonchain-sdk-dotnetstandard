@@ -25,17 +25,20 @@ namespace dragonchain_sdk.Credentials.Manager
 
         /// <summary>
         /// Get an authKey/authKeyId pair
-        /// </summary>        
-        public DragonchainCredentials GetDragonchainCredentials()
+        /// </summary>   
+        /// <param name="dragonchainId">(optional) dragonchainId to get keys for</param>
+        public DragonchainCredentials GetDragonchainCredentials(string dragonchainId = "")
         {
+            var authKeyIdentifier = string.IsNullOrWhiteSpace(dragonchainId) ? "AUTH_KEY" : $"{dragonchainId}:AUTH_KEY";
+            var authKeyIdIdentifier = string.IsNullOrWhiteSpace(dragonchainId) ? "AUTH_KEY_ID" : $"{dragonchainId}:AUTH_KEY_ID";
             if (_config == null) { throw new FailureByDesignException("NOT_FOUND", "No configuration provider set"); }
-            var authKey = _config["AUTH_KEY"];
-            var authKeyId = _config["AUTH_KEY_ID"];
+            var authKey = _config[authKeyIdentifier];
+            var authKeyId = _config[authKeyIdIdentifier];
             if (!string.IsNullOrWhiteSpace(authKey) && !string.IsNullOrWhiteSpace(authKeyId))
             {
                 return new DragonchainCredentials { AuthKey = authKey, AuthKeyId = authKeyId };
             }
-            throw new FailureByDesignException("NOT_FOUND", "Config does not contain both keys 'AUTH_KEY' and 'AUTH_KEY_ID'");
+            throw new FailureByDesignException("NOT_FOUND", $"Config does not contain both keys '{authKeyIdentifier}' and '{authKeyIdIdentifier}'");
         }
     }
 }

@@ -1,15 +1,14 @@
 ﻿using System;
 using System.Security.Cryptography;
 using System.Text;
-using dragonchain_sdk.Credentials.Manager;
-using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Logging.Abstractions;
+using dragonchain_sdk.Credentials.Manager;
 
 namespace dragonchain_sdk.Credentials
 {
     /// <summary>
-    /// Stateless service to retrieve Dragonchain credentials for use in API requests
+    /// Service to retrieve Dragonchain credentials for use in API requests
     /// </summary>
     public class CredentialService : ICredentialService
     {
@@ -24,6 +23,7 @@ namespace dragonchain_sdk.Credentials
         /// <param name="authKey">authKey to use with these credentials</param>
         /// <param name="authKeyId">authKeyId to use with these credentials</param>
         /// <param name="hmacAlgo">hmac algorithm to use</param>
+        /// <param name="credentialManager">manager to retrieve Dragonchain credentials from config provider</param>
         /// <param name="logger"></param>
         public CredentialService(string dragonchainId, string authKey = "", string authKeyId = "", HmacAlgorithm hmacAlgo = HmacAlgorithm.SHA256, ICredentialManager credentialManager = null, ILogger logger = null)
         {

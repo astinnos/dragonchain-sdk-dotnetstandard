@@ -32,7 +32,7 @@ namespace dragonchain_sdk.tests
 
             //dotnet user-secrets set LevelOneId <id>
             var levelOneId = configuration["LevelOneId"];
-            //dotnet user-secrets set LevelOneAuthKeyId <keyId>
+            //dotnet user-secrets set LevelOneAuthKeyId <id>
             var levelOneAuthKeyId = configuration["LevelOneAuthKeyId"];
             //dotnet user-secrets set LevelOneAuthKey <key>
             var levelOneAuthKey = configuration["LevelOneAuthKey"];

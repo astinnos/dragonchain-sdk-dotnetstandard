@@ -40,7 +40,9 @@ namespace dragonchain_sdk.tests
             {
                 {"dragonchainId", "configTestId"},
                 {"AUTH_KEY", "configAuthKey"},
-                {"AUTH_KEY_ID", "configAuthKeyId"}
+                {"AUTH_KEY_ID", "configAuthKeyId"},
+                {"fakeDragonchainId:AUTH_KEY", "fakeDragonchainIdConfigAuthKey"},
+                {"fakeDragonchainId:AUTH_KEY_ID", "fakeDragonchainIdConfigAuthKeyId"}                
             };
             var config = new ConfigurationBuilder()
                 .AddInMemoryCollection(credentials)
@@ -52,6 +54,10 @@ namespace dragonchain_sdk.tests
             var dragonchainCredentials = credentialManager.GetDragonchainCredentials();
             Assert.AreEqual("configAuthKeyId", dragonchainCredentials.AuthKeyId);
             Assert.AreEqual("configAuthKey", dragonchainCredentials.AuthKey);
+
+            var fakeDragonchainIdDragonchainCredentials = credentialManager.GetDragonchainCredentials("fakeDragonchainId");
+            Assert.AreEqual("fakeDragonchainIdConfigAuthKeyId", fakeDragonchainIdDragonchainCredentials.AuthKeyId);
+            Assert.AreEqual("fakeDragonchainIdConfigAuthKey", fakeDragonchainIdDragonchainCredentials.AuthKey);
         }
 
         [Test]
@@ -60,6 +66,8 @@ namespace dragonchain_sdk.tests
             Environment.SetEnvironmentVariable("dragonchainId", "configTestId");
             Environment.SetEnvironmentVariable("AUTH_KEY", "configAuthKey");
             Environment.SetEnvironmentVariable("AUTH_KEY_ID", "configAuthKeyId");
+            Environment.SetEnvironmentVariable("fakeDragonchainId:AUTH_KEY", "fakeDragonchainIdConfigAuthKey");
+            Environment.SetEnvironmentVariable("fakeDragonchainId:AUTH_KEY_ID", "fakeDragonchainIdConfigAuthKeyId");
             var config = new ConfigurationBuilder()
                 .AddEnvironmentVariables()
                 .Build();
@@ -70,6 +78,10 @@ namespace dragonchain_sdk.tests
             var dragonchainCredentials = credentialManager.GetDragonchainCredentials();
             Assert.AreEqual("configAuthKeyId", dragonchainCredentials.AuthKeyId);
             Assert.AreEqual("configAuthKey", dragonchainCredentials.AuthKey);
+
+            var fakeDragonchainIdDragonchainCredentials = credentialManager.GetDragonchainCredentials("fakeDragonchainId");
+            Assert.AreEqual("fakeDragonchainIdConfigAuthKeyId", fakeDragonchainIdDragonchainCredentials.AuthKeyId);
+            Assert.AreEqual("fakeDragonchainIdConfigAuthKey", fakeDragonchainIdDragonchainCredentials.AuthKey);
         }
 
         [Test]
@@ -85,6 +97,10 @@ namespace dragonchain_sdk.tests
             var dragonchainCredentials = credentialManager.GetDragonchainCredentials();
             Assert.AreEqual("configAuthKeyId", dragonchainCredentials.AuthKeyId);
             Assert.AreEqual("configAuthKey", dragonchainCredentials.AuthKey);
+
+            var fakeDragonchainIdDragonchainCredentials = credentialManager.GetDragonchainCredentials("fakeDragonchainId");
+            Assert.AreEqual("fakeDragonchainIdConfigAuthKeyId", fakeDragonchainIdDragonchainCredentials.AuthKeyId);
+            Assert.AreEqual("fakeDragonchainIdConfigAuthKey", fakeDragonchainIdDragonchainCredentials.AuthKey);
         }
 
         [Test]
@@ -100,6 +116,10 @@ namespace dragonchain_sdk.tests
             var dragonchainCredentials = credentialManager.GetDragonchainCredentials();
             Assert.AreEqual("configAuthKeyId", dragonchainCredentials.AuthKeyId);
             Assert.AreEqual("configAuthKey", dragonchainCredentials.AuthKey);
+
+            var fakeDragonchainIdDragonchainCredentials = credentialManager.GetDragonchainCredentials("fakeDragonchainId");
+            Assert.AreEqual("fakeDragonchainIdConfigAuthKeyId", fakeDragonchainIdDragonchainCredentials.AuthKeyId);
+            Assert.AreEqual("fakeDragonchainIdConfigAuthKey", fakeDragonchainIdDragonchainCredentials.AuthKey);
         }
 
         [Test]
@@ -115,6 +135,10 @@ namespace dragonchain_sdk.tests
             var dragonchainCredentials = credentialManager.GetDragonchainCredentials();
             Assert.AreEqual("configAuthKeyId", dragonchainCredentials.AuthKeyId);
             Assert.AreEqual("configAuthKey", dragonchainCredentials.AuthKey);
+
+            var fakeDragonchainIdDragonchainCredentials = credentialManager.GetDragonchainCredentials("fakeDragonchainId");
+            Assert.AreEqual("fakeDragonchainIdConfigAuthKeyId", fakeDragonchainIdDragonchainCredentials.AuthKeyId);
+            Assert.AreEqual("fakeDragonchainIdConfigAuthKey", fakeDragonchainIdDragonchainCredentials.AuthKey);
         }
     }
 }
