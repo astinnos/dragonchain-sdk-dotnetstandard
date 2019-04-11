@@ -6,5 +6,7 @@ namespace dragonchain_sdk.Framework.Web
     {
         public DragonchainApiException(DragonchainApiError error)
             : base($"{error.Type}: {error.Details}") { }
+
+        public DragonchainApiException(string message):base(message) { }
     }    
 }

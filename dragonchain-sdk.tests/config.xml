@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<configuration>
+  <dragonchainId>configTestId</dragonchainId>
+  <AUTH_KEY>configAuthKey</AUTH_KEY>
+  <AUTH_KEY_ID>configAuthKeyId</AUTH_KEY_ID>
+</configuration>

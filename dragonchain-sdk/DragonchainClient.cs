@@ -1,12 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Logging.Abstractions;
 using dragonchain_sdk.Blocks;
 using dragonchain_sdk.Contracts;
-using dragonchain_sdk.Contracts.SmartContractAtRest;
 using dragonchain_sdk.Credentials;
 using dragonchain_sdk.DragonNet;
 using dragonchain_sdk.Framework.Lucene;
@@ -16,17 +14,16 @@ using dragonchain_sdk.Shared;
 using dragonchain_sdk.Transactions;
 using dragonchain_sdk.Transactions.L1;
 using dragonchain_sdk.Framework.Errors;
+using dragonchain_sdk.Transactions.Types;
+using dragonchain_sdk.Credentials.Manager;
 
 namespace dragonchain_sdk
 {
     /// <summary>
     /// HTTP Client that interfaces with the dragonchain api, using credentials stored on your machine.
     /// </summary>
-    public class DragonchainClient
-    {
-        private readonly ILogger _logger;
-        private static readonly IConfiguration _config;
-        //private string _endpoint;        
+    public class DragonchainClient : IDragonchainClient
+    {                    
         private ICredentialService _credentialService;
         private IHttpService _httpService;
 
@@ -36,18 +33,19 @@ namespace dragonchain_sdk
         /// <param name="dragonchainId">id of a target dragonchain</param>
         /// <param name="verify">verify SSL Certs when talking to local dragonchains</param>
         /// <param name="injected">used only for testing</param>
-        public DragonchainClient(string dragonchainId = "", ILogger logger = null, ICredentialService credentialService = null, IConfiguration config = null, IHttpService httpService = null)
+        public DragonchainClient(string dragonchainId = "", ICredentialService credentialService = null, ICredentialManager credentialManager = null, IHttpService httpService = null, ILogger logger = null)
         {
-            _logger = logger ?? NullLogger.Instance;           
+            logger = logger ?? NullLogger.Instance;           
             
             if (string.IsNullOrWhiteSpace(dragonchainId))
             {
-                _logger.LogDebug("Dragonchain ID not explicitly provided, will search env/disk");
-                dragonchainId = CredentialService.GetDragonchainId();
+                if(credentialManager == null) { throw new FailureByDesignException(message: "Credential Manager must be provided if dragonchainid is null or empty"); }
+                logger.LogDebug("Dragonchain ID not explicitly provided, will search env/disk");
+                dragonchainId = credentialManager.GetDragonchainId();
             }                        
-            _credentialService = credentialService ?? new CredentialService(dragonchainId);
+            _credentialService = credentialService ?? new CredentialService(dragonchainId, credentialManager: credentialManager);
             var endpoint = $"https://{dragonchainId}.api.dragonchain.com";
-            _httpService = httpService ?? new HttpService(_credentialService, endpoint);
+            _httpService = httpService ?? new HttpService(_credentialService, endpoint, logger);
         }
 
         #region -- IDragonchainClient Members --
@@ -109,9 +107,9 @@ namespace dragonchain_sdk
         /// </summary>
         /// <param name="blockId"></param>
         /// <returns></returns>
-        public async Task<ApiResponse<L1DragonchainTransactionFull>> GetBlock(string blockId)
+        public async Task<ApiResponse<BlockSchemaType>> GetBlock(string blockId)
         {
-            return await _httpService.GetAsync<L1DragonchainTransactionFull>($"/block/{blockId}");            
+            return await _httpService.GetAsync<BlockSchemaType>($"/block/{blockId}");            
         }
 
         /// <summary>
@@ -121,6 +119,7 @@ namespace dragonchain_sdk
         /// <returns></returns>
         public string GetSecret(string secretName)
         {
+            
             throw new NotImplementedException();
         }
 
@@ -176,8 +175,8 @@ namespace dragonchain_sdk
         {            
             if (level > 0)
             {
-                var levelresponse = await _httpService.GetAsync<LevelVerifications>($"/verifications/{blockId}?level={level}");
-                var levelVerifications = new ApiResponse<IVerifications> { Ok = levelresponse.Ok, Status = levelresponse.Status, Response = levelresponse.Response };
+                var levelresponse = await _httpService.GetAsync<IEnumerable<BlockSchemaType>>($"/verifications/{blockId}?level={level}");
+                var levelVerifications = new ApiResponse<IVerifications> { Ok = levelresponse.Ok, Status = levelresponse.Status, Response = new LevelVerifications { Verifications = levelresponse.Response } };
                 return levelVerifications;
             }
             var response = await _httpService.GetAsync<Verifications>($"/verifications/{blockId}");
@@ -205,9 +204,9 @@ namespace dragonchain_sdk
         /// Lists current accepted transaction types for a chain
         /// </summary>
         /// <returns></returns>
-        public async Task<ApiResponse<IEnumerable<TransactionTypeResponse>>> ListTransactionTypes()
+        public async Task<ApiResponse<DragonchainTransactionTypeQueryResult>> ListTransactionTypes()
         {
-            return await _httpService.GetAsync<IEnumerable<TransactionTypeResponse>>("/transaction-types");            
+            return await _httpService.GetAsync<DragonchainTransactionTypeQueryResult>("/transaction-types");            
         }
 
         /// <summary>
@@ -244,10 +243,10 @@ namespace dragonchain_sdk
         /// <param name="offset"></param>
         /// <param name="limit"></param>
         /// <returns></returns>
-        public async Task<ApiResponse<SmartContractAtRest>> QuerySmartContracts(string luceneQuery = "", string sort = "", int offset = 0, int limit = 10)
+        public async Task<ApiResponse<DragonchainSmartContractQueryResult>> QuerySmartContracts(string luceneQuery = "", string sort = "", int offset = 0, int limit = 10)
         {
             var queryParams = LuceneHelper.GetLuceneParams(luceneQuery, sort, offset, limit);
-            return await _httpService.GetAsync<SmartContractAtRest>($"/contract{queryParams}");
+            return await _httpService.GetAsync<DragonchainSmartContractQueryResult>($"/contract{queryParams}");
         }
 
         /// <summary>
@@ -305,7 +304,7 @@ namespace dragonchain_sdk
         public async Task<ApiResponse<UpdateResponse>> UpdateDragonnetConfig(DragonnetConfigSchema maximumPrices)
         {
             var dragonnet = maximumPrices.ToDragonnet();
-            return await _httpService.PutAsync<UpdateResponse>("/update-matchmaking-data", dragonnet);
+            return await _httpService.PutAsync<UpdateResponse>("/update-matchmaking-data", new { dragonnet });
         }
 
         /// <summary>

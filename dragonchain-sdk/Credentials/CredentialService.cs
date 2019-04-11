@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Security.Cryptography;
 using System.Text;
-using dragonchain_sdk.Framework.Errors;
+using dragonchain_sdk.Credentials.Manager;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Logging.Abstractions;
@@ -13,8 +13,7 @@ namespace dragonchain_sdk.Credentials
     /// </summary>
     public class CredentialService : ICredentialService
     {
-        private readonly ILogger _logger;
-        private static IConfiguration _config;
+        private readonly ILogger _logger;        
         private DragonchainCredentials _credentials;
         private HmacAlgorithm _hmacAlgo;
 
@@ -26,10 +25,9 @@ namespace dragonchain_sdk.Credentials
         /// <param name="authKeyId">authKeyId to use with these credentials</param>
         /// <param name="hmacAlgo">hmac algorithm to use</param>
         /// <param name="logger"></param>
-        public CredentialService(string dragonchainId, string authKey = "", string authKeyId = "", HmacAlgorithm hmacAlgo = HmacAlgorithm.SHA256, ILogger logger = null, IConfiguration config = null)
+        public CredentialService(string dragonchainId, string authKey = "", string authKeyId = "", HmacAlgorithm hmacAlgo = HmacAlgorithm.SHA256, ICredentialManager credentialManager = null, ILogger logger = null)
         {
-            _logger = logger ?? NullLogger.Instance;
-            _config = config;
+            _logger = logger ?? NullLogger.Instance;            
             DragonchainId = dragonchainId;
             if (!string.IsNullOrWhiteSpace(authKey) && !string.IsNullOrWhiteSpace(authKeyId))
             {
@@ -40,7 +38,7 @@ namespace dragonchain_sdk.Credentials
             {
                 try
                 {
-                    _credentials = GetDragonchainCredentials();
+                    _credentials = credentialManager.GetDragonchainCredentials();
                 }
                 catch
                 {  // don't require credentials to be present on construction
@@ -69,32 +67,6 @@ namespace dragonchain_sdk.Credentials
             var message = GetMessageString(method, path, DragonchainId, timestamp, contentType, body);            
             var signature = Convert.ToBase64String(hmac.ComputeHash(Encoding.UTF8.GetBytes(message)));
             return $"DC1-HMAC-{_hmacAlgo.ToValue()} {_credentials.AuthKeyId}:{signature}";
-        }
-
-        /// <summary>
-        /// Get a dragonchainId from environment/config file
-        /// </summary>        
-        public static string GetDragonchainId()
-        {            
-            if(_config == null) { throw new FailureByDesignException("NOT_FOUND", "No configuration provider set"); }
-            var id = _config["dragonchainId"];
-            if (!string.IsNullOrWhiteSpace(id)) { return id; }            
-            throw new FailureByDesignException("NOT_FOUND", "Config does not contain key 'dragonchainId'");
-        }
-
-        /// <summary>
-        /// Get an authKey/authKeyId pair
-        /// </summary>        
-        public static DragonchainCredentials GetDragonchainCredentials()
-        {
-            if (_config == null) { throw new FailureByDesignException("NOT_FOUND", "No configuration provider set"); }
-            var authKey = _config["AUTH_KEY"];
-            var authKeyId = _config["AUTH_KEY_ID"];
-            if (!string.IsNullOrWhiteSpace(authKey) && !string.IsNullOrWhiteSpace(authKeyId))
-            {
-                return new DragonchainCredentials { AuthKey = authKey, AuthKeyId = authKeyId };
-            }
-            throw new FailureByDesignException("NOT_FOUND", "Config does not contain both keys 'AUTH_KEY' and 'AUTH_KEY_ID'");
         }
 
         private HashAlgorithm CreateHmac(HmacAlgorithm hmacAlgo, string authKey)

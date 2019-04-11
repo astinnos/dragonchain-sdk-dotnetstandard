@@ -1,4 +1,4 @@
-﻿namespace dragonchain_sdk.Transactions
+﻿namespace dragonchain_sdk.Transactions.Types
 {
     public class CustomIndexStructure
     {

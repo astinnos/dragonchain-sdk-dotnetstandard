@@ -1,6 +1,6 @@
-﻿namespace dragonchain_sdk.Transactions.Transaction
+﻿namespace dragonchain_sdk.Transactions.L1
 {
-    public class TransactionProof
+    public class L1DragonchainTransactionProof
     {
         public string Full { get; set; }
         public string Stripped { get; set; }

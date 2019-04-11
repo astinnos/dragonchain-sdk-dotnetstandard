@@ -1,7 +1,9 @@
-﻿namespace dragonchain_sdk.Transactions
+﻿using System.Collections.Generic;
+
+namespace dragonchain_sdk.Transactions
 {
     public class DragonchainBulkTransactions
     {
-        public DragonchainTransactionCreatePayload[] Payload { get; set; }
+        public IEnumerable<DragonchainTransactionCreatePayload> Payload { get; set; }
     }
 }

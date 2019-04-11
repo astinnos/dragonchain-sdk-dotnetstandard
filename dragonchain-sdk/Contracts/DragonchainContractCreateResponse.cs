@@ -2,6 +2,6 @@
 {
     public class DragonchainContractCreateResponse
     {
-        public string Success { get { return "Contract creation in progress."; } }
+        public string Success { get; set; }
     }
 }

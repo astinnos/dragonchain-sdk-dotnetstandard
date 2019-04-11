@@ -3,7 +3,7 @@ using Microsoft.Extensions.Logging;
 
 namespace dragonchain_sdk.tests
 {
-    internal class NUnitLogger<T> : ILogger<T>, IDisposable
+    internal class TestLogger<T> : ILogger<T>, IDisposable
         {
             private readonly Action<string> output = Console.WriteLine;
 

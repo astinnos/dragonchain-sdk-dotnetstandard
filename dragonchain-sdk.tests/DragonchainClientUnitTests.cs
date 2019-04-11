@@ -1,4 +1,5 @@
 ﻿using System.Threading.Tasks;
+using System.Collections.Generic;
 using Microsoft.Extensions.Logging;
 using Moq;
 using NUnit.Framework;
@@ -6,10 +7,11 @@ using dragonchain_sdk.Contracts;
 using dragonchain_sdk.Framework.Web;
 using dragonchain_sdk.Status;
 using dragonchain_sdk.Transactions.L1;
-using dragonchain_sdk.Contracts.SmartContractAtRest;
 using dragonchain_sdk.Blocks;
 using dragonchain_sdk.Transactions;
 using dragonchain_sdk.Shared;
+using dragonchain_sdk.Framework.Errors;
+using dragonchain_sdk.Credentials.Manager;
 
 namespace dragonchain_sdk.tests
 {
@@ -17,14 +19,16 @@ namespace dragonchain_sdk.tests
     public class DragonchainClientUnitTests
     {
         private Mock<IHttpService> _httpService;
-        private ILogger _logger;
+        private Mock<ICredentialManager> _credentialManager;
         private DragonchainClient _dragonchainClient;
+        private ILogger _logger;
 
         public DragonchainClientUnitTests()
         {   
-            _logger = new NUnitLogger<DragonchainClientUnitTests>();
+            _logger = new TestLogger<DragonchainClientUnitTests>();            
             _httpService = new Mock<IHttpService>();
-            _dragonchainClient = new DragonchainClient("fakeDragonchainId", _logger, null, null, _httpService.Object);
+            _credentialManager = new Mock<ICredentialManager>();
+            _dragonchainClient = new DragonchainClient("fakeDragonchainId", null, null, _httpService.Object, _logger);
         }
 
         [SetUp]
@@ -32,7 +36,34 @@ namespace dragonchain_sdk.tests
         {
             _httpService.Invocations.Clear();
         }
-        
+
+        [Test]
+        public void ConstructClient_Tests()
+        {
+            _credentialManager.Setup(manager => manager.GetDragonchainId()).Returns("fakeDragonchainId");
+            IDragonchainClient dragonchainClient;
+            Assert.DoesNotThrow(() => dragonchainClient = new DragonchainClient("fakeDragonchainId"));
+            Assert.DoesNotThrow(() => dragonchainClient = new DragonchainClient(credentialManager: _credentialManager.Object));
+            Assert.Throws<FailureByDesignException>(() => dragonchainClient = new DragonchainClient(), "Credential Manager must be provided if dragonchainid is null or empty");
+        }
+
+        [Test]
+        public void SetDragonchainId_AllowsResettingtheDragonchainId_Test()
+        {
+            var dragonchainClient = new DragonchainClient("fakeDragonchainId", null, null, _httpService.Object, _logger);
+            dragonchainClient.SetDragonchainId("hotBanana");
+            _httpService.Verify(service => service.SetEndpoint("https://hotBanana.api.dragonchain.com"), Times.Once);
+        }
+
+        [Test]
+        public void SetEndpoint_AllowsSettingtheEnpointManually_Test()
+        {
+            var dragonchainClient = new DragonchainClient("fakeDragonchainId", null, null, _httpService.Object, _logger);
+            var endpoint = "https://some.domain.com";
+            dragonchainClient.SetEndpoint(endpoint);
+            _httpService.Verify(service => service.SetEndpoint($"{endpoint}"), Times.Once);
+        }
+
         [Test]
         public async Task GetStatus_CallswithCorrectParams_Test()
         {            
@@ -47,30 +78,13 @@ namespace dragonchain_sdk.tests
             await _dragonchainClient.GetTransaction(id);
             _httpService.Verify(service => service.GetAsync<L1DragonchainTransactionFull>($"/transaction/{id}"), Times.Once);
         }
-
-        [Test]
-        public void SetDragonchainId_AllowsResettingtheDragonchainId_Test()
-        {
-            var dragonchainClient = new DragonchainClient("fakeDragonchainId", _logger, null, null, _httpService.Object);
-            dragonchainClient.SetDragonchainId("hotBanana");            
-            _httpService.Verify(service => service.SetEndpoint("https://hotBanana.api.dragonchain.com"), Times.Once);            
-        }
-
-        [Test]
-        public void SetEndpoint_AllowsSettingtheEnpointManually_Test()
-        {
-            var dragonchainClient = new DragonchainClient("fakeDragonchainId", _logger, null, null, _httpService.Object);
-            var endpoint = "https://some.domain.com";
-            dragonchainClient.SetEndpoint(endpoint);            
-            _httpService.Verify(service => service.SetEndpoint($"{endpoint}"), Times.Once);
-        }
-
+        
         [Test]
         public async Task GetBlock_CallswithCorrectParams_Test()
         {               
             var id = "robin-block-id";
             await _dragonchainClient.GetBlock(id);
-            _httpService.Verify(service => service.GetAsync<L1DragonchainTransactionFull>($"/block/{id}"), Times.Once);
+            _httpService.Verify(service => service.GetAsync<BlockSchemaType>($"/block/{id}"), Times.Once);
         }
 
         [Test]
@@ -90,11 +104,11 @@ namespace dragonchain_sdk.tests
             await _dragonchainClient.GetVerifications(id);            
             _httpService.Verify(service => service.GetAsync<Verifications>($"/verifications/{id}"), Times.Once);
 
-            var verificationsReponse = new ApiResponse<LevelVerifications> { Ok = true, Status = 200, Response = new LevelVerifications() };
-            _httpService.Setup(service => service.GetAsync<LevelVerifications>(It.IsAny<string>())).ReturnsAsync(verificationsReponse);
+            var verificationsReponse = new ApiResponse<IEnumerable<BlockSchemaType>> { Ok = true, Status = 200, Response = new List<BlockSchemaType>() };
+            _httpService.Setup(service => service.GetAsync<IEnumerable<BlockSchemaType>>(It.IsAny<string>())).ReturnsAsync(verificationsReponse);
             var level = 2;            
             await _dragonchainClient.GetVerifications(id, level);
-            _httpService.Verify(service => service.GetAsync<LevelVerifications>($"/verifications/{id}?level={level}"), Times.Once);
+            _httpService.Verify(service => service.GetAsync<IEnumerable<BlockSchemaType>>($"/verifications/{id}?level={level}"), Times.Once);
         }
 
         [Test]
@@ -103,6 +117,20 @@ namespace dragonchain_sdk.tests
             var @params = "banana";
             await _dragonchainClient.QueryBlocks(@params);
             _httpService.Verify(service => service.GetAsync<DragonchainBlockQueryResult>($"/block?q={@params}&offset=0&limit=10"), Times.Once);
+
+            await _dragonchainClient.QueryBlocks(@params, offset: 5, limit: 12);
+            _httpService.Verify(service => service.GetAsync<DragonchainBlockQueryResult>($"/block?q={@params}&offset=5&limit=12"), Times.Once);
+        }
+
+        [Test]
+        public async Task QueryTransactions_CallswithCorrectParams_Test()
+        {
+            var @params = "banana";
+            await _dragonchainClient.QueryTransactions(@params);
+            _httpService.Verify(service => service.GetAsync<L1DragonchainTransactionQueryResult>($"/transaction?q={@params}&offset=0&limit=10"), Times.Once);
+
+            await _dragonchainClient.QueryTransactions(@params, offset: 5, limit: 12);
+            _httpService.Verify(service => service.GetAsync<L1DragonchainTransactionQueryResult>($"/transaction?q={@params}&offset=5&limit=12"), Times.Once);
         }
 
         [Test]
@@ -110,7 +138,10 @@ namespace dragonchain_sdk.tests
         {
             var @params = "banana";
             await _dragonchainClient.QuerySmartContracts(@params);
-            _httpService.Verify(service => service.GetAsync<SmartContractAtRest>($"/contract?q={@params}&offset=0&limit=10"), Times.Once);
+            _httpService.Verify(service => service.GetAsync<DragonchainSmartContractQueryResult>($"/contract?q={@params}&offset=0&limit=10"), Times.Once);
+
+            await _dragonchainClient.QuerySmartContracts(@params, offset: 5, limit: 12);
+            _httpService.Verify(service => service.GetAsync<DragonchainSmartContractQueryResult>($"/contract?q={@params}&offset=5&limit=12"), Times.Once);
         }
 
         [Test]
@@ -127,7 +158,7 @@ namespace dragonchain_sdk.tests
             var transactionCreatePayload = new DragonchainTransactionCreatePayload
             {
                 Version = "1",
-                TxnType= "transaction",
+                TransactionType= "transaction",
                 Payload = "hi!" ,
                 Tag = "Awesome!"
             };
@@ -140,12 +171,12 @@ namespace dragonchain_sdk.tests
         {
             var contractPayload = new ContractCreationSchema
             {
-                TxnType = "name",
+                TransactionType = "name",
                 Image = "ubuntu:latest",
                 ExecutionOrder = SmartContractExecutionOrder.Serial,
-                Env = new { Banana = "banana", Apple = "banana" },
+                EnvironmentVariables = new { Banana = "banana", Apple = "banana" },
                 Cmd = "banana",
-                Args = new string[] { "-m cool" }
+                Arguments = new string[] { "-m cool" }
             };
             await _dragonchainClient.CreateContract(contractPayload);
             _httpService.Verify(service => service.PostAsync<DragonchainContractCreateResponse>("/contract", contractPayload), Times.Once);
