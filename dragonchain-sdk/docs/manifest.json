@@ -1,0 +1,1451 @@
+{
+  "homepages": [],
+  "source_base_path": "C:/Users/ksmith/Documents/Visual Studio 2017/Projects/Dragonchain-SDK/dragonchain-sdk/docfx_project",
+  "xrefmap": "xrefmap.yml",
+  "files": [
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/dragonchain_sdk.Blocks.BlockSchemaType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/dragonchain_sdk.Blocks.BlockSchemaType.html",
+          "hash": "QTUniu+pDHJSd81QZk0e3Q=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/dragonchain_sdk.Blocks.BlockSchemaTypeHeader.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/dragonchain_sdk.Blocks.BlockSchemaTypeHeader.html",
+          "hash": "owJ0O42j8i/14Zzh/Ni5Xw=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/dragonchain_sdk.Blocks.BlockSchemaTypeProof.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/dragonchain_sdk.Blocks.BlockSchemaTypeProof.html",
+          "hash": "ehdV9hd15DYl4g/obYSlYQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/dragonchain_sdk.Blocks.Common.Header.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/dragonchain_sdk.Blocks.Common.Header.html",
+          "hash": "CsebxtTfDzZIgQr+rU+YEw=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/dragonchain_sdk.Blocks.Common.Proof.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/dragonchain_sdk.Blocks.Common.Proof.html",
+          "hash": "u5zQpvRh+nfInne0vuZRjA=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/dragonchain_sdk.Blocks.Common.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/dragonchain_sdk.Blocks.Common.html",
+          "hash": "NhPbWtwFprJvhLEwmfMY8g=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/dragonchain_sdk.Blocks.DragonchainBlockQueryResult.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/dragonchain_sdk.Blocks.DragonchainBlockQueryResult.html",
+          "hash": "CtXZLrXOPbHZIg1ShJsE8A=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/dragonchain_sdk.Blocks.IVerifications.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/dragonchain_sdk.Blocks.IVerifications.html",
+          "hash": "Bsb6JS0Uwx7Hq5zFbqNucg=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/dragonchain_sdk.Blocks.L1.Header.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/dragonchain_sdk.Blocks.L1.Header.html",
+          "hash": "hXLrfIA/b5ssbwHKUobPsQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/dragonchain_sdk.Blocks.L1.L1BlockAtRest.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/dragonchain_sdk.Blocks.L1.L1BlockAtRest.html",
+          "hash": "mrJV+pybXCcU5wWjVr759w=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/dragonchain_sdk.Blocks.L1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/dragonchain_sdk.Blocks.L1.html",
+          "hash": "TzlOIDFRfjLkM/FXTN3XcQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/dragonchain_sdk.Blocks.L2.L2BlockAtRest.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/dragonchain_sdk.Blocks.L2.L2BlockAtRest.html",
+          "hash": "ldxv23YOrjXDch+hN/tFHA=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/dragonchain_sdk.Blocks.L2.Validation.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/dragonchain_sdk.Blocks.L2.Validation.html",
+          "hash": "SgQh31stl6sQVZOZNBavzQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/dragonchain_sdk.Blocks.L2.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/dragonchain_sdk.Blocks.L2.html",
+          "hash": "MJSjxLCuaJg1vFRgKX1oCw=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/dragonchain_sdk.Blocks.L3.L3BlockAtRest.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/dragonchain_sdk.Blocks.L3.L3BlockAtRest.html",
+          "hash": "c1WwZi4k30N7PQ0B7JyTmg=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/dragonchain_sdk.Blocks.L3.Validations.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/dragonchain_sdk.Blocks.L3.Validations.html",
+          "hash": "opf3TDDh4ZDw2yS2rUXITQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/dragonchain_sdk.Blocks.L3.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/dragonchain_sdk.Blocks.L3.html",
+          "hash": "+rRSbM7Yrg9AGRp6BKa9aQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/dragonchain_sdk.Blocks.L4.Header.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/dragonchain_sdk.Blocks.L4.Header.html",
+          "hash": "ECbPOCnzgFndplnZa/N/PQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/dragonchain_sdk.Blocks.L4.L4BlockAtRest.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/dragonchain_sdk.Blocks.L4.L4BlockAtRest.html",
+          "hash": "sSqVW6tfCwT2IWTgKFmWfA=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/dragonchain_sdk.Blocks.L4.Validations.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/dragonchain_sdk.Blocks.L4.Validations.html",
+          "hash": "7vRtJiuk/yv/VYFtPBA9kA=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/dragonchain_sdk.Blocks.L4.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/dragonchain_sdk.Blocks.L4.html",
+          "hash": "/IgiuqpGTj8FZ6vw1cmyAQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/dragonchain_sdk.Blocks.L5.L5BlockAtRest.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/dragonchain_sdk.Blocks.L5.L5BlockAtRest.html",
+          "hash": "H7a4r6dBO8do5mkBKj4ZvA=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/dragonchain_sdk.Blocks.L5.Proof.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/dragonchain_sdk.Blocks.L5.Proof.html",
+          "hash": "+08HiugcRVzrr/hA32bnlg=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/dragonchain_sdk.Blocks.L5.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/dragonchain_sdk.Blocks.L5.html",
+          "hash": "SWQnrXBxeMbX7cgHP649WA=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/dragonchain_sdk.Blocks.LevelVerifications.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/dragonchain_sdk.Blocks.LevelVerifications.html",
+          "hash": "OEuUpQt0nTmYPM9mrdq9JA=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/dragonchain_sdk.Blocks.Verifications.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/dragonchain_sdk.Blocks.Verifications.html",
+          "hash": "b+9t7jGSTGznguWnMQt4ig=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/dragonchain_sdk.Blocks.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/dragonchain_sdk.Blocks.html",
+          "hash": "f6WCkGKURZoVtcutSr9mvA=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/dragonchain_sdk.Contracts.ContractCreationSchema.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/dragonchain_sdk.Contracts.ContractCreationSchema.html",
+          "hash": "C0QNgQCVZiCbsZgqw89kdA=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/dragonchain_sdk.Contracts.ContractRuntime.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/dragonchain_sdk.Contracts.ContractRuntime.html",
+          "hash": "kJF2KfmomKTdju7+cQMbaA=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/dragonchain_sdk.Contracts.ContractStatus.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/dragonchain_sdk.Contracts.ContractStatus.html",
+          "hash": "SG1/Vp1nwz0Ei/jsho23sg=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/dragonchain_sdk.Contracts.DragonchainContractCreateResponse.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/dragonchain_sdk.Contracts.DragonchainContractCreateResponse.html",
+          "hash": "TOBGaFPONgtiiu/fBWX7ag=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/dragonchain_sdk.Contracts.DragonchainSmartContractQueryResult.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/dragonchain_sdk.Contracts.DragonchainSmartContractQueryResult.html",
+          "hash": "yoT0crcaSSOlvoIoiFVbbQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/dragonchain_sdk.Contracts.Library.Currency.AddressScheme.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/dragonchain_sdk.Contracts.Library.Currency.AddressScheme.html",
+          "hash": "Zxvuiy3vu6aGnAF2TXwZeA=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/dragonchain_sdk.Contracts.Library.Currency.CreateCurrencyContract.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/dragonchain_sdk.Contracts.Library.Currency.CreateCurrencyContract.html",
+          "hash": "9+fXpaoTTKOqjBtKsm5zwQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/dragonchain_sdk.Contracts.Library.Currency.CustomEnvironmentVariables.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/dragonchain_sdk.Contracts.Library.Currency.CustomEnvironmentVariables.html",
+          "hash": "voph+0I44J4vHyGpX3awzA=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/dragonchain_sdk.Contracts.Library.Currency.Governance.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/dragonchain_sdk.Contracts.Library.Currency.Governance.html",
+          "hash": "yv06i4SGCns3cBuUYmJ25w=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/dragonchain_sdk.Contracts.Library.Currency.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/dragonchain_sdk.Contracts.Library.Currency.html",
+          "hash": "U/XkN/DArnEEwkQjCDZZSg=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/dragonchain_sdk.Contracts.Library.InterchainWatchers.Bitcoin.CreateBtcInterchainWatcherContract.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/dragonchain_sdk.Contracts.Library.InterchainWatchers.Bitcoin.CreateBtcInterchainWatcherContract.html",
+          "hash": "e+J2f/CGItquW6z08sqFqw=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/dragonchain_sdk.Contracts.Library.InterchainWatchers.Bitcoin.CustomEnvironmentVariables.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/dragonchain_sdk.Contracts.Library.InterchainWatchers.Bitcoin.CustomEnvironmentVariables.html",
+          "hash": "NiEofIpKIdMuE6I+CAqkXA=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/dragonchain_sdk.Contracts.Library.InterchainWatchers.Bitcoin.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/dragonchain_sdk.Contracts.Library.InterchainWatchers.Bitcoin.html",
+          "hash": "uktf+bwti8xEske/Cyy8ww=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/dragonchain_sdk.Contracts.Library.InterchainWatchers.Ethereum.CreateEthereumInterchainWatcherContract.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/dragonchain_sdk.Contracts.Library.InterchainWatchers.Ethereum.CreateEthereumInterchainWatcherContract.html",
+          "hash": "AFyGJJq8oB0hDk1etQ6ggg=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/dragonchain_sdk.Contracts.Library.InterchainWatchers.Ethereum.CustomEnvironmentVariables.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/dragonchain_sdk.Contracts.Library.InterchainWatchers.Ethereum.CustomEnvironmentVariables.html",
+          "hash": "Si+T7U8NJJffHg8gsGMCPg=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/dragonchain_sdk.Contracts.Library.InterchainWatchers.Ethereum.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/dragonchain_sdk.Contracts.Library.InterchainWatchers.Ethereum.html",
+          "hash": "ydEnx047zVK3vbfEBL83Dw=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/dragonchain_sdk.Contracts.Library.InterchainWatchers.Neo.CreateNeoInterchainWatcherContract.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/dragonchain_sdk.Contracts.Library.InterchainWatchers.Neo.CreateNeoInterchainWatcherContract.html",
+          "hash": "AgiNya5LQxBlj53jnLlPBw=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/dragonchain_sdk.Contracts.Library.InterchainWatchers.Neo.CustomEnvironmentVariables.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/dragonchain_sdk.Contracts.Library.InterchainWatchers.Neo.CustomEnvironmentVariables.html",
+          "hash": "8nfDaMQxQcUoDnYgeoCsDg=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/dragonchain_sdk.Contracts.Library.InterchainWatchers.Neo.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/dragonchain_sdk.Contracts.Library.InterchainWatchers.Neo.html",
+          "hash": "ZCQPbltSB2DcUOQ+VdgjxQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/dragonchain_sdk.Contracts.Library.Networks.BitcoinNetwork.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/dragonchain_sdk.Contracts.Library.Networks.BitcoinNetwork.html",
+          "hash": "NC4nDJ9YjNlkl/qU/rAN0Q=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/dragonchain_sdk.Contracts.Library.Networks.EthereumNetwork.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/dragonchain_sdk.Contracts.Library.Networks.EthereumNetwork.html",
+          "hash": "p21WgL0odnbjgt7+XMYH2w=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/dragonchain_sdk.Contracts.Library.Networks.NeoNetwork.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/dragonchain_sdk.Contracts.Library.Networks.NeoNetwork.html",
+          "hash": "YOLJ3zlALv6RscQ77cLsvw=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/dragonchain_sdk.Contracts.Library.Networks.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/dragonchain_sdk.Contracts.Library.Networks.html",
+          "hash": "bw8UCdNpVVvcCU2qRm+szg=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/dragonchain_sdk.Contracts.Library.Publishers.Bitcoin.CreateBtcPublisherContract.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/dragonchain_sdk.Contracts.Library.Publishers.Bitcoin.CreateBtcPublisherContract.html",
+          "hash": "YbLj988p9DMrdiN/Bbub4Q=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/dragonchain_sdk.Contracts.Library.Publishers.Bitcoin.CustomEnvironmentVariables.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/dragonchain_sdk.Contracts.Library.Publishers.Bitcoin.CustomEnvironmentVariables.html",
+          "hash": "hHpvSZTqeAaN+kO4EWCNmA=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/dragonchain_sdk.Contracts.Library.Publishers.Bitcoin.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/dragonchain_sdk.Contracts.Library.Publishers.Bitcoin.html",
+          "hash": "uW2uzgkczzt9BbmwesyOBg=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/dragonchain_sdk.Contracts.Library.Publishers.Ethereum.CreateEthereumPublisherContract.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/dragonchain_sdk.Contracts.Library.Publishers.Ethereum.CreateEthereumPublisherContract.html",
+          "hash": "WVhx2OlLYb5V3sYLvCKqsA=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/dragonchain_sdk.Contracts.Library.Publishers.Ethereum.CustomEnvironmentVariables.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/dragonchain_sdk.Contracts.Library.Publishers.Ethereum.CustomEnvironmentVariables.html",
+          "hash": "cyXozsHJyAtroFOA/gKSmw=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/dragonchain_sdk.Contracts.Library.Publishers.Ethereum.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/dragonchain_sdk.Contracts.Library.Publishers.Ethereum.html",
+          "hash": "rjfJR1Z3cyojQPFFpufT/w=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/dragonchain_sdk.Contracts.Library.Publishers.Neo.CreateNeoPublisherContract.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/dragonchain_sdk.Contracts.Library.Publishers.Neo.CreateNeoPublisherContract.html",
+          "hash": "5icZ/4uQdecJU0L8OY9sSw=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/dragonchain_sdk.Contracts.Library.Publishers.Neo.CustomEnvironmentVariables.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/dragonchain_sdk.Contracts.Library.Publishers.Neo.CustomEnvironmentVariables.html",
+          "hash": "0IIqHfd0unVRaPfcKCKUOA=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/dragonchain_sdk.Contracts.Library.Publishers.Neo.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/dragonchain_sdk.Contracts.Library.Publishers.Neo.html",
+          "hash": "YJK6n/AjSDcFflCmeAYymQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/dragonchain_sdk.Contracts.SmartContractAtRest.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/dragonchain_sdk.Contracts.SmartContractAtRest.html",
+          "hash": "cfCyeP7N+U4HDQMxlrG8xA=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/dragonchain_sdk.Contracts.SmartContractDesiredState.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/dragonchain_sdk.Contracts.SmartContractDesiredState.html",
+          "hash": "CaHVPlk4zf/yFdIerseo3Q=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/dragonchain_sdk.Contracts.SmartContractExecutionOrder.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/dragonchain_sdk.Contracts.SmartContractExecutionOrder.html",
+          "hash": "uJa2+0h/ghNElV7ILQaTrg=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/dragonchain_sdk.Contracts.SmartContractType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/dragonchain_sdk.Contracts.SmartContractType.html",
+          "hash": "cCyyuOECeaVH6cujUiSpmw=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/dragonchain_sdk.Contracts.Status.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/dragonchain_sdk.Contracts.Status.html",
+          "hash": "TYeC+dhkJ0LJSmB9c7thwg=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/dragonchain_sdk.Contracts.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/dragonchain_sdk.Contracts.html",
+          "hash": "RxK/6zs3TL1+AjMUW0EXlw=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/dragonchain_sdk.Credentials.CredentialService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/dragonchain_sdk.Credentials.CredentialService.html",
+          "hash": "q69cC+GJfbt1C08YUEOG+w=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/dragonchain_sdk.Credentials.DragonchainCredentials.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/dragonchain_sdk.Credentials.DragonchainCredentials.html",
+          "hash": "4EB3yzOiPJM/cM2c9+E/kA=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/dragonchain_sdk.Credentials.HmacAlgorithm.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/dragonchain_sdk.Credentials.HmacAlgorithm.html",
+          "hash": "dRo/3Hk46n8Y/8QZOKb5Tw=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/dragonchain_sdk.Credentials.HmacAlgorithmExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/dragonchain_sdk.Credentials.HmacAlgorithmExtensions.html",
+          "hash": "g+uKkdVK82vjmcRGeo3/2A=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/dragonchain_sdk.Credentials.ICredentialService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/dragonchain_sdk.Credentials.ICredentialService.html",
+          "hash": "4IJ02tHbq/etolWz5fI4UQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/dragonchain_sdk.Credentials.Manager.CredentialManager.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/dragonchain_sdk.Credentials.Manager.CredentialManager.html",
+          "hash": "s0h6raXM3l+W0hCHA3drzA=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/dragonchain_sdk.Credentials.Manager.ICredentialManager.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/dragonchain_sdk.Credentials.Manager.ICredentialManager.html",
+          "hash": "3RxbOXc0FtJXHAAMStnZLA=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/dragonchain_sdk.Credentials.Manager.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/dragonchain_sdk.Credentials.Manager.html",
+          "hash": "5yUr8ABaY+Hi3AW9rCKYuQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/dragonchain_sdk.Credentials.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/dragonchain_sdk.Credentials.html",
+          "hash": "OrHeN4jmlltE3+cCmW6FpA=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/dragonchain_sdk.DragonNet.Dragonnet.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/dragonchain_sdk.DragonNet.Dragonnet.html",
+          "hash": "oDhraeIje2uieIbzCreXHA=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/dragonchain_sdk.DragonNet.DragonnetConfigSchema.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/dragonchain_sdk.DragonNet.DragonnetConfigSchema.html",
+          "hash": "pTphVIu8SZfTfAKRSMBYaQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/dragonchain_sdk.DragonNet.DragonnetConfigSchemaExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/dragonchain_sdk.DragonNet.DragonnetConfigSchemaExtensions.html",
+          "hash": "NQXRqiZ7QGaONwBGxXgETQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/dragonchain_sdk.DragonNet.DragonnetPrice.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/dragonchain_sdk.DragonNet.DragonnetPrice.html",
+          "hash": "o7DJgxsZspIEBnXb7rjWuQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/dragonchain_sdk.DragonNet.MatchMaking.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/dragonchain_sdk.DragonNet.MatchMaking.html",
+          "hash": "4KT5lQp7DR8Ol4RGfUuz5A=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/dragonchain_sdk.DragonNet.MatchMakingUpdate.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/dragonchain_sdk.DragonNet.MatchMakingUpdate.html",
+          "hash": "4W0zrdVBsukkgm4vfEbqmQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/dragonchain_sdk.DragonNet.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/dragonchain_sdk.DragonNet.html",
+          "hash": "FaVcR6dF4N3m1B+X9SJU9Q=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/dragonchain_sdk.DragonchainClient.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/dragonchain_sdk.DragonchainClient.html",
+          "hash": "A2WcpdxWiYufbbMTeHOdEQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/dragonchain_sdk.Framework.Errors.FailureByDesignException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/dragonchain_sdk.Framework.Errors.FailureByDesignException.html",
+          "hash": "GEydkIPnfnxyATgfDdAGYQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/dragonchain_sdk.Framework.Errors.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/dragonchain_sdk.Framework.Errors.html",
+          "hash": "aPIplOXI7SK+z+dY3q/q/w=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/dragonchain_sdk.Framework.Lucene.LuceneHelper.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/dragonchain_sdk.Framework.Lucene.LuceneHelper.html",
+          "hash": "87FYmc1S9w84b1RXeJzQYQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/dragonchain_sdk.Framework.Lucene.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/dragonchain_sdk.Framework.Lucene.html",
+          "hash": "J5FFFwMmhNCJPv21erXxOQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/dragonchain_sdk.Framework.Web.ApiResponse-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/dragonchain_sdk.Framework.Web.ApiResponse-1.html",
+          "hash": "uK5I33RrgygP+YsP86QswQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/dragonchain_sdk.Framework.Web.DragonchainApiError.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/dragonchain_sdk.Framework.Web.DragonchainApiError.html",
+          "hash": "CkRh800JcSg9TJo9Jiakmw=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/dragonchain_sdk.Framework.Web.DragonchainApiException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/dragonchain_sdk.Framework.Web.DragonchainApiException.html",
+          "hash": "ACSOEUDcQJ6qGHn0jQXFUA=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/dragonchain_sdk.Framework.Web.IHttpService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/dragonchain_sdk.Framework.Web.IHttpService.html",
+          "hash": "qyu3cM5y9vBk/kmEmRLMZg=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/dragonchain_sdk.Framework.Web.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/dragonchain_sdk.Framework.Web.html",
+          "hash": "MgSGrQ5yRoyA35dAZkVYJQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/dragonchain_sdk.IDragonchainClient.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/dragonchain_sdk.IDragonchainClient.html",
+          "hash": "Z8A6PAHhxUSJS/3Rj/ioGQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/dragonchain_sdk.Shared.UpdateResponse.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/dragonchain_sdk.Shared.UpdateResponse.html",
+          "hash": "ATcyt3qKTZ0w09YmpmSd4g=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/dragonchain_sdk.Shared.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/dragonchain_sdk.Shared.html",
+          "hash": "CXqxw9+P4d4AQIspwcDRNw=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/dragonchain_sdk.Status.L1DragonchainStatusResult.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/dragonchain_sdk.Status.L1DragonchainStatusResult.html",
+          "hash": "PH1uw50LZFJY8MWQyt92TQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/dragonchain_sdk.Status.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/dragonchain_sdk.Status.html",
+          "hash": "YkO8YKPSf50+HZA3/hYKvQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/dragonchain_sdk.Transactions.DragonchainBulkTransactions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/dragonchain_sdk.Transactions.DragonchainBulkTransactions.html",
+          "hash": "KtBcZcY2p0+0gcPAGL+FXg=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/dragonchain_sdk.Transactions.DragonchainTransactionCreatePayload.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/dragonchain_sdk.Transactions.DragonchainTransactionCreatePayload.html",
+          "hash": "4aW0Fij+aw6Cb23m7+Xhig=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/dragonchain_sdk.Transactions.DragonchainTransactionCreateResponse.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/dragonchain_sdk.Transactions.DragonchainTransactionCreateResponse.html",
+          "hash": "WQEILru6OvlntSsdSKfLZg=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/dragonchain_sdk.Transactions.L1.L1DragonchainTransactionFull.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/dragonchain_sdk.Transactions.L1.L1DragonchainTransactionFull.html",
+          "hash": "dOJK3jCb+VcspayjgfpTNw=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/dragonchain_sdk.Transactions.L1.L1DragonchainTransactionHeader.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/dragonchain_sdk.Transactions.L1.L1DragonchainTransactionHeader.html",
+          "hash": "GCGINTdKmeaD+xTfo+x3fg=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/dragonchain_sdk.Transactions.L1.L1DragonchainTransactionProof.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/dragonchain_sdk.Transactions.L1.L1DragonchainTransactionProof.html",
+          "hash": "f0gNdXuDmN/+HZwpbj2Vpw=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/dragonchain_sdk.Transactions.L1.L1DragonchainTransactionQueryResult.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/dragonchain_sdk.Transactions.L1.L1DragonchainTransactionQueryResult.html",
+          "hash": "p2KaJcS+4ZhYQPdb2ZX1jw=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/dragonchain_sdk.Transactions.L1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/dragonchain_sdk.Transactions.L1.html",
+          "hash": "4uCJHFjDUBT2Ke3n35uYOw=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/dragonchain_sdk.Transactions.Types.CustomIndexStructure.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/dragonchain_sdk.Transactions.Types.CustomIndexStructure.html",
+          "hash": "oldKC0PmdRXTv1/vsrw6zQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/dragonchain_sdk.Transactions.Types.DragonchainTransactionTypeQueryResult.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/dragonchain_sdk.Transactions.Types.DragonchainTransactionTypeQueryResult.html",
+          "hash": "L/jGrhnfWQKSvzvFiNG+8w=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/dragonchain_sdk.Transactions.Types.TransactionTypeResponse.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/dragonchain_sdk.Transactions.Types.TransactionTypeResponse.html",
+          "hash": "fRvd9KXkU+2OJRToXtMQPg=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/dragonchain_sdk.Transactions.Types.TransactionTypeStructure.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/dragonchain_sdk.Transactions.Types.TransactionTypeStructure.html",
+          "hash": "craBJaie8JuWsjJm6EtpWw=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/dragonchain_sdk.Transactions.Types.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/dragonchain_sdk.Transactions.Types.html",
+          "hash": "1X5jpb6QVkVjFC6Tc9mESg=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/dragonchain_sdk.Transactions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/dragonchain_sdk.Transactions.html",
+          "hash": "xG8KmWakWiU+9lOJNtVL3g=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/dragonchain_sdk.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/dragonchain_sdk.html",
+          "hash": "hiRgi5fXMJ1PDESiRU5efQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "api/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/toc.html",
+          "hash": "yHhs3Noac04mFL3Tl3wEaw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/dragonchainlogo.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/dragonchainlogo.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/favicon.ico",
+      "output": {
+        "resource": {
+          "relative_path": "images/favicon.ico"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "index.md",
+      "output": {
+        ".html": {
+          "relative_path": "index.html",
+          "hash": "e3WsSm4ZHe8GqltqHlzTPg=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "toc.html",
+          "hash": "RnNjRYqQLtsyXnAcWO325w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    }
+  ],
+  "incremental_info": [
+    {
+      "status": {
+        "can_incremental": true,
+        "incrementalPhase": "build",
+        "total_file_count": 0,
+        "skipped_file_count": 0
+      },
+      "processors": {
+        "TocDocumentProcessor": {
+          "can_incremental": false,
+          "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+          "incrementalPhase": "build",
+          "total_file_count": 0,
+          "skipped_file_count": 0
+        },
+        "ConceptualDocumentProcessor": {
+          "can_incremental": true,
+          "incrementalPhase": "build",
+          "total_file_count": 1,
+          "skipped_file_count": 1
+        },
+        "ManagedReferenceDocumentProcessor": {
+          "can_incremental": true,
+          "incrementalPhase": "build",
+          "total_file_count": 111,
+          "skipped_file_count": 111
+        },
+        "ResourceDocumentProcessor": {
+          "can_incremental": false,
+          "details": "Processor ResourceDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+          "incrementalPhase": "build",
+          "total_file_count": 0,
+          "skipped_file_count": 0
+        }
+      }
+    },
+    {
+      "status": {
+        "can_incremental": true,
+        "details": "Can support incremental post processing.",
+        "incrementalPhase": "postProcessing",
+        "total_file_count": 0,
+        "skipped_file_count": 0
+      },
+      "processors": {}
+    }
+  ],
+  "version_info": {},
+  "groups": [
+    {
+      "xrefmap": "xrefmap.yml"
+    }
+  ]
+}

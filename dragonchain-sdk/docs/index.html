@@ -1,0 +1,248 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Dragonchain .Net SDK </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Dragonchain .Net SDK ">
+    <meta name="generator" content="docfx 2.41.0.0">
+    
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"> 
+    <meta property="docfx:navrel" content="toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="index.html">
+                  <img id="logo" class="svg" src="images/dragonchainlogo.png" style="margin-top: 8px; width: 200px;" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="article row grid">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="dragonchain-net-sdk">Dragonchain .Net SDK</h1>
+
+<p>Talk to your dragonchain.</p>
+<p>Under construction</p>
+<h3 id="examples">Examples</h3>
+<h3 id="import">Import</h3>
+<pre><code class="lang-csharp">using dragonchain_sdk;
+using dragonchain_sdk.Framework.Web;
+</code></pre>
+<h4 id="overridecredentials">OverrideCredentials</h4>
+<p>This is fine for quick tests. For actual production use, you should inject an implementation of Microsoft.Extensions.Configuration.IConfiguration. Read here for more information <a href="https://docs.microsoft.com/en-us/aspnet/core/fundamentals/configuration/?view=aspnetcore-2.2">Mircosoft Configuration Docs</a>.<br>
+<a href="#configuration">Examples</a></p>
+<pre><code class="lang-csharp">client.OverrideCredentials(&quot;AUTH_KEY_ID&quot;, &quot;AUTH_KEY&quot;);
+</code></pre>
+<h4 id="getblock">GetBlock</h4>
+<pre><code class="lang-csharp">var myDcId = &quot;3f2fef78-0000-0000-0000-9f2971607130&quot;;
+var client = new DragonchainClient(myDcId);
+
+const call = await client.getBlock('block-id-here');
+
+try 
+{
+    var block = await client.GetBlock(&quot;block-id-here&quot;);
+    var block = call.Response;
+    Console.WriteLine(&quot;Successful call!&quot;);
+    Console.WriteLine($&quot;Block: {block.Header.BlockId}&quot;);
+}
+catch(DragonchainApiException exception)
+{
+    Console.WriteLine(&quot;Something went wrong!&quot;);
+    Console.WriteLine($&quot;HTTP status code from chain: {exception.Status}&quot;);
+    Console.WriteLine($&quot;Error response from chain: {exception.Message}&quot;);
+}
+</code></pre>
+<h4 id="querytransactions">QueryTransactions</h4>
+<pre><code class="lang-csharp">var searchResult = await client.QueryTransactions(&quot;tag=MyAwesomeTransactionTag&quot;);
+var totalTransactionsCount = searchResult.Response.Total;
+var transactions = searchResult.Response.Results;
+</code></pre>
+<h4 id="register-transaction-type">Register Transaction Type</h4>
+<pre><code class="lang-csharp">var registerTransactionTypeResult = await _dragonchainLevel1Client.RegisterTransactionType(new TransactionTypeStructure
+{
+    Version = &quot;1&quot;,
+    TransactionType = &quot;apple&quot;,
+    CustomIndexes = new List&lt;CustomIndexStructure&gt;
+    {
+        new CustomIndexStructure{ Key =&quot;SomeKey&quot;, Path=&quot;SomePath&quot; }
+    }
+});
+</code></pre>
+<h4 id="create-a-transaction">Create a Transaction</h4>
+<pre><code class="lang-csharp">var newTransaction = new DragonchainTransactionCreatePayload
+{
+    TransactionType = &quot;apple&quot;,
+    Version = &quot;1&quot;,
+    Tag = &quot;pottery&quot;,
+    Payload = new {}
+};
+var createResult = await _dragonchainLevel1Client.CreateTransaction(newTransaction);
+</code></pre>
+<h2 id="configuration">Configuration</h2>
+<p>In order to use this SDK, you need to have an Auth Key as well as an Auth Key ID for a given dragonchain.
+This can be loaded into the sdk in various ways using an IConfiguration provider:</p>
+<ol>
+<li>The environment variables <code>AUTH_KEY</code> and <code>AUTH_KEY_ID</code> can be set with the appropriate values</li>
+<li>Write a json, ini or xml file and use the required Configuration Builder extension like so:</li>
+</ol>
+<h3 id="environment-variables">Environment Variables</h3>
+<pre><code class="lang-csharp">  var config = new ConfigurationBuilder()
+    .AddEnvironmentVariables()
+    .Build();    
+  var client = new DragonchainClient(myDcId, config);
+</code></pre>
+<h3 id="json">Json</h3>
+<pre><code class="lang-csharp">  var config = new ConfigurationBuilder()
+    .AddJsonFile(&quot;appsettings.json&quot;)
+    .Build();    
+  var client = new DragonchainClient(myDcId, config);
+</code></pre>
+<pre><code class="lang-json">{
+  &quot;dragonchainId&quot;: &quot;3f2fef78-0000-0000-0000-9f2971607130&quot;,
+  &quot;AUTH_KEY&quot;: &quot;MyAuthKey&quot;,
+  &quot;AUTH_KEY_ID&quot;: &quot;MyAuthKeyId&quot;
+ }
+</code></pre>
+<p>or</p>
+<pre><code class="lang-json">{
+ &quot;3f2fef78-0000-0000-0000-9f2971607130&quot;: {
+   &quot;AUTH_KEY&quot;: &quot;MyAuthKey&quot;,
+   &quot;AUTH_KEY_ID&quot;: &quot;MyAuthKeyId&quot;
+ }
+}
+</code></pre>
+<h3 id="ini">INI</h3>
+<pre><code class="lang-csharp">  var config = new ConfigurationBuilder()
+    .AddIniFile(&quot;config.ini&quot;)
+    .Build();    
+  var client = new DragonchainClient(myDcId, config);
+</code></pre>
+<pre><code class="lang-ini">dragonchainId=3f2fef78-0000-0000-0000-9f2971607130
+AUTH_KEY=MyAuthKey
+AUTH_KEY_ID=MyAuthKeyId
+</code></pre>
+<p>or</p>
+<pre><code class="lang-ini">[3f2fef78-0000-0000-0000-9f2971607130]
+AUTH_KEY=MyAuthKey
+AUTH_KEY_ID=MyAuthKeyId
+</code></pre>
+<h3 id="xml">XML</h3>
+<pre><code class="lang-csharp">  var config = new ConfigurationBuilder()
+    .AddXmlFile(&quot;config.xml&quot;)
+    .Build();    
+  var client = new DragonchainClient(myDcId, config);
+</code></pre>
+<pre><code class="lang-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot; ?&gt;
+&lt;configuration&gt;
+  &lt;dragonchainId&gt;3f2fef78-0000-0000-0000-9f2971607130&lt;/dragonchainId&gt;
+  &lt;AUTH_KEY&gt;MyAuthKey&lt;/AUTH_KEY&gt;
+  &lt;AUTH_KEY_ID&gt;MyAuthKeyId&lt;/AUTH_KEY_ID&gt;
+&lt;/configuration&gt;
+</code></pre>
+<p>or</p>
+<pre><code class="lang-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot; ?&gt;
+&lt;configuration&gt;  
+  &lt;3f2fef78-0000-0000-0000-9f2971607130&gt;
+    &lt;AUTH_KEY&gt;MyAuthKey&lt;/AUTH_KEY&gt;
+    &lt;AUTH_KEY_ID&gt;MyAuthKeyId&lt;/AUTH_KEY_ID&gt;  
+  &lt;/3f2fef78-0000-0000-0000-9f2971607130&gt;
+&lt;/configuration&gt;
+</code></pre>
+<h2 id="logging">Logging</h2>
+<p>In order to get the logging output of the sdk, a logger must be set (by default all logging is thrown away).</p>
+<p>In order to set the logger, simply inject a Microsoft.Extensions.Logging implementation <code>.setLogger</code> on the root of the require/import.
+Read here for more information <a href="https://docs.microsoft.com/en-us/aspnet/core/fundamentals/logging/?view=aspnetcore-2.2">Microsoft Logging Docs</a>.
+For example, if you just wanted to log to the console you can set the logger like the following:</p>
+<pre><code class="lang-csharp">var webHost = new WebHostBuilder()        
+  .ConfigureLogging((hostingContext, logging) =&gt;
+  {
+    logging.AddConsole();            
+  })
+  .UseStartup&lt;Startup&gt;()
+  .Build();
+</code></pre>
+<p>You can also create your own implemnations of ILogger</p>
+<pre><code class="lang-csharp">var logger = new MyLogger();
+var client = new DragonchainClient(myDcId, config, logger);                
+</code></pre>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/astinnos/dragonchain-sdk-dotnetstandard/blob/master/dragonchain-sdk/docfx_project/index.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

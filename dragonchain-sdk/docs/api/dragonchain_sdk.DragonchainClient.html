@@ -1,0 +1,1559 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class DragonchainClient
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class DragonchainClient
+   ">
+    <meta name="generator" content="docfx 2.41.0.0">
+    
+    <link rel="shortcut icon" href="../images/favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"> 
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../images/dragonchainlogo.png" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="dragonchain_sdk.DragonchainClient">
+  
+  
+  <h1 id="dragonchain_sdk_DragonchainClient" data-uid="dragonchain_sdk.DragonchainClient" class="text-break">Class DragonchainClient
+  </h1>
+  <div class="markdown level0 summary"><p>HTTP Client that interfaces with the dragonchain api, using credentials stored on your machine.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><span class="xref">DragonchainClient</span></div>
+  </div>
+  <div classs="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="dragonchain_sdk.IDragonchainClient.html">IDragonchainClient</a></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetHashCode()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetType()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.MemberwiseClone()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ToString()</span>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="dragonchain_sdk.html">dragonchain_sdk</a></h6>
+  <h6><strong>Assembly</strong>: dragonchain-sdk.dll</h6>
+  <h5 id="dragonchain_sdk_DragonchainClient_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class DragonchainClient : IDragonchainClient</code></pre>
+  </div>
+  <h3 id="constructors">Constructors
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/astinnos/dragonchain-sdk-dotnetstandard/new/master/apiSpec/new?filename=dragonchain_sdk_DragonchainClient__ctor_System_String_dragonchain_sdk_Credentials_Manager_ICredentialManager_dragonchain_sdk_Credentials_ICredentialService_dragonchain_sdk_Framework_Web_IHttpService_Microsoft_Extensions_Logging_ILogger_.md&amp;value=---%0Auid%3A%20dragonchain_sdk.DragonchainClient.%23ctor(System.String%2Cdragonchain_sdk.Credentials.Manager.ICredentialManager%2Cdragonchain_sdk.Credentials.ICredentialService%2Cdragonchain_sdk.Framework.Web.IHttpService%2CMicrosoft.Extensions.Logging.ILogger)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/astinnos/dragonchain-sdk-dotnetstandard/blob/master/dragonchain-sdk/DragonchainClient.cs/#L59">View Source</a>
+  </span>
+  <a id="dragonchain_sdk_DragonchainClient__ctor_" data-uid="dragonchain_sdk.DragonchainClient.#ctor*"></a>
+  <h4 id="dragonchain_sdk_DragonchainClient__ctor_System_String_dragonchain_sdk_Credentials_Manager_ICredentialManager_dragonchain_sdk_Credentials_ICredentialService_dragonchain_sdk_Framework_Web_IHttpService_Microsoft_Extensions_Logging_ILogger_" data-uid="dragonchain_sdk.DragonchainClient.#ctor(System.String,dragonchain_sdk.Credentials.Manager.ICredentialManager,dragonchain_sdk.Credentials.ICredentialService,dragonchain_sdk.Framework.Web.IHttpService,Microsoft.Extensions.Logging.ILogger)">DragonchainClient(String, ICredentialManager, ICredentialService, IHttpService, ILogger)</h4>
+  <div class="markdown level1 summary"><p>Create an Instance of a DragonchainClient.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public DragonchainClient(string dragonchainId, ICredentialManager credentialManager, ICredentialService credentialService = null, IHttpService httpService = null, ILogger logger = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">dragonchainId</span></td>
+        <td><p>dragonchainId associated with these credentials</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="dragonchain_sdk.Credentials.Manager.ICredentialManager.html">ICredentialManager</a></td>
+        <td><span class="parametername">credentialManager</span></td>
+        <td><p>manager to retrieve Dragonchain credentials from config provider</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="dragonchain_sdk.Credentials.ICredentialService.html">ICredentialService</a></td>
+        <td><span class="parametername">credentialService</span></td>
+        <td><p>service to retrieve Dragonchain credentials for use in API requests</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="dragonchain_sdk.Framework.Web.IHttpService.html">IHttpService</a></td>
+        <td><span class="parametername">httpService</span></td>
+        <td><p>API request service</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Microsoft.Extensions.Logging.ILogger</span></td>
+        <td><span class="parametername">logger</span></td>
+        <td><p>Microsoft.Extensions.Logging implementation</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/astinnos/dragonchain-sdk-dotnetstandard/new/master/apiSpec/new?filename=dragonchain_sdk_DragonchainClient__ctor_System_String_Microsoft_Extensions_Configuration_IConfiguration_Microsoft_Extensions_Logging_ILogger_.md&amp;value=---%0Auid%3A%20dragonchain_sdk.DragonchainClient.%23ctor(System.String%2CMicrosoft.Extensions.Configuration.IConfiguration%2CMicrosoft.Extensions.Logging.ILogger)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/astinnos/dragonchain-sdk-dotnetstandard/blob/master/dragonchain-sdk/DragonchainClient.cs/#L37">View Source</a>
+  </span>
+  <a id="dragonchain_sdk_DragonchainClient__ctor_" data-uid="dragonchain_sdk.DragonchainClient.#ctor*"></a>
+  <h4 id="dragonchain_sdk_DragonchainClient__ctor_System_String_Microsoft_Extensions_Configuration_IConfiguration_Microsoft_Extensions_Logging_ILogger_" data-uid="dragonchain_sdk.DragonchainClient.#ctor(System.String,Microsoft.Extensions.Configuration.IConfiguration,Microsoft.Extensions.Logging.ILogger)">DragonchainClient(String, IConfiguration, ILogger)</h4>
+  <div class="markdown level1 summary"><p>Create an Instance of a DragonchainClient.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public DragonchainClient(string dragonchainId = &quot;&quot;, IConfiguration config = null, ILogger logger = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">dragonchainId</span></td>
+        <td><p>dragonchainId associated with these credentials</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Microsoft.Extensions.Configuration.IConfiguration</span></td>
+        <td><span class="parametername">config</span></td>
+        <td><p>Microsoft.Extensions.Configuration implementation</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Microsoft.Extensions.Logging.ILogger</span></td>
+        <td><span class="parametername">logger</span></td>
+        <td><p>Microsoft.Extensions.Logging implementation</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/astinnos/dragonchain-sdk-dotnetstandard/new/master/apiSpec/new?filename=dragonchain_sdk_DragonchainClient_CreateBulkTransaction_dragonchain_sdk_Transactions_DragonchainBulkTransactions_.md&amp;value=---%0Auid%3A%20dragonchain_sdk.DragonchainClient.CreateBulkTransaction(dragonchain_sdk.Transactions.DragonchainBulkTransactions)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/astinnos/dragonchain-sdk-dotnetstandard/blob/master/dragonchain-sdk/DragonchainClient.cs/#L81">View Source</a>
+  </span>
+  <a id="dragonchain_sdk_DragonchainClient_CreateBulkTransaction_" data-uid="dragonchain_sdk.DragonchainClient.CreateBulkTransaction*"></a>
+  <h4 id="dragonchain_sdk_DragonchainClient_CreateBulkTransaction_dragonchain_sdk_Transactions_DragonchainBulkTransactions_" data-uid="dragonchain_sdk.DragonchainClient.CreateBulkTransaction(dragonchain_sdk.Transactions.DragonchainBulkTransactions)">CreateBulkTransaction(DragonchainBulkTransactions)</h4>
+  <div class="markdown level1 summary"><p>Create a bulk transaction by string together a bunch of transactions as JSON objects into an array</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;ApiResponse&lt;DragonchainTransactionCreateResponse&gt;&gt; CreateBulkTransaction(DragonchainBulkTransactions transactionBulkObject)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="dragonchain_sdk.Transactions.DragonchainBulkTransactions.html">DragonchainBulkTransactions</a></td>
+        <td><span class="parametername">transactionBulkObject</span></td>
+        <td><p>array of transactions</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<a class="xref" href="dragonchain_sdk.Framework.Web.ApiResponse-1.html">ApiResponse</a>&lt;<a class="xref" href="dragonchain_sdk.Transactions.DragonchainTransactionCreateResponse.html">DragonchainTransactionCreateResponse</a>&gt;&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/astinnos/dragonchain-sdk-dotnetstandard/new/master/apiSpec/new?filename=dragonchain_sdk_DragonchainClient_CreateContract_dragonchain_sdk_Contracts_ContractCreationSchema_.md&amp;value=---%0Auid%3A%20dragonchain_sdk.DragonchainClient.CreateContract(dragonchain_sdk.Contracts.ContractCreationSchema)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/astinnos/dragonchain-sdk-dotnetstandard/blob/master/dragonchain-sdk/DragonchainClient.cs/#L91">View Source</a>
+  </span>
+  <a id="dragonchain_sdk_DragonchainClient_CreateContract_" data-uid="dragonchain_sdk.DragonchainClient.CreateContract*"></a>
+  <h4 id="dragonchain_sdk_DragonchainClient_CreateContract_dragonchain_sdk_Contracts_ContractCreationSchema_" data-uid="dragonchain_sdk.DragonchainClient.CreateContract(dragonchain_sdk.Contracts.ContractCreationSchema)">CreateContract(ContractCreationSchema)</h4>
+  <div class="markdown level1 summary"><p>Create a new Smart Contract on your Dragonchain.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;ApiResponse&lt;DragonchainContractCreateResponse&gt;&gt; CreateContract(ContractCreationSchema body)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="dragonchain_sdk.Contracts.ContractCreationSchema.html">ContractCreationSchema</a></td>
+        <td><span class="parametername">body</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<a class="xref" href="dragonchain_sdk.Framework.Web.ApiResponse-1.html">ApiResponse</a>&lt;<a class="xref" href="dragonchain_sdk.Contracts.DragonchainContractCreateResponse.html">DragonchainContractCreateResponse</a>&gt;&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/astinnos/dragonchain-sdk-dotnetstandard/new/master/apiSpec/new?filename=dragonchain_sdk_DragonchainClient_CreateTransaction_dragonchain_sdk_Transactions_DragonchainTransactionCreatePayload_.md&amp;value=---%0Auid%3A%20dragonchain_sdk.DragonchainClient.CreateTransaction(dragonchain_sdk.Transactions.DragonchainTransactionCreatePayload)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/astinnos/dragonchain-sdk-dotnetstandard/blob/master/dragonchain-sdk/DragonchainClient.cs/#L103">View Source</a>
+  </span>
+  <a id="dragonchain_sdk_DragonchainClient_CreateTransaction_" data-uid="dragonchain_sdk.DragonchainClient.CreateTransaction*"></a>
+  <h4 id="dragonchain_sdk_DragonchainClient_CreateTransaction_dragonchain_sdk_Transactions_DragonchainTransactionCreatePayload_" data-uid="dragonchain_sdk.DragonchainClient.CreateTransaction(dragonchain_sdk.Transactions.DragonchainTransactionCreatePayload)">CreateTransaction(DragonchainTransactionCreatePayload)</h4>
+  <div class="markdown level1 summary"><p>Create a new Transaction on your Dragonchain. This transaction, if properly structured, will be received by your dragonchain,
+hashed, and put into a queue for processing into a block. The transaction_id returned from this function can be used for checking
+the status of this transaction. Most importantly; the block in which it has been fixated.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;ApiResponse&lt;DragonchainTransactionCreateResponse&gt;&gt; CreateTransaction(DragonchainTransactionCreatePayload transactionObject)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="dragonchain_sdk.Transactions.DragonchainTransactionCreatePayload.html">DragonchainTransactionCreatePayload</a></td>
+        <td><span class="parametername">transactionObject</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<a class="xref" href="dragonchain_sdk.Framework.Web.ApiResponse-1.html">ApiResponse</a>&lt;<a class="xref" href="dragonchain_sdk.Transactions.DragonchainTransactionCreateResponse.html">DragonchainTransactionCreateResponse</a>&gt;&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/astinnos/dragonchain-sdk-dotnetstandard/new/master/apiSpec/new?filename=dragonchain_sdk_DragonchainClient_DeleteSmartContract_System_String_.md&amp;value=---%0Auid%3A%20dragonchain_sdk.DragonchainClient.DeleteSmartContract(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/astinnos/dragonchain-sdk-dotnetstandard/blob/master/dragonchain-sdk/DragonchainClient.cs/#L113">View Source</a>
+  </span>
+  <a id="dragonchain_sdk_DragonchainClient_DeleteSmartContract_" data-uid="dragonchain_sdk.DragonchainClient.DeleteSmartContract*"></a>
+  <h4 id="dragonchain_sdk_DragonchainClient_DeleteSmartContract_System_String_" data-uid="dragonchain_sdk.DragonchainClient.DeleteSmartContract(System.String)">DeleteSmartContract(String)</h4>
+  <div class="markdown level1 summary"><p>Deletes a smart contract</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;ApiResponse&lt;UpdateResponse&gt;&gt; DeleteSmartContract(string contractId)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">contractId</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<a class="xref" href="dragonchain_sdk.Framework.Web.ApiResponse-1.html">ApiResponse</a>&lt;<a class="xref" href="dragonchain_sdk.Shared.UpdateResponse.html">UpdateResponse</a>&gt;&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/astinnos/dragonchain-sdk-dotnetstandard/new/master/apiSpec/new?filename=dragonchain_sdk_DragonchainClient_DeleteTransactionType_System_String_.md&amp;value=---%0Auid%3A%20dragonchain_sdk.DragonchainClient.DeleteTransactionType(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/astinnos/dragonchain-sdk-dotnetstandard/blob/master/dragonchain-sdk/DragonchainClient.cs/#L123">View Source</a>
+  </span>
+  <a id="dragonchain_sdk_DragonchainClient_DeleteTransactionType_" data-uid="dragonchain_sdk.DragonchainClient.DeleteTransactionType*"></a>
+  <h4 id="dragonchain_sdk_DragonchainClient_DeleteTransactionType_System_String_" data-uid="dragonchain_sdk.DragonchainClient.DeleteTransactionType(System.String)">DeleteTransactionType(String)</h4>
+  <div class="markdown level1 summary"><p>Deletes existing registered transaction type</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;ApiResponse&lt;UpdateResponse&gt;&gt; DeleteTransactionType(string transactionType)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">transactionType</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<a class="xref" href="dragonchain_sdk.Framework.Web.ApiResponse-1.html">ApiResponse</a>&lt;<a class="xref" href="dragonchain_sdk.Shared.UpdateResponse.html">UpdateResponse</a>&gt;&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/astinnos/dragonchain-sdk-dotnetstandard/new/master/apiSpec/new?filename=dragonchain_sdk_DragonchainClient_GetBlock_System_String_.md&amp;value=---%0Auid%3A%20dragonchain_sdk.DragonchainClient.GetBlock(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/astinnos/dragonchain-sdk-dotnetstandard/blob/master/dragonchain-sdk/DragonchainClient.cs/#L133">View Source</a>
+  </span>
+  <a id="dragonchain_sdk_DragonchainClient_GetBlock_" data-uid="dragonchain_sdk.DragonchainClient.GetBlock*"></a>
+  <h4 id="dragonchain_sdk_DragonchainClient_GetBlock_System_String_" data-uid="dragonchain_sdk.DragonchainClient.GetBlock(System.String)">GetBlock(String)</h4>
+  <div class="markdown level1 summary"><p>Get a single block by ID</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;ApiResponse&lt;BlockSchemaType&gt;&gt; GetBlock(string blockId)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">blockId</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<a class="xref" href="dragonchain_sdk.Framework.Web.ApiResponse-1.html">ApiResponse</a>&lt;<a class="xref" href="dragonchain_sdk.Blocks.BlockSchemaType.html">BlockSchemaType</a>&gt;&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/astinnos/dragonchain-sdk-dotnetstandard/new/master/apiSpec/new?filename=dragonchain_sdk_DragonchainClient_GetSecret_System_String_.md&amp;value=---%0Auid%3A%20dragonchain_sdk.DragonchainClient.GetSecret(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/astinnos/dragonchain-sdk-dotnetstandard/blob/master/dragonchain-sdk/DragonchainClient.cs/#L143">View Source</a>
+  </span>
+  <a id="dragonchain_sdk_DragonchainClient_GetSecret_" data-uid="dragonchain_sdk.DragonchainClient.GetSecret*"></a>
+  <h4 id="dragonchain_sdk_DragonchainClient_GetSecret_System_String_" data-uid="dragonchain_sdk.DragonchainClient.GetSecret(System.String)">GetSecret(String)</h4>
+  <div class="markdown level1 summary"><p>Reads secrets given to a smart contract</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string GetSecret(string secretName)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">secretName</span></td>
+        <td><p>the name of the secret to retrieve for smart contract</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/astinnos/dragonchain-sdk-dotnetstandard/new/master/apiSpec/new?filename=dragonchain_sdk_DragonchainClient_GetSmartContract_System_String_.md&amp;value=---%0Auid%3A%20dragonchain_sdk.DragonchainClient.GetSmartContract(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/astinnos/dragonchain-sdk-dotnetstandard/blob/master/dragonchain-sdk/DragonchainClient.cs/#L154">View Source</a>
+  </span>
+  <a id="dragonchain_sdk_DragonchainClient_GetSmartContract_" data-uid="dragonchain_sdk.DragonchainClient.GetSmartContract*"></a>
+  <h4 id="dragonchain_sdk_DragonchainClient_GetSmartContract_System_String_" data-uid="dragonchain_sdk.DragonchainClient.GetSmartContract(System.String)">GetSmartContract(String)</h4>
+  <div class="markdown level1 summary"><p>Get a single smart contract by id</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;ApiResponse&lt;SmartContractAtRest&gt;&gt; GetSmartContract(string contractId)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">contractId</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<a class="xref" href="dragonchain_sdk.Framework.Web.ApiResponse-1.html">ApiResponse</a>&lt;<a class="xref" href="dragonchain_sdk.Contracts.SmartContractAtRest.html">SmartContractAtRest</a>&gt;&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/astinnos/dragonchain-sdk-dotnetstandard/new/master/apiSpec/new?filename=dragonchain_sdk_DragonchainClient_GetSmartContractHeap_System_String_System_String_System_Boolean_.md&amp;value=---%0Auid%3A%20dragonchain_sdk.DragonchainClient.GetSmartContractHeap(System.String%2CSystem.String%2CSystem.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/astinnos/dragonchain-sdk-dotnetstandard/blob/master/dragonchain-sdk/DragonchainClient.cs/#L167">View Source</a>
+  </span>
+  <a id="dragonchain_sdk_DragonchainClient_GetSmartContractHeap_" data-uid="dragonchain_sdk.DragonchainClient.GetSmartContractHeap*"></a>
+  <h4 id="dragonchain_sdk_DragonchainClient_GetSmartContractHeap_System_String_System_String_System_Boolean_" data-uid="dragonchain_sdk.DragonchainClient.GetSmartContractHeap(System.String,System.String,System.Boolean)">GetSmartContractHeap(String, String, Boolean)</h4>
+  <div class="markdown level1 summary"><p>Get from the smart contract heap This function, (unlike other SDK methods) returns raw utf-8 text by design.
+If you expect the result to be parsed json pass true as the jsonParse parameter.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;ApiResponse&lt;string&gt;&gt; GetSmartContractHeap(string key, string scName, bool jsonParse = false)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">key</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">scName</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">jsonParse</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<a class="xref" href="dragonchain_sdk.Framework.Web.ApiResponse-1.html">ApiResponse</a>&lt;<span class="xref">System.String</span>&gt;&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/astinnos/dragonchain-sdk-dotnetstandard/new/master/apiSpec/new?filename=dragonchain_sdk_DragonchainClient_GetStatus.md&amp;value=---%0Auid%3A%20dragonchain_sdk.DragonchainClient.GetStatus%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/astinnos/dragonchain-sdk-dotnetstandard/blob/master/dragonchain-sdk/DragonchainClient.cs/#L176">View Source</a>
+  </span>
+  <a id="dragonchain_sdk_DragonchainClient_GetStatus_" data-uid="dragonchain_sdk.DragonchainClient.GetStatus*"></a>
+  <h4 id="dragonchain_sdk_DragonchainClient_GetStatus" data-uid="dragonchain_sdk.DragonchainClient.GetStatus">GetStatus()</h4>
+  <div class="markdown level1 summary"><p>Get the status of your dragonchain</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;ApiResponse&lt;L1DragonchainStatusResult&gt;&gt; GetStatus()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<a class="xref" href="dragonchain_sdk.Framework.Web.ApiResponse-1.html">ApiResponse</a>&lt;<a class="xref" href="dragonchain_sdk.Status.L1DragonchainStatusResult.html">L1DragonchainStatusResult</a>&gt;&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/astinnos/dragonchain-sdk-dotnetstandard/new/master/apiSpec/new?filename=dragonchain_sdk_DragonchainClient_GetTransaction_System_String_.md&amp;value=---%0Auid%3A%20dragonchain_sdk.DragonchainClient.GetTransaction(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/astinnos/dragonchain-sdk-dotnetstandard/blob/master/dragonchain-sdk/DragonchainClient.cs/#L186">View Source</a>
+  </span>
+  <a id="dragonchain_sdk_DragonchainClient_GetTransaction_" data-uid="dragonchain_sdk.DragonchainClient.GetTransaction*"></a>
+  <h4 id="dragonchain_sdk_DragonchainClient_GetTransaction_System_String_" data-uid="dragonchain_sdk.DragonchainClient.GetTransaction(System.String)">GetTransaction(String)</h4>
+  <div class="markdown level1 summary"><p>Get a transaction by Id.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;ApiResponse&lt;L1DragonchainTransactionFull&gt;&gt; GetTransaction(string transactionId)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">transactionId</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<a class="xref" href="dragonchain_sdk.Framework.Web.ApiResponse-1.html">ApiResponse</a>&lt;<a class="xref" href="dragonchain_sdk.Transactions.L1.L1DragonchainTransactionFull.html">L1DragonchainTransactionFull</a>&gt;&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/astinnos/dragonchain-sdk-dotnetstandard/new/master/apiSpec/new?filename=dragonchain_sdk_DragonchainClient_GetVerifications_System_String_System_Int32_.md&amp;value=---%0Auid%3A%20dragonchain_sdk.DragonchainClient.GetVerifications(System.String%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/astinnos/dragonchain-sdk-dotnetstandard/blob/master/dragonchain-sdk/DragonchainClient.cs/#L197">View Source</a>
+  </span>
+  <a id="dragonchain_sdk_DragonchainClient_GetVerifications_" data-uid="dragonchain_sdk.DragonchainClient.GetVerifications*"></a>
+  <h4 id="dragonchain_sdk_DragonchainClient_GetVerifications_System_String_System_Int32_" data-uid="dragonchain_sdk.DragonchainClient.GetVerifications(System.String,System.Int32)">GetVerifications(String, Int32)</h4>
+  <div class="markdown level1 summary"><p>Get all the verifications for one block_id.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;ApiResponse&lt;IVerifications&gt;&gt; GetVerifications(string blockId, int level = 0)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">blockId</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">level</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<a class="xref" href="dragonchain_sdk.Framework.Web.ApiResponse-1.html">ApiResponse</a>&lt;<a class="xref" href="dragonchain_sdk.Blocks.IVerifications.html">IVerifications</a>&gt;&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/astinnos/dragonchain-sdk-dotnetstandard/new/master/apiSpec/new?filename=dragonchain_sdk_DragonchainClient_ListSmartcontractHeap_System_String_System_String_.md&amp;value=---%0Auid%3A%20dragonchain_sdk.DragonchainClient.ListSmartcontractHeap(System.String%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/astinnos/dragonchain-sdk-dotnetstandard/blob/master/dragonchain-sdk/DragonchainClient.cs/#L216">View Source</a>
+  </span>
+  <a id="dragonchain_sdk_DragonchainClient_ListSmartcontractHeap_" data-uid="dragonchain_sdk.DragonchainClient.ListSmartcontractHeap*"></a>
+  <h4 id="dragonchain_sdk_DragonchainClient_ListSmartcontractHeap_System_String_System_String_" data-uid="dragonchain_sdk.DragonchainClient.ListSmartcontractHeap(System.String,System.String)">ListSmartcontractHeap(String, String)</h4>
+  <div class="markdown level1 summary"><p>List objects from a smart contract heap</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;ApiResponse&lt;IEnumerable&lt;string&gt;&gt;&gt; ListSmartcontractHeap(string scName, string key = &quot;&quot;)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">scName</span></td>
+        <td><p>the name of smart contract</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">key</span></td>
+        <td><p>the sub-key ('folder') to list in the SC heap (optional. Defaults to root of SC heap)</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<a class="xref" href="dragonchain_sdk.Framework.Web.ApiResponse-1.html">ApiResponse</a>&lt;<span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<span class="xref">System.String</span>&gt;&gt;&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/astinnos/dragonchain-sdk-dotnetstandard/new/master/apiSpec/new?filename=dragonchain_sdk_DragonchainClient_ListTransactionTypes.md&amp;value=---%0Auid%3A%20dragonchain_sdk.DragonchainClient.ListTransactionTypes%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/astinnos/dragonchain-sdk-dotnetstandard/blob/master/dragonchain-sdk/DragonchainClient.cs/#L230">View Source</a>
+  </span>
+  <a id="dragonchain_sdk_DragonchainClient_ListTransactionTypes_" data-uid="dragonchain_sdk.DragonchainClient.ListTransactionTypes*"></a>
+  <h4 id="dragonchain_sdk_DragonchainClient_ListTransactionTypes" data-uid="dragonchain_sdk.DragonchainClient.ListTransactionTypes">ListTransactionTypes()</h4>
+  <div class="markdown level1 summary"><p>Lists current accepted transaction types for a chain</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;ApiResponse&lt;DragonchainTransactionTypeQueryResult&gt;&gt; ListTransactionTypes()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<a class="xref" href="dragonchain_sdk.Framework.Web.ApiResponse-1.html">ApiResponse</a>&lt;<a class="xref" href="dragonchain_sdk.Transactions.Types.DragonchainTransactionTypeQueryResult.html">DragonchainTransactionTypeQueryResult</a>&gt;&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/astinnos/dragonchain-sdk-dotnetstandard/new/master/apiSpec/new?filename=dragonchain_sdk_DragonchainClient_OverrideCredentials_System_String_System_String_.md&amp;value=---%0Auid%3A%20dragonchain_sdk.DragonchainClient.OverrideCredentials(System.String%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/astinnos/dragonchain-sdk-dotnetstandard/blob/master/dragonchain-sdk/DragonchainClient.cs/#L240">View Source</a>
+  </span>
+  <a id="dragonchain_sdk_DragonchainClient_OverrideCredentials_" data-uid="dragonchain_sdk.DragonchainClient.OverrideCredentials*"></a>
+  <h4 id="dragonchain_sdk_DragonchainClient_OverrideCredentials_System_String_System_String_" data-uid="dragonchain_sdk.DragonchainClient.OverrideCredentials(System.String,System.String)">OverrideCredentials(String, String)</h4>
+  <div class="markdown level1 summary"><p>This method is used to override this SDK's attempt to automatically fetch credentials automatically with manually specified creds</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void OverrideCredentials(string authKeyId, string authKey)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">authKeyId</span></td>
+        <td><p>Auth Key ID used in HMAC</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">authKey</span></td>
+        <td><p>Auth Key used in HMAC</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/astinnos/dragonchain-sdk-dotnetstandard/new/master/apiSpec/new?filename=dragonchain_sdk_DragonchainClient_QueryBlocks_System_String_System_String_System_Int32_System_Int32_.md&amp;value=---%0Auid%3A%20dragonchain_sdk.DragonchainClient.QueryBlocks(System.String%2CSystem.String%2CSystem.Int32%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/astinnos/dragonchain-sdk-dotnetstandard/blob/master/dragonchain-sdk/DragonchainClient.cs/#L254">View Source</a>
+  </span>
+  <a id="dragonchain_sdk_DragonchainClient_QueryBlocks_" data-uid="dragonchain_sdk.DragonchainClient.QueryBlocks*"></a>
+  <h4 id="dragonchain_sdk_DragonchainClient_QueryBlocks_System_String_System_String_System_Int32_System_Int32_" data-uid="dragonchain_sdk.DragonchainClient.QueryBlocks(System.String,System.String,System.Int32,System.Int32)">QueryBlocks(String, String, Int32, Int32)</h4>
+  <div class="markdown level1 summary"><p>Query blocks using ElasticSearch query-string syntax For more information on how to use the ElasticSearch query-string syntax
+checkout the Elastic Search documentation: <a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-query-string-query.html#query-string-syntax">https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-query-string-query.html#query-string-syntax</a></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;ApiResponse&lt;DragonchainBlockQueryResult&gt;&gt; QueryBlocks(string luceneQuery = &quot;&quot;, string sort = &quot;&quot;, int offset = 0, int limit = 10)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">luceneQuery</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">sort</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">offset</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">limit</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<a class="xref" href="dragonchain_sdk.Framework.Web.ApiResponse-1.html">ApiResponse</a>&lt;<a class="xref" href="dragonchain_sdk.Blocks.DragonchainBlockQueryResult.html">DragonchainBlockQueryResult</a>&gt;&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/astinnos/dragonchain-sdk-dotnetstandard/new/master/apiSpec/new?filename=dragonchain_sdk_DragonchainClient_QuerySmartContracts_System_String_System_String_System_Int32_System_Int32_.md&amp;value=---%0Auid%3A%20dragonchain_sdk.DragonchainClient.QuerySmartContracts(System.String%2CSystem.String%2CSystem.Int32%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/astinnos/dragonchain-sdk-dotnetstandard/blob/master/dragonchain-sdk/DragonchainClient.cs/#L269">View Source</a>
+  </span>
+  <a id="dragonchain_sdk_DragonchainClient_QuerySmartContracts_" data-uid="dragonchain_sdk.DragonchainClient.QuerySmartContracts*"></a>
+  <h4 id="dragonchain_sdk_DragonchainClient_QuerySmartContracts_System_String_System_String_System_Int32_System_Int32_" data-uid="dragonchain_sdk.DragonchainClient.QuerySmartContracts(System.String,System.String,System.Int32,System.Int32)">QuerySmartContracts(String, String, Int32, Int32)</h4>
+  <div class="markdown level1 summary"><p>Query smart contracts using ElasticSearch query-string syntax For more information on how to use the ElasticSearch query-string syntax
+checkout the Elastic Search documentation: <a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-query-string-query.html#query-string-syntax">https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-query-string-query.html#query-string-syntax</a></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;ApiResponse&lt;DragonchainSmartContractQueryResult&gt;&gt; QuerySmartContracts(string luceneQuery = &quot;&quot;, string sort = &quot;&quot;, int offset = 0, int limit = 10)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">luceneQuery</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">sort</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">offset</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">limit</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<a class="xref" href="dragonchain_sdk.Framework.Web.ApiResponse-1.html">ApiResponse</a>&lt;<a class="xref" href="dragonchain_sdk.Contracts.DragonchainSmartContractQueryResult.html">DragonchainSmartContractQueryResult</a>&gt;&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/astinnos/dragonchain-sdk-dotnetstandard/new/master/apiSpec/new?filename=dragonchain_sdk_DragonchainClient_QueryTransactions_System_String_System_String_System_Int32_System_Int32_.md&amp;value=---%0Auid%3A%20dragonchain_sdk.DragonchainClient.QueryTransactions(System.String%2CSystem.String%2CSystem.Int32%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/astinnos/dragonchain-sdk-dotnetstandard/blob/master/dragonchain-sdk/DragonchainClient.cs/#L284">View Source</a>
+  </span>
+  <a id="dragonchain_sdk_DragonchainClient_QueryTransactions_" data-uid="dragonchain_sdk.DragonchainClient.QueryTransactions*"></a>
+  <h4 id="dragonchain_sdk_DragonchainClient_QueryTransactions_System_String_System_String_System_Int32_System_Int32_" data-uid="dragonchain_sdk.DragonchainClient.QueryTransactions(System.String,System.String,System.Int32,System.Int32)">QueryTransactions(String, String, Int32, Int32)</h4>
+  <div class="markdown level1 summary"><p>Query transactions using ElasticSearch query-string syntax For more information on how to use the ElasticSearch query-string syntax
+checkout the Elastic Search documentation: <a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-query-string-query.html#query-string-syntax">https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-query-string-query.html#query-string-syntax</a></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;ApiResponse&lt;L1DragonchainTransactionQueryResult&gt;&gt; QueryTransactions(string luceneQuery = &quot;&quot;, string sort = &quot;&quot;, int offset = 0, int limit = 10)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">luceneQuery</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">sort</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">offset</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">limit</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<a class="xref" href="dragonchain_sdk.Framework.Web.ApiResponse-1.html">ApiResponse</a>&lt;<a class="xref" href="dragonchain_sdk.Transactions.L1.L1DragonchainTransactionQueryResult.html">L1DragonchainTransactionQueryResult</a>&gt;&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/astinnos/dragonchain-sdk-dotnetstandard/new/master/apiSpec/new?filename=dragonchain_sdk_DragonchainClient_RegisterTransactionType_dragonchain_sdk_Transactions_Types_TransactionTypeStructure_.md&amp;value=---%0Auid%3A%20dragonchain_sdk.DragonchainClient.RegisterTransactionType(dragonchain_sdk.Transactions.Types.TransactionTypeStructure)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/astinnos/dragonchain-sdk-dotnetstandard/blob/master/dragonchain-sdk/DragonchainClient.cs/#L295">View Source</a>
+  </span>
+  <a id="dragonchain_sdk_DragonchainClient_RegisterTransactionType_" data-uid="dragonchain_sdk.DragonchainClient.RegisterTransactionType*"></a>
+  <h4 id="dragonchain_sdk_DragonchainClient_RegisterTransactionType_dragonchain_sdk_Transactions_Types_TransactionTypeStructure_" data-uid="dragonchain_sdk.DragonchainClient.RegisterTransactionType(dragonchain_sdk.Transactions.Types.TransactionTypeStructure)">RegisterTransactionType(TransactionTypeStructure)</h4>
+  <div class="markdown level1 summary"><p>Registers a new transaction type</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;ApiResponse&lt;UpdateResponse&gt;&gt; RegisterTransactionType(TransactionTypeStructure txnTypeStructure)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="dragonchain_sdk.Transactions.Types.TransactionTypeStructure.html">TransactionTypeStructure</a></td>
+        <td><span class="parametername">txnTypeStructure</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<a class="xref" href="dragonchain_sdk.Framework.Web.ApiResponse-1.html">ApiResponse</a>&lt;<a class="xref" href="dragonchain_sdk.Shared.UpdateResponse.html">UpdateResponse</a>&gt;&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/astinnos/dragonchain-sdk-dotnetstandard/new/master/apiSpec/new?filename=dragonchain_sdk_DragonchainClient_SetDragonchainId_System_String_System_Boolean_.md&amp;value=---%0Auid%3A%20dragonchain_sdk.DragonchainClient.SetDragonchainId(System.String%2CSystem.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/astinnos/dragonchain-sdk-dotnetstandard/blob/master/dragonchain-sdk/DragonchainClient.cs/#L306">View Source</a>
+  </span>
+  <a id="dragonchain_sdk_DragonchainClient_SetDragonchainId_" data-uid="dragonchain_sdk.DragonchainClient.SetDragonchainId*"></a>
+  <h4 id="dragonchain_sdk_DragonchainClient_SetDragonchainId_System_String_System_Boolean_" data-uid="dragonchain_sdk.DragonchainClient.SetDragonchainId(System.String,System.Boolean)">SetDragonchainId(String, Boolean)</h4>
+  <div class="markdown level1 summary"><p>Change the dragonchainId for this DragonchainClient instance.
+After using this command, subsequent requests to your dragonchain will attempt to re-locate credentials for the new dragonchain</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SetDragonchainId(string dragonchainId, bool setEndpoint = true)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">dragonchainId</span></td>
+        <td><p>The id of the dragonchain you want to set</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">setEndpoint</span></td>
+        <td><p>Whether or not to set a new endpoint automatically (for managed chains at .api.dragonchain.com)</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/astinnos/dragonchain-sdk-dotnetstandard/new/master/apiSpec/new?filename=dragonchain_sdk_DragonchainClient_SetEndpoint_System_String_.md&amp;value=---%0Auid%3A%20dragonchain_sdk.DragonchainClient.SetEndpoint(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/astinnos/dragonchain-sdk-dotnetstandard/blob/master/dragonchain-sdk/DragonchainClient.cs/#L316">View Source</a>
+  </span>
+  <a id="dragonchain_sdk_DragonchainClient_SetEndpoint_" data-uid="dragonchain_sdk.DragonchainClient.SetEndpoint*"></a>
+  <h4 id="dragonchain_sdk_DragonchainClient_SetEndpoint_System_String_" data-uid="dragonchain_sdk.DragonchainClient.SetEndpoint(System.String)">SetEndpoint(String)</h4>
+  <div class="markdown level1 summary"><p>Change the endpoint for this DragonchainClient instance.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SetEndpoint(string endpoint)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">endpoint</span></td>
+        <td><p>The endpoint of the dragonchain you want to set</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/astinnos/dragonchain-sdk-dotnetstandard/new/master/apiSpec/new?filename=dragonchain_sdk_DragonchainClient_UpdateDragonnetConfig_dragonchain_sdk_DragonNet_DragonnetConfigSchema_.md&amp;value=---%0Auid%3A%20dragonchain_sdk.DragonchainClient.UpdateDragonnetConfig(dragonchain_sdk.DragonNet.DragonnetConfigSchema)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/astinnos/dragonchain-sdk-dotnetstandard/blob/master/dragonchain-sdk/DragonchainClient.cs/#L327">View Source</a>
+  </span>
+  <a id="dragonchain_sdk_DragonchainClient_UpdateDragonnetConfig_" data-uid="dragonchain_sdk.DragonchainClient.UpdateDragonnetConfig*"></a>
+  <h4 id="dragonchain_sdk_DragonchainClient_UpdateDragonnetConfig_dragonchain_sdk_DragonNet_DragonnetConfigSchema_" data-uid="dragonchain_sdk.DragonchainClient.UpdateDragonnetConfig(dragonchain_sdk.DragonNet.DragonnetConfigSchema)">UpdateDragonnetConfig(DragonnetConfigSchema)</h4>
+  <div class="markdown level1 summary"><p>Update your maximum price for each level of verification.
+This method is only relevant for L1 nodes.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;ApiResponse&lt;UpdateResponse&gt;&gt; UpdateDragonnetConfig(DragonnetConfigSchema maximumPrices)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="dragonchain_sdk.DragonNet.DragonnetConfigSchema.html">DragonnetConfigSchema</a></td>
+        <td><span class="parametername">maximumPrices</span></td>
+        <td><p>maximum prices (0-1000) to set for each level (in DRGNs) If this number is too low, other nodes will not
+verify your blocks. Changing this number will affect older unverified blocks first.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<a class="xref" href="dragonchain_sdk.Framework.Web.ApiResponse-1.html">ApiResponse</a>&lt;<a class="xref" href="dragonchain_sdk.Shared.UpdateResponse.html">UpdateResponse</a>&gt;&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/astinnos/dragonchain-sdk-dotnetstandard/new/master/apiSpec/new?filename=dragonchain_sdk_DragonchainClient_UpdateMatchmakingConfig_System_Nullable_System_Decimal__System_Nullable_System_Int32__.md&amp;value=---%0Auid%3A%20dragonchain_sdk.DragonchainClient.UpdateMatchmakingConfig(System.Nullable%7BSystem.Decimal%7D%2CSystem.Nullable%7BSystem.Int32%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/astinnos/dragonchain-sdk-dotnetstandard/blob/master/dragonchain-sdk/DragonchainClient.cs/#L340">View Source</a>
+  </span>
+  <a id="dragonchain_sdk_DragonchainClient_UpdateMatchmakingConfig_" data-uid="dragonchain_sdk.DragonchainClient.UpdateMatchmakingConfig*"></a>
+  <h4 id="dragonchain_sdk_DragonchainClient_UpdateMatchmakingConfig_System_Nullable_System_Decimal__System_Nullable_System_Int32__" data-uid="dragonchain_sdk.DragonchainClient.UpdateMatchmakingConfig(System.Nullable{System.Decimal},System.Nullable{System.Int32})">UpdateMatchmakingConfig(Nullable&lt;Decimal&gt;, Nullable&lt;Int32&gt;)</h4>
+  <div class="markdown level1 summary"><p>Update your maximum price for each level of verification.
+This method is only relevant for L1 nodes.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;ApiResponse&lt;UpdateResponse&gt;&gt; UpdateMatchmakingConfig(decimal? askingPrice = default(decimal? ), int? broadcastInterval = default(int? ))</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Decimal</span>&gt;</td>
+        <td><span class="parametername">askingPrice</span></td>
+        <td><p>(0.0001-1000.0000) the price in DRGN to charge L1 nodes for your verification of their data. Setting this number too high will cause L1's to ignore you more often.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Int32</span>&gt;</td>
+        <td><span class="parametername">broadcastInterval</span></td>
+        <td><p>Broadcast Interval is only for level 5 chains</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<a class="xref" href="dragonchain_sdk.Framework.Web.ApiResponse-1.html">ApiResponse</a>&lt;<a class="xref" href="dragonchain_sdk.Shared.UpdateResponse.html">UpdateResponse</a>&gt;&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/astinnos/dragonchain-sdk-dotnetstandard/new/master/apiSpec/new?filename=dragonchain_sdk_DragonchainClient_UpdateSmartContract_System_String_System_String_System_String_System_Nullable_dragonchain_sdk_Contracts_SmartContractExecutionOrder__System_Nullable_dragonchain_sdk_Contracts_SmartContractDesiredState__System_String___System_Object_System_Object_System_Nullable_System_Int32__System_String_System_String_.md&amp;value=---%0Auid%3A%20dragonchain_sdk.DragonchainClient.UpdateSmartContract(System.String%2CSystem.String%2CSystem.String%2CSystem.Nullable%7Bdragonchain_sdk.Contracts.SmartContractExecutionOrder%7D%2CSystem.Nullable%7Bdragonchain_sdk.Contracts.SmartContractDesiredState%7D%2CSystem.String%5B%5D%2CSystem.Object%2CSystem.Object%2CSystem.Nullable%7BSystem.Int32%7D%2CSystem.String%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/astinnos/dragonchain-sdk-dotnetstandard/blob/master/dragonchain-sdk/DragonchainClient.cs/#L365">View Source</a>
+  </span>
+  <a id="dragonchain_sdk_DragonchainClient_UpdateSmartContract_" data-uid="dragonchain_sdk.DragonchainClient.UpdateSmartContract*"></a>
+  <h4 id="dragonchain_sdk_DragonchainClient_UpdateSmartContract_System_String_System_String_System_String_System_Nullable_dragonchain_sdk_Contracts_SmartContractExecutionOrder__System_Nullable_dragonchain_sdk_Contracts_SmartContractDesiredState__System_String___System_Object_System_Object_System_Nullable_System_Int32__System_String_System_String_" data-uid="dragonchain_sdk.DragonchainClient.UpdateSmartContract(System.String,System.String,System.String,System.Nullable{dragonchain_sdk.Contracts.SmartContractExecutionOrder},System.Nullable{dragonchain_sdk.Contracts.SmartContractDesiredState},System.String[],System.Object,System.Object,System.Nullable{System.Int32},System.String,System.String)">UpdateSmartContract(String, String, String, Nullable&lt;SmartContractExecutionOrder&gt;, Nullable&lt;SmartContractDesiredState&gt;, String[], Object, Object, Nullable&lt;Int32&gt;, String, String)</h4>
+  <div class="markdown level1 summary"><p>Updates existing contract fields</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;ApiResponse&lt;UpdateResponse&gt;&gt; UpdateSmartContract(string contractId, string image = null, string cmd = null, SmartContractExecutionOrder? executionOrder = default(SmartContractExecutionOrder? ), SmartContractDesiredState? desiredState = default(SmartContractDesiredState? ), string[] args = null, object env = null, object secrets = null, int? seconds = default(int? ), string cron = null, string auth = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">contractId</span></td>
+        <td><p>The id of the existing contract you want to update</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">image</span></td>
+        <td><p>The docker image containing the smart contract logic</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">cmd</span></td>
+        <td><p>Entrypoint command to run in the docker container</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<a class="xref" href="dragonchain_sdk.Contracts.SmartContractExecutionOrder.html">SmartContractExecutionOrder</a>&gt;</td>
+        <td><span class="parametername">executionOrder</span></td>
+        <td><p>Order of execution. Valid values 'parallel' or 'serial'</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<a class="xref" href="dragonchain_sdk.Contracts.SmartContractDesiredState.html">SmartContractDesiredState</a>&gt;</td>
+        <td><span class="parametername">desiredState</span></td>
+        <td><p>Change the state of a contract. Valid values are &quot;active&quot; and &quot;inactive&quot;. You may only change the state of an active or inactive contract.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span>[]</td>
+        <td><span class="parametername">args</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><span class="parametername">env</span></td>
+        <td><p>mapping of environment variables for your contract</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><span class="parametername">secrets</span></td>
+        <td><p>mapping of secrets for your contract</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Int32</span>&gt;</td>
+        <td><span class="parametername">seconds</span></td>
+        <td><p>The seconds of scheduled execution</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">cron</span></td>
+        <td><p>The rate of scheduled execution specified as a cron</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">auth</span></td>
+        <td><p>basic-auth for pulling docker images, base64 encoded (e.g. username:password)</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<a class="xref" href="dragonchain_sdk.Framework.Web.ApiResponse-1.html">ApiResponse</a>&lt;<a class="xref" href="dragonchain_sdk.Shared.UpdateResponse.html">UpdateResponse</a>&gt;&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/astinnos/dragonchain-sdk-dotnetstandard/new/master/apiSpec/new?filename=dragonchain_sdk_DragonchainClient_UpdateTransactionType_System_String_System_Collections_Generic_IEnumerable_dragonchain_sdk_Transactions_Types_CustomIndexStructure__.md&amp;value=---%0Auid%3A%20dragonchain_sdk.DragonchainClient.UpdateTransactionType(System.String%2CSystem.Collections.Generic.IEnumerable%7Bdragonchain_sdk.Transactions.Types.CustomIndexStructure%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/astinnos/dragonchain-sdk-dotnetstandard/blob/master/dragonchain-sdk/DragonchainClient.cs/#L403">View Source</a>
+  </span>
+  <a id="dragonchain_sdk_DragonchainClient_UpdateTransactionType_" data-uid="dragonchain_sdk.DragonchainClient.UpdateTransactionType*"></a>
+  <h4 id="dragonchain_sdk_DragonchainClient_UpdateTransactionType_System_String_System_Collections_Generic_IEnumerable_dragonchain_sdk_Transactions_Types_CustomIndexStructure__" data-uid="dragonchain_sdk.DragonchainClient.UpdateTransactionType(System.String,System.Collections.Generic.IEnumerable{dragonchain_sdk.Transactions.Types.CustomIndexStructure})">UpdateTransactionType(String, IEnumerable&lt;CustomIndexStructure&gt;)</h4>
+  <div class="markdown level1 summary"><p>Updates a given transaction type structure</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;ApiResponse&lt;UpdateResponse&gt;&gt; UpdateTransactionType(string transactionType, IEnumerable&lt;CustomIndexStructure&gt; customIndexes)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">transactionType</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<a class="xref" href="dragonchain_sdk.Transactions.Types.CustomIndexStructure.html">CustomIndexStructure</a>&gt;</td>
+        <td><span class="parametername">customIndexes</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<a class="xref" href="dragonchain_sdk.Framework.Web.ApiResponse-1.html">ApiResponse</a>&lt;<a class="xref" href="dragonchain_sdk.Shared.UpdateResponse.html">UpdateResponse</a>&gt;&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="dragonchain_sdk.IDragonchainClient.html">IDragonchainClient</a>
+  </div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/astinnos/dragonchain-sdk-dotnetstandard/new/master/apiSpec/new?filename=dragonchain_sdk_DragonchainClient.md&amp;value=---%0Auid%3A%20dragonchain_sdk.DragonchainClient%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/astinnos/dragonchain-sdk-dotnetstandard/blob/master/dragonchain-sdk/DragonchainClient.cs/#L26" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>
