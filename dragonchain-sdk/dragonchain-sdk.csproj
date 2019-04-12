@@ -3,6 +3,17 @@
   <PropertyGroup>
     <TargetFrameworks>netstandard2.0;net461</TargetFrameworks>
     <RootNamespace>dragonchain_sdk</RootNamespace>
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+    <PackageTags>dragonchain sdk</PackageTags>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Version>1.0.0-alpha</Version>
+    <PackageId>dragonchain-sdk-dotnet</PackageId>
+    <Description>Unofficial Dragonchain SDK for .Net</Description>
+    <PackageProjectUrl>https://astinnos.github.io/dragonchain-sdk-dotnetstandard/</PackageProjectUrl>
+    <PackageLicenseUrl>https://github.com/astinnos/dragonchain-sdk-dotnetstandard/blob/master/LICENSE</PackageLicenseUrl>
+    <RepositoryUrl>https://github.com/astinnos/dragonchain-sdk-dotnetstandard</RepositoryUrl>
+    <RepositoryType>Github</RepositoryType>
+    <Authors>astinnos</Authors>
   </PropertyGroup>
 
   <ItemGroup>
