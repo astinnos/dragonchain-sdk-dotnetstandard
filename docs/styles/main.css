@@ -47,8 +47,10 @@ article h4 {
 
 /* NAVBAR */
 
-.navbar-brand>img {
+.navbar-brand > img {
     color: #fff;
+    margin-top: 8px;
+    width: 200px;
 }
 
 .navbar {
