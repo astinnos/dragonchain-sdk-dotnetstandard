@@ -247,21 +247,21 @@ namespace dragonchain_sdk.tests
             }
         }
 
-        //[Test]
-        //public async Task ListTransactionTypes_Test()
-        //{
-        //    if (AreLevel1TestsConfigured())
-        //    {
-        //        var result = await _dragonchainLevel1Client.ListTransactionTypes();
-        //        Assert.AreEqual(200, result.Status);
-        //        Assert.IsTrue(result.Ok);
-        //        Assert.IsInstanceOf<DragonchainTransactionTypeQueryResult> (result.Response);                
-        //    }
-        //    else
-        //    {
-        //        Assert.Warn("User secrets - dragonchain-sdk.tests-79a3edd0-2092-40a2-a04d-dcb46d5ca9ed not available");
-        //    }
-        //}                            
+        [Test]
+        public async Task ListTransactionTypes_Test()
+        {
+            if (AreLevel1TestsConfigured())
+            {
+                var result = await _dragonchainLevel1Client.ListTransactionTypes();
+                Assert.AreEqual(200, result.Status);
+                Assert.IsTrue(result.Ok);
+                Assert.IsInstanceOf<DragonchainTransactionTypeQueryResult>(result.Response);
+            }
+            else
+            {
+                Assert.Warn("User secrets - dragonchain-sdk.tests-79a3edd0-2092-40a2-a04d-dcb46d5ca9ed not available");
+            }
+        }
 
         //[Test]
         //public async Task UpdateDragonnetConfig_Test()
