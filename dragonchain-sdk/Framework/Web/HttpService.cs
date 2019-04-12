@@ -101,10 +101,10 @@ namespace dragonchain_sdk.Framework.Web
                 throw new DragonchainApiException($"Not Found: {response.RequestMessage.RequestUri}");
             }
             var errorJson = await response.Content.ReadAsStringAsync();
-            var errorResponse = JsonConvert.DeserializeObject<DragonchainApiErrorResponse>(errorJson, CreateJsonSerializerSettings());
-            throw new DragonchainApiException(errorResponse.Error);             
+            var errorResponse = JsonConvert.DeserializeObject<DragonchainApiErrorResponse>(errorJson, CreateJsonSerializerSettings());            
+            throw new DragonchainApiException(errorResponse.Error, (int)response.StatusCode);             
         }
-
+        
         private JsonSerializerSettings CreateJsonSerializerSettings()
         {
             var contractResolver = new DefaultContractResolver

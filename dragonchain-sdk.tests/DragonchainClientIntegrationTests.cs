@@ -48,12 +48,12 @@ namespace dragonchain_sdk.tests
             if (AreRequiredUserSecretsAvailable(levelOneId, levelOneAuthKey, levelOneAuthKeyId))
             {
                 var level1credentialService = new CredentialService(levelOneId, levelOneAuthKey, levelOneAuthKeyId);
-                _dragonchainLevel1Client = new DragonchainClient(levelOneId, level1credentialService, logger: logger);                
+                _dragonchainLevel1Client = new DragonchainClient(levelOneId, credentialManager: null, credentialService: level1credentialService, logger: logger);                
             }
             if (AreRequiredUserSecretsAvailable(levelTwoId, levelTwoAuthKey, levelTwoAuthKey))
             {
                 var level2CredentialService = new CredentialService(levelTwoId, levelTwoAuthKey, levelTwoAuthKeyId);
-                _dragonchainLevel2Client = new DragonchainClient(levelTwoId, level2CredentialService, logger: logger);
+                _dragonchainLevel2Client = new DragonchainClient(levelTwoId, credentialManager: null, credentialService: level2CredentialService, logger: logger);
             }
         }
         

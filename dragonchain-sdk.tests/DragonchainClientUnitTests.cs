@@ -42,9 +42,8 @@ namespace dragonchain_sdk.tests
         {
             _credentialManager.Setup(manager => manager.GetDragonchainId()).Returns("fakeDragonchainId");
             IDragonchainClient dragonchainClient;
-            Assert.DoesNotThrow(() => dragonchainClient = new DragonchainClient("fakeDragonchainId"));
-            Assert.DoesNotThrow(() => dragonchainClient = new DragonchainClient(credentialManager: _credentialManager.Object));
-            Assert.Throws<FailureByDesignException>(() => dragonchainClient = new DragonchainClient(), "Credential Manager must be provided if dragonchainid is null or empty");
+            Assert.DoesNotThrow(() => dragonchainClient = new DragonchainClient("fakeDragonchainId"));            
+            Assert.Throws<FailureByDesignException>(() => dragonchainClient = new DragonchainClient(), "No configuration provider set");
         }
 
         [Test]

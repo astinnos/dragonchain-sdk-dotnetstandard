@@ -16,6 +16,7 @@ using dragonchain_sdk.Transactions.L1;
 using dragonchain_sdk.Framework.Errors;
 using dragonchain_sdk.Transactions.Types;
 using dragonchain_sdk.Credentials.Manager;
+using Microsoft.Extensions.Configuration;
 
 namespace dragonchain_sdk
 {
@@ -31,11 +32,31 @@ namespace dragonchain_sdk
         /// Create an Instance of a DragonchainClient.
         /// </summary>
         /// <param name="dragonchainId">dragonchainId associated with these credentials</param>
+        /// <param name="config">Microsoft.Extensions.Configuration implementation</param>        
+        /// <param name="logger">Microsoft.Extensions.Logging implementation</param>
+        public DragonchainClient(string dragonchainId = "", IConfiguration config = null, ILogger logger = null)            
+        {
+            logger = logger ?? NullLogger.Instance;
+            var credentialManager = new CredentialManager(config);            
+            if (string.IsNullOrWhiteSpace(dragonchainId))
+            {                
+                logger.LogDebug("Dragonchain ID not explicitly provided, will search env/disk");
+                dragonchainId = credentialManager.GetDragonchainId();
+            }
+            _credentialService = new CredentialService(dragonchainId, credentialManager: credentialManager);
+            var endpoint = $"https://{dragonchainId}.api.dragonchain.com";
+            _httpService = new HttpService(_credentialService, endpoint, logger);
+        }
+
+        /// <summary>
+        /// Create an Instance of a DragonchainClient.
+        /// </summary>
+        /// <param name="dragonchainId">dragonchainId associated with these credentials</param>
+        /// /// <param name="credentialManager">manager to retrieve Dragonchain credentials from config provider</param>
         /// <param name="credentialService">service to retrieve Dragonchain credentials for use in API requests</param>
-        /// <param name="credentialManager">manager to retrieve Dragonchain credentials from config provider</param>
         /// <param name="httpService">API request service</param>
         /// <param name="logger">Microsoft.Extensions.Logging implementation</param>
-        public DragonchainClient(string dragonchainId = "", ICredentialService credentialService = null, ICredentialManager credentialManager = null, IHttpService httpService = null, ILogger logger = null)
+        public DragonchainClient(string dragonchainId, ICredentialManager credentialManager, ICredentialService credentialService = null, IHttpService httpService = null, ILogger logger = null)
         {
             logger = logger ?? NullLogger.Instance;           
             
