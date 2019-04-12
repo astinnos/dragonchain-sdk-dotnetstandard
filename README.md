@@ -1,8 +1,16 @@
 # Dragonchain .Net SDK
 
+[![NuGet](https://img.shields.io/badge/nuget-v1.0.0--alpha-blue.svg)](https://www.nuget.org/packages/dragonchain-sdk-dotnet/)
+
 Talk to your dragonchain.
 
-Under construction
+### Installation
+First, [install NuGet](http://docs.nuget.org/docs/start-here/installing-nuget). Then, install [Dragonchain .Net SDK](https://www.nuget.org/packages/dragonchain-sdk-dotnet/) from the package manager console:
+
+Pre -release
+```
+PM> Install-Package dragonchain-sdk-dotnet -Version 1.0.0-alpha
+```
 
 ### Examples
 
