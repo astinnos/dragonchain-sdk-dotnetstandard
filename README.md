@@ -63,7 +63,8 @@ var transactions = searchResult.Response.Results;
 #### Register Transaction Type
 
 ```csharp
-var registerTransactionTypeResult = await _dragonchainLevel1Client.RegisterTransactionType(new TransactionTypeStructure
+var registerTransactionTypeResult = await _dragonchainLevel1Client.RegisterTransactionType(
+new TransactionTypeStructure
 {
     Version = "1",
     TransactionType = "apple",
