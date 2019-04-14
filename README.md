@@ -184,7 +184,7 @@ or
 
 In order to get the logging output of the sdk, a logger must be set (by default all logging is thrown away).
 
-In order to set the logger, simply inject a Microsoft.Extensions.Logging implementation `.setLogger` on the root of the require/import. 
+In order to set the logger, simply inject a Microsoft.Extensions.Logging implementation. 
 Read here for more information [Microsoft Logging Docs](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/logging/?view=aspnetcore-2.2). 
 For example, if you just wanted to log to the console you can set the logger like the following:
 
