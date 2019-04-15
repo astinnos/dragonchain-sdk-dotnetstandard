@@ -1,6 +1,6 @@
 # Dragonchain .Net SDK
 
-[![NuGet](https://img.shields.io/badge/nuget-v1.0.0.1--alpha-blue.svg)](https://www.nuget.org/packages/dragonchain-sdk-dotnet/)
+[![NuGet](https://img.shields.io/badge/nuget-v1.0.0.2--alpha-blue.svg)](https://www.nuget.org/packages/dragonchain-sdk-dotnet/)
 
 Talk to your dragonchain.
 
@@ -87,6 +87,63 @@ var newTransaction = new DragonchainTransactionCreatePayload
 };
 var createResult = await _dragonchainLevel1Client.CreateTransaction(newTransaction);
 ```
+#### Inject into Asp.net Core Web App
+
+##### Program.cs
+Configure logging and configuration choices.
+
+```csharp
+public class Program
+{
+    public static void Main(string[] args)
+    {
+        BuildWebHost(args).Run();
+    }
+
+    public static IWebHost BuildWebHost(string[] args) =>
+        WebHost.CreateDefaultBuilder(args)
+            .UseSerilog()
+            .ConfigureAppConfiguration((hostingContext, config) =>
+            {
+                config.SetBasePath(Directory.GetCurrentDirectory());
+                config.AddJsonFile("config.json", optional: true, reloadOnChange: true);
+            })
+            .UseStartup<Startup>()
+            .Build();
+}
+```
+
+##### Startup.cs
+
+Add the dragonchain client service using the ConfigureServices method
+
+```csharp
+public void ConfigureServices(IServiceCollection services)
+{
+    services.AddSingleton<IDragonchainClient, DragonchainClient>();
+    services.AddMvc();            
+}
+```
+
+##### Controller.cs
+
+Consume the service in controllers or middleware
+```csharp
+public class HomeController : Controller
+{
+    private IDragonchainClient _client;
+
+    public HomeController(IDragonchainClient client)
+    {
+        _client = client;
+    }
+
+    public IActionResult Index()
+    {
+        var transactionTypes = _client.ListTransactionTypes();
+        return View(transactionTypes);
+    }
+```
 
 ## Configuration
 
@@ -124,6 +181,7 @@ This can be loaded into the sdk in various ways using an IConfiguration provider
  or
  ```json
 {
+  "dragonchainId": "3f2fef78-0000-0000-0000-9f2971607130",
   "3f2fef78-0000-0000-0000-9f2971607130": {
     "AUTH_KEY": "MyAuthKey",
     "AUTH_KEY_ID": "MyAuthKeyId"
@@ -147,6 +205,7 @@ AUTH_KEY_ID=MyAuthKeyId
 ```
 or
 ```ini
+dragonchainId=3f2fef78-0000-0000-0000-9f2971607130
 [3f2fef78-0000-0000-0000-9f2971607130]
 AUTH_KEY=MyAuthKey
 AUTH_KEY_ID=MyAuthKeyId
@@ -173,6 +232,7 @@ or
 ```xml
 <?xml version="1.0" encoding="utf-8" ?>
 <configuration>  
+  <dragonchainId>3f2fef78-0000-0000-0000-9f2971607130</dragonchainId>
   <3f2fef78-0000-0000-0000-9f2971607130>
     <AUTH_KEY>MyAuthKey</AUTH_KEY>
     <AUTH_KEY_ID>MyAuthKeyId</AUTH_KEY_ID>  
