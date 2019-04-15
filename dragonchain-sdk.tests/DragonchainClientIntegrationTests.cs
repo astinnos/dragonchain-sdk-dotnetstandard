@@ -42,7 +42,7 @@ namespace dragonchain_sdk.tests
             //dotnet user-secrets set LevelTwoAuthKey <key>
             var levelTwoAuthKey = configuration["LevelTwoAuthKey"];
 
-            var logger = new TestLogger<DragonchainClientUnitTests>();
+            var logger = new TestLogger<DragonchainClient>();
             if (AreRequiredUserSecretsAvailable(levelOneId, levelOneAuthKey, levelOneAuthKeyId))
             {
                 var level1credentialService = new CredentialService(levelOneId, levelOneAuthKey, levelOneAuthKeyId);
@@ -124,30 +124,30 @@ namespace dragonchain_sdk.tests
             }
         }
 
-        [Test]
-        public async Task CreateContract_Test()
-        {
-            if (AreLevel1TestsConfigured())
-            {                        
-                var createContractResponse = await _dragonchainLevel1Client.CreateContract(new ContractCreationSchema
-                {
-                    Version = "2",                    
-                    TransactionType = "calculator",                    
-                    Image = "image_name",
-                    Cmd = "node",
-                    Arguments = new string[] { "index.js" },
-                    ExecutionOrder = SmartContractExecutionOrder.Parallel,
+        //[Test]
+        //public async Task CreateContract_Test()
+        //{
+        //    if (AreLevel1TestsConfigured())
+        //    {                        
+        //        var createContractResponse = await _dragonchainLevel1Client.CreateContract(new ContractCreationSchema
+        //        {
+        //            Version = "2",                    
+        //            TransactionType = "calculator",                    
+        //            Image = "image_name",
+        //            Cmd = "node",
+        //            Arguments = new string[] { "index.js" },
+        //            ExecutionOrder = SmartContractExecutionOrder.Parallel,
                     
-                });
-                Assert.AreEqual(200, createContractResponse.Status);
-                Assert.IsTrue(createContractResponse.Ok);
-                Assert.IsInstanceOf<DragonchainContractCreateResponse>(createContractResponse.Response);                
-            }
-            else
-            {
-                Assert.Warn("User secrets - dragonchain-sdk.tests-79a3edd0-2092-40a2-a04d-dcb46d5ca9ed not available");
-            }
-        }
+        //        });
+        //        Assert.AreEqual(200, createContractResponse.Status);
+        //        Assert.IsTrue(createContractResponse.Ok);
+        //        Assert.IsInstanceOf<DragonchainContractCreateResponse>(createContractResponse.Response);                
+        //    }
+        //    else
+        //    {
+        //        Assert.Warn("User secrets - dragonchain-sdk.tests-79a3edd0-2092-40a2-a04d-dcb46d5ca9ed not available");
+        //    }
+        //}
 
         [Test]
         public async Task GetStatus_Test()

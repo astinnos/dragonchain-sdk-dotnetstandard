@@ -25,9 +25,9 @@ namespace dragonchain_sdk.Credentials
         /// <param name="hmacAlgo">hmac algorithm to use</param>
         /// <param name="credentialManager">manager to retrieve Dragonchain credentials from config provider</param>
         /// <param name="logger"></param>
-        public CredentialService(string dragonchainId, string authKey = "", string authKeyId = "", HmacAlgorithm hmacAlgo = HmacAlgorithm.SHA256, ICredentialManager credentialManager = null, ILogger logger = null)
+        public CredentialService(string dragonchainId, string authKey = "", string authKeyId = "", HmacAlgorithm hmacAlgo = HmacAlgorithm.SHA256, ICredentialManager credentialManager = null, ILogger<DragonchainClient> logger = null)
         {
-            _logger = logger ?? NullLogger.Instance;            
+            _logger = logger ?? new NullLogger<DragonchainClient>();
             DragonchainId = dragonchainId;
             if (!string.IsNullOrWhiteSpace(authKey) && !string.IsNullOrWhiteSpace(authKeyId))
             {
@@ -38,7 +38,7 @@ namespace dragonchain_sdk.Credentials
             {
                 try
                 {
-                    _credentials = credentialManager.GetDragonchainCredentials();
+                    _credentials = credentialManager.GetDragonchainCredentials(dragonchainId);
                 }
                 catch
                 {  // don't require credentials to be present on construction

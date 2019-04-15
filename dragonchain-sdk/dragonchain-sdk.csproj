@@ -6,24 +6,28 @@
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
     <PackageTags>dragonchain sdk</PackageTags>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Version>1.0.0-alpha</Version>
+    <Version>1.0.0.1-alpha</Version>
     <PackageId>dragonchain-sdk-dotnet</PackageId>
     <Description>Unofficial Dragonchain SDK for .Net</Description>
-    <PackageProjectUrl>https://astinnos.github.io/dragonchain-sdk-dotnetstandard/</PackageProjectUrl>
-    <PackageLicenseUrl>https://github.com/astinnos/dragonchain-sdk-dotnetstandard/blob/master/LICENSE</PackageLicenseUrl>
+    <PackageProjectUrl>https://astinnos.github.io/dragonchain-sdk-dotnetstandard/</PackageProjectUrl>    
+    <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
     <RepositoryUrl>https://github.com/astinnos/dragonchain-sdk-dotnetstandard</RepositoryUrl>
     <RepositoryType>Github</RepositoryType>
     <Authors>astinnos</Authors>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.Extensions.Configuration" Version="2.2.0" />
-    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="2.2.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration" Version="2.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="2.0.0" />
     <PackageReference Include="Newtonsoft.Json" Version="12.0.1" />
   </ItemGroup>
 
   <ItemGroup Condition=" '$(TargetFramework)' == 'net461' ">
     <Reference Include="System.Web" />    
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Framework\Logging\" />
   </ItemGroup>
 
 </Project>

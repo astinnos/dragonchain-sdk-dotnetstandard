@@ -34,9 +34,9 @@ namespace dragonchain_sdk
         /// <param name="dragonchainId">dragonchainId associated with these credentials</param>
         /// <param name="config">Microsoft.Extensions.Configuration implementation</param>        
         /// <param name="logger">Microsoft.Extensions.Logging implementation</param>
-        public DragonchainClient(string dragonchainId = "", IConfiguration config = null, ILogger logger = null)            
+        public DragonchainClient(string dragonchainId = "", IConfiguration config = null, ILogger<DragonchainClient> logger = null)            
         {
-            logger = logger ?? NullLogger.Instance;
+            logger = logger ?? new NullLogger<DragonchainClient>();
             var credentialManager = new CredentialManager(config);            
             if (string.IsNullOrWhiteSpace(dragonchainId))
             {                
@@ -58,8 +58,7 @@ namespace dragonchain_sdk
         /// <param name="logger">Microsoft.Extensions.Logging implementation</param>
         public DragonchainClient(string dragonchainId, ICredentialManager credentialManager, ICredentialService credentialService = null, IHttpService httpService = null, ILogger logger = null)
         {
-            logger = logger ?? NullLogger.Instance;           
-            
+            logger = logger ?? NullLogger.Instance;                       
             if (string.IsNullOrWhiteSpace(dragonchainId))
             {
                 if(credentialManager == null) { throw new FailureByDesignException(message: "Credential Manager must be provided if dragonchainid is null or empty"); }

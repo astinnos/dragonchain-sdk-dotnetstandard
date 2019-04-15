@@ -25,7 +25,7 @@ namespace dragonchain_sdk.tests
 
         public DragonchainClientUnitTests()
         {   
-            _logger = new TestLogger<DragonchainClientUnitTests>();            
+            _logger = new TestLogger<DragonchainClient>();            
             _httpService = new Mock<IHttpService>();
             _credentialManager = new Mock<ICredentialManager>();
             _dragonchainClient = new DragonchainClient("fakeDragonchainId", null, null, _httpService.Object, _logger);
