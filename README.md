@@ -1,8 +1,16 @@
 # Dragonchain .Net SDK
 
+[![NuGet](https://img.shields.io/badge/nuget-v1.0.0--alpha-blue.svg)](https://www.nuget.org/packages/dragonchain-sdk-dotnet/)
+
 Talk to your dragonchain.
 
-Under construction
+### Installation
+First, [install NuGet](http://docs.nuget.org/docs/start-here/installing-nuget). Then, install [Dragonchain .Net SDK](https://www.nuget.org/packages/dragonchain-sdk-dotnet/) from the package manager console:
+
+Pre -release
+```
+PM> Install-Package dragonchain-sdk-dotnet -Version 1.0.0-alpha
+```
 
 ### Examples
 
@@ -55,7 +63,8 @@ var transactions = searchResult.Response.Results;
 #### Register Transaction Type
 
 ```csharp
-var registerTransactionTypeResult = await _dragonchainLevel1Client.RegisterTransactionType(new TransactionTypeStructure
+var registerTransactionTypeResult = await _dragonchainLevel1Client.RegisterTransactionType(
+new TransactionTypeStructure
 {
     Version = "1",
     TransactionType = "apple",
@@ -175,7 +184,7 @@ or
 
 In order to get the logging output of the sdk, a logger must be set (by default all logging is thrown away).
 
-In order to set the logger, simply inject a Microsoft.Extensions.Logging implementation `.setLogger` on the root of the require/import. 
+In order to set the logger, simply inject a Microsoft.Extensions.Logging implementation. 
 Read here for more information [Microsoft Logging Docs](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/logging/?view=aspnetcore-2.2). 
 For example, if you just wanted to log to the console you can set the logger like the following:
 
