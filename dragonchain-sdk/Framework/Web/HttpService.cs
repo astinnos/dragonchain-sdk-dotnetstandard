@@ -119,7 +119,10 @@ namespace dragonchain_sdk.Framework.Web
                 NullValueHandling = NullValueHandling.Ignore,
                 ContractResolver = contractResolver                
             };
-            settings.Converters.Add(new Newtonsoft.Json.Converters.StringEnumConverter());
+            settings.Converters.Add(new Newtonsoft.Json.Converters.StringEnumConverter(new CamelCaseNamingStrategy()
+            {
+                OverrideSpecifiedNames = false
+            }));
             return settings;
         }                 
     }

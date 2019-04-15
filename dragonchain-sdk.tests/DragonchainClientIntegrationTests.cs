@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.Extensions.Configuration;
 using NUnit.Framework;
 using dragonchain_sdk.Credentials;
 using dragonchain_sdk.Status;
@@ -10,10 +11,7 @@ using dragonchain_sdk.Contracts;
 using dragonchain_sdk.Transactions;
 using dragonchain_sdk.Shared;
 using dragonchain_sdk.Transactions.Types;
-using System.Threading;
 using dragonchain_sdk.DragonNet;
-using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Configuration;
 
 namespace dragonchain_sdk.tests
 {
@@ -119,6 +117,31 @@ namespace dragonchain_sdk.tests
                     Assert.IsTrue(deleteResult.Ok);
                     Assert.IsInstanceOf<UpdateResponse>(deleteResult.Response);
                 }
+            }
+            else
+            {
+                Assert.Warn("User secrets - dragonchain-sdk.tests-79a3edd0-2092-40a2-a04d-dcb46d5ca9ed not available");
+            }
+        }
+
+        [Test]
+        public async Task CreateContract_Test()
+        {
+            if (AreLevel1TestsConfigured())
+            {                        
+                var createContractResponse = await _dragonchainLevel1Client.CreateContract(new ContractCreationSchema
+                {
+                    Version = "2",                    
+                    TransactionType = "calculator",                    
+                    Image = "image_name",
+                    Cmd = "node",
+                    Arguments = new string[] { "index.js" },
+                    ExecutionOrder = SmartContractExecutionOrder.Parallel,
+                    
+                });
+                Assert.AreEqual(200, createContractResponse.Status);
+                Assert.IsTrue(createContractResponse.Ok);
+                Assert.IsInstanceOf<DragonchainContractCreateResponse>(createContractResponse.Response);                
             }
             else
             {
@@ -268,16 +291,15 @@ namespace dragonchain_sdk.tests
         //{
         //    if (AreLevel1TestsConfigured())
         //    {
-        //        var result = await _dragonchainLevel1Client.UpdateDragonnetConfig(new DragonnetConfigSchema { L2 = (decimal)10.123 });
+        //        var result = await _dragonchainLevel1Client.UpdateDragonnetConfig(new DragonnetConfigSchema { L2 = (decimal)0.123 });
         //        Assert.AreEqual(200, result.Status);
         //        Assert.IsTrue(result.Ok);
         //        Assert.IsInstanceOf<UpdateResponse>(result.Response);
-        //    }  
+        //    }
         //    else
         //    {
         //        Assert.Warn("User secrets - dragonchain-sdk.tests-79a3edd0-2092-40a2-a04d-dcb46d5ca9ed not available");
         //    }
-        //} 
         //}
 
         //[Test]
@@ -294,8 +316,7 @@ namespace dragonchain_sdk.tests
         //    {
         //        Assert.Warn("User secrets - dragonchain-sdk.tests-79a3edd0-2092-40a2-a04d-dcb46d5ca9ed not available");
         //    }
-        //} 
-        //}        
+        //}    
 
         public bool AreLevel1TestsConfigured()
         {

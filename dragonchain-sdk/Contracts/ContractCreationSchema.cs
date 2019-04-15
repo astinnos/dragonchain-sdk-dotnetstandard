@@ -9,6 +9,9 @@ namespace dragonchain_sdk.Contracts
         public IEnumerable<string> Arguments { get; set; }               
         public string Auth { get; set; }
         public string Cmd { get; set; }
+        public string Name { get; set; }
+        [JsonProperty(PropertyName = "sc_type")]
+        public SmartContractType? SmartContractType { get; set; }
         public string Cron { get; set; }
         public string Dcrn { get { return "SmartContract::L1::Create"; } }     
         [JsonProperty(PropertyName = "desired_state")]
@@ -18,10 +21,10 @@ namespace dragonchain_sdk.Contracts
         [JsonProperty(PropertyName = "execution_order")]
         public SmartContractExecutionOrder? ExecutionOrder { get; set; }
         public string Image { get; set; }
-        public int Seconds { get; set; }        
+        public int? Seconds { get; set; }        
         public object Secrets { get; set; }
         [JsonProperty(PropertyName = "txn_type")]
         public string TransactionType { get; set; }        
-        public string Version { get { return "3"; } }        
+        public string Version { get; set; }        
     }
 }
