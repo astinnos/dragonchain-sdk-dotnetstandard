@@ -133,18 +133,7 @@ namespace dragonchain_sdk
         {
             return await _httpService.GetAsync<BlockSchemaType>($"/block/{blockId}");            
         }
-
-        /// <summary>
-        /// Reads secrets given to a smart contract
-        /// </summary>
-        /// <param name="secretName">the name of the secret to retrieve for smart contract</param>
-        /// <returns></returns>
-        public string GetSecret(string secretName)
-        {
-            
-            throw new NotImplementedException();
-        }
-
+                
         /// <summary>
         /// Get a single smart contract by id
         /// </summary>

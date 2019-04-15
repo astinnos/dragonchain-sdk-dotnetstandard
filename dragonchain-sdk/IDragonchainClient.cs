@@ -19,8 +19,7 @@ namespace dragonchain_sdk
         Task<ApiResponse<DragonchainTransactionCreateResponse>> CreateTransaction(DragonchainTransactionCreatePayload transactionObject);
         Task<ApiResponse<UpdateResponse>> DeleteSmartContract(string contractId);
         Task<ApiResponse<UpdateResponse>> DeleteTransactionType(string transactionType);
-        Task<ApiResponse<BlockSchemaType>> GetBlock(string blockId);
-        string GetSecret(string secretName);
+        Task<ApiResponse<BlockSchemaType>> GetBlock(string blockId);        
         Task<ApiResponse<SmartContractAtRest>> GetSmartContract(string contractId);
         Task<ApiResponse<string>> GetSmartContractHeap(string key, string scName, bool jsonParse = false);
         Task<ApiResponse<L1DragonchainStatusResult>> GetStatus();
