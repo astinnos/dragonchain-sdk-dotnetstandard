@@ -14,7 +14,7 @@ namespace dragonchain_sdk
 {
     public interface IDragonchainClient
     {
-        Task<ApiResponse<DragonchainTransactionCreateResponse>> CreateBulkTransaction(DragonchainBulkTransactions transactionBulkObject);
+        Task<ApiResponse<DragonchainTransactionCreateResponse>> CreateBulkTransaction(IEnumerable<DragonchainTransactionCreatePayload> transactionObjects);
         Task<ApiResponse<DragonchainContractCreateResponse>> CreateContract(ContractCreationSchema body);
         Task<ApiResponse<DragonchainTransactionCreateResponse>> CreateTransaction(DragonchainTransactionCreatePayload transactionObject);
         Task<ApiResponse<UpdateResponse>> DeleteSmartContract(string contractId);

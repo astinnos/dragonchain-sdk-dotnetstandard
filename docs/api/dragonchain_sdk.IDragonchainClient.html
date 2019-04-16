@@ -85,18 +85,18 @@
   </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/astinnos/dragonchain-sdk-dotnetstandard/new/master/apiSpec/new?filename=dragonchain_sdk_IDragonchainClient_CreateBulkTransaction_dragonchain_sdk_Transactions_DragonchainBulkTransactions_.md&amp;value=---%0Auid%3A%20dragonchain_sdk.IDragonchainClient.CreateBulkTransaction(dragonchain_sdk.Transactions.DragonchainBulkTransactions)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/astinnos/dragonchain-sdk-dotnetstandard/new/master/apiSpec/new?filename=dragonchain_sdk_IDragonchainClient_CreateBulkTransaction_System_Collections_Generic_IEnumerable_dragonchain_sdk_Transactions_DragonchainTransactionCreatePayload__.md&amp;value=---%0Auid%3A%20dragonchain_sdk.IDragonchainClient.CreateBulkTransaction(System.Collections.Generic.IEnumerable%7Bdragonchain_sdk.Transactions.DragonchainTransactionCreatePayload%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/astinnos/dragonchain-sdk-dotnetstandard/blob/master/dragonchain-sdk/IDragonchainClient.cs/#L17">View Source</a>
   </span>
   <a id="dragonchain_sdk_IDragonchainClient_CreateBulkTransaction_" data-uid="dragonchain_sdk.IDragonchainClient.CreateBulkTransaction*"></a>
-  <h4 id="dragonchain_sdk_IDragonchainClient_CreateBulkTransaction_dragonchain_sdk_Transactions_DragonchainBulkTransactions_" data-uid="dragonchain_sdk.IDragonchainClient.CreateBulkTransaction(dragonchain_sdk.Transactions.DragonchainBulkTransactions)">CreateBulkTransaction(DragonchainBulkTransactions)</h4>
+  <h4 id="dragonchain_sdk_IDragonchainClient_CreateBulkTransaction_System_Collections_Generic_IEnumerable_dragonchain_sdk_Transactions_DragonchainTransactionCreatePayload__" data-uid="dragonchain_sdk.IDragonchainClient.CreateBulkTransaction(System.Collections.Generic.IEnumerable{dragonchain_sdk.Transactions.DragonchainTransactionCreatePayload})">CreateBulkTransaction(IEnumerable&lt;DragonchainTransactionCreatePayload&gt;)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">Task&lt;ApiResponse&lt;DragonchainTransactionCreateResponse&gt;&gt; CreateBulkTransaction(DragonchainBulkTransactions transactionBulkObject)</code></pre>
+    <pre><code class="lang-csharp hljs">Task&lt;ApiResponse&lt;DragonchainTransactionCreateResponse&gt;&gt; CreateBulkTransaction(IEnumerable&lt;DragonchainTransactionCreatePayload&gt; transactionObjects)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -109,8 +109,8 @@
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="dragonchain_sdk.Transactions.DragonchainBulkTransactions.html">DragonchainBulkTransactions</a></td>
-        <td><span class="parametername">transactionBulkObject</span></td>
+        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<a class="xref" href="dragonchain_sdk.Transactions.DragonchainTransactionCreatePayload.html">DragonchainTransactionCreatePayload</a>&gt;</td>
+        <td><span class="parametername">transactionObjects</span></td>
         <td></td>
       </tr>
     </tbody>
@@ -367,57 +367,10 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/astinnos/dragonchain-sdk-dotnetstandard/new/master/apiSpec/new?filename=dragonchain_sdk_IDragonchainClient_GetSecret_System_String_.md&amp;value=---%0Auid%3A%20dragonchain_sdk.IDragonchainClient.GetSecret(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/astinnos/dragonchain-sdk-dotnetstandard/blob/master/dragonchain-sdk/IDragonchainClient.cs/#L23">View Source</a>
-  </span>
-  <a id="dragonchain_sdk_IDragonchainClient_GetSecret_" data-uid="dragonchain_sdk.IDragonchainClient.GetSecret*"></a>
-  <h4 id="dragonchain_sdk_IDragonchainClient_GetSecret_System_String_" data-uid="dragonchain_sdk.IDragonchainClient.GetSecret(System.String)">GetSecret(String)</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">string GetSecret(string secretName)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.String</span></td>
-        <td><span class="parametername">secretName</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.String</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
     <a href="https://github.com/astinnos/dragonchain-sdk-dotnetstandard/new/master/apiSpec/new?filename=dragonchain_sdk_IDragonchainClient_GetSmartContract_System_String_.md&amp;value=---%0Auid%3A%20dragonchain_sdk.IDragonchainClient.GetSmartContract(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/astinnos/dragonchain-sdk-dotnetstandard/blob/master/dragonchain-sdk/IDragonchainClient.cs/#L24">View Source</a>
+    <a href="https://github.com/astinnos/dragonchain-sdk-dotnetstandard/blob/master/dragonchain-sdk/IDragonchainClient.cs/#L23">View Source</a>
   </span>
   <a id="dragonchain_sdk_IDragonchainClient_GetSmartContract_" data-uid="dragonchain_sdk.IDragonchainClient.GetSmartContract*"></a>
   <h4 id="dragonchain_sdk_IDragonchainClient_GetSmartContract_System_String_" data-uid="dragonchain_sdk.IDragonchainClient.GetSmartContract(System.String)">GetSmartContract(String)</h4>
@@ -464,7 +417,7 @@
     <a href="https://github.com/astinnos/dragonchain-sdk-dotnetstandard/new/master/apiSpec/new?filename=dragonchain_sdk_IDragonchainClient_GetSmartContractHeap_System_String_System_String_System_Boolean_.md&amp;value=---%0Auid%3A%20dragonchain_sdk.IDragonchainClient.GetSmartContractHeap(System.String%2CSystem.String%2CSystem.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/astinnos/dragonchain-sdk-dotnetstandard/blob/master/dragonchain-sdk/IDragonchainClient.cs/#L25">View Source</a>
+    <a href="https://github.com/astinnos/dragonchain-sdk-dotnetstandard/blob/master/dragonchain-sdk/IDragonchainClient.cs/#L24">View Source</a>
   </span>
   <a id="dragonchain_sdk_IDragonchainClient_GetSmartContractHeap_" data-uid="dragonchain_sdk.IDragonchainClient.GetSmartContractHeap*"></a>
   <h4 id="dragonchain_sdk_IDragonchainClient_GetSmartContractHeap_System_String_System_String_System_Boolean_" data-uid="dragonchain_sdk.IDragonchainClient.GetSmartContractHeap(System.String,System.String,System.Boolean)">GetSmartContractHeap(String, String, Boolean)</h4>
@@ -521,7 +474,7 @@
     <a href="https://github.com/astinnos/dragonchain-sdk-dotnetstandard/new/master/apiSpec/new?filename=dragonchain_sdk_IDragonchainClient_GetStatus.md&amp;value=---%0Auid%3A%20dragonchain_sdk.IDragonchainClient.GetStatus%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/astinnos/dragonchain-sdk-dotnetstandard/blob/master/dragonchain-sdk/IDragonchainClient.cs/#L26">View Source</a>
+    <a href="https://github.com/astinnos/dragonchain-sdk-dotnetstandard/blob/master/dragonchain-sdk/IDragonchainClient.cs/#L25">View Source</a>
   </span>
   <a id="dragonchain_sdk_IDragonchainClient_GetStatus_" data-uid="dragonchain_sdk.IDragonchainClient.GetStatus*"></a>
   <h4 id="dragonchain_sdk_IDragonchainClient_GetStatus" data-uid="dragonchain_sdk.IDragonchainClient.GetStatus">GetStatus()</h4>
@@ -551,7 +504,7 @@
     <a href="https://github.com/astinnos/dragonchain-sdk-dotnetstandard/new/master/apiSpec/new?filename=dragonchain_sdk_IDragonchainClient_GetTransaction_System_String_.md&amp;value=---%0Auid%3A%20dragonchain_sdk.IDragonchainClient.GetTransaction(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/astinnos/dragonchain-sdk-dotnetstandard/blob/master/dragonchain-sdk/IDragonchainClient.cs/#L27">View Source</a>
+    <a href="https://github.com/astinnos/dragonchain-sdk-dotnetstandard/blob/master/dragonchain-sdk/IDragonchainClient.cs/#L26">View Source</a>
   </span>
   <a id="dragonchain_sdk_IDragonchainClient_GetTransaction_" data-uid="dragonchain_sdk.IDragonchainClient.GetTransaction*"></a>
   <h4 id="dragonchain_sdk_IDragonchainClient_GetTransaction_System_String_" data-uid="dragonchain_sdk.IDragonchainClient.GetTransaction(System.String)">GetTransaction(String)</h4>
@@ -598,7 +551,7 @@
     <a href="https://github.com/astinnos/dragonchain-sdk-dotnetstandard/new/master/apiSpec/new?filename=dragonchain_sdk_IDragonchainClient_GetVerifications_System_String_System_Int32_.md&amp;value=---%0Auid%3A%20dragonchain_sdk.IDragonchainClient.GetVerifications(System.String%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/astinnos/dragonchain-sdk-dotnetstandard/blob/master/dragonchain-sdk/IDragonchainClient.cs/#L28">View Source</a>
+    <a href="https://github.com/astinnos/dragonchain-sdk-dotnetstandard/blob/master/dragonchain-sdk/IDragonchainClient.cs/#L27">View Source</a>
   </span>
   <a id="dragonchain_sdk_IDragonchainClient_GetVerifications_" data-uid="dragonchain_sdk.IDragonchainClient.GetVerifications*"></a>
   <h4 id="dragonchain_sdk_IDragonchainClient_GetVerifications_System_String_System_Int32_" data-uid="dragonchain_sdk.IDragonchainClient.GetVerifications(System.String,System.Int32)">GetVerifications(String, Int32)</h4>
@@ -650,7 +603,7 @@
     <a href="https://github.com/astinnos/dragonchain-sdk-dotnetstandard/new/master/apiSpec/new?filename=dragonchain_sdk_IDragonchainClient_ListSmartcontractHeap_System_String_System_String_.md&amp;value=---%0Auid%3A%20dragonchain_sdk.IDragonchainClient.ListSmartcontractHeap(System.String%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/astinnos/dragonchain-sdk-dotnetstandard/blob/master/dragonchain-sdk/IDragonchainClient.cs/#L29">View Source</a>
+    <a href="https://github.com/astinnos/dragonchain-sdk-dotnetstandard/blob/master/dragonchain-sdk/IDragonchainClient.cs/#L28">View Source</a>
   </span>
   <a id="dragonchain_sdk_IDragonchainClient_ListSmartcontractHeap_" data-uid="dragonchain_sdk.IDragonchainClient.ListSmartcontractHeap*"></a>
   <h4 id="dragonchain_sdk_IDragonchainClient_ListSmartcontractHeap_System_String_System_String_" data-uid="dragonchain_sdk.IDragonchainClient.ListSmartcontractHeap(System.String,System.String)">ListSmartcontractHeap(String, String)</h4>
@@ -702,7 +655,7 @@
     <a href="https://github.com/astinnos/dragonchain-sdk-dotnetstandard/new/master/apiSpec/new?filename=dragonchain_sdk_IDragonchainClient_ListTransactionTypes.md&amp;value=---%0Auid%3A%20dragonchain_sdk.IDragonchainClient.ListTransactionTypes%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/astinnos/dragonchain-sdk-dotnetstandard/blob/master/dragonchain-sdk/IDragonchainClient.cs/#L30">View Source</a>
+    <a href="https://github.com/astinnos/dragonchain-sdk-dotnetstandard/blob/master/dragonchain-sdk/IDragonchainClient.cs/#L29">View Source</a>
   </span>
   <a id="dragonchain_sdk_IDragonchainClient_ListTransactionTypes_" data-uid="dragonchain_sdk.IDragonchainClient.ListTransactionTypes*"></a>
   <h4 id="dragonchain_sdk_IDragonchainClient_ListTransactionTypes" data-uid="dragonchain_sdk.IDragonchainClient.ListTransactionTypes">ListTransactionTypes()</h4>
@@ -732,7 +685,7 @@
     <a href="https://github.com/astinnos/dragonchain-sdk-dotnetstandard/new/master/apiSpec/new?filename=dragonchain_sdk_IDragonchainClient_OverrideCredentials_System_String_System_String_.md&amp;value=---%0Auid%3A%20dragonchain_sdk.IDragonchainClient.OverrideCredentials(System.String%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/astinnos/dragonchain-sdk-dotnetstandard/blob/master/dragonchain-sdk/IDragonchainClient.cs/#L31">View Source</a>
+    <a href="https://github.com/astinnos/dragonchain-sdk-dotnetstandard/blob/master/dragonchain-sdk/IDragonchainClient.cs/#L30">View Source</a>
   </span>
   <a id="dragonchain_sdk_IDragonchainClient_OverrideCredentials_" data-uid="dragonchain_sdk.IDragonchainClient.OverrideCredentials*"></a>
   <h4 id="dragonchain_sdk_IDragonchainClient_OverrideCredentials_System_String_System_String_" data-uid="dragonchain_sdk.IDragonchainClient.OverrideCredentials(System.String,System.String)">OverrideCredentials(String, String)</h4>
@@ -769,7 +722,7 @@
     <a href="https://github.com/astinnos/dragonchain-sdk-dotnetstandard/new/master/apiSpec/new?filename=dragonchain_sdk_IDragonchainClient_QueryBlocks_System_String_System_String_System_Int32_System_Int32_.md&amp;value=---%0Auid%3A%20dragonchain_sdk.IDragonchainClient.QueryBlocks(System.String%2CSystem.String%2CSystem.Int32%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/astinnos/dragonchain-sdk-dotnetstandard/blob/master/dragonchain-sdk/IDragonchainClient.cs/#L32">View Source</a>
+    <a href="https://github.com/astinnos/dragonchain-sdk-dotnetstandard/blob/master/dragonchain-sdk/IDragonchainClient.cs/#L31">View Source</a>
   </span>
   <a id="dragonchain_sdk_IDragonchainClient_QueryBlocks_" data-uid="dragonchain_sdk.IDragonchainClient.QueryBlocks*"></a>
   <h4 id="dragonchain_sdk_IDragonchainClient_QueryBlocks_System_String_System_String_System_Int32_System_Int32_" data-uid="dragonchain_sdk.IDragonchainClient.QueryBlocks(System.String,System.String,System.Int32,System.Int32)">QueryBlocks(String, String, Int32, Int32)</h4>
@@ -831,7 +784,7 @@
     <a href="https://github.com/astinnos/dragonchain-sdk-dotnetstandard/new/master/apiSpec/new?filename=dragonchain_sdk_IDragonchainClient_QuerySmartContracts_System_String_System_String_System_Int32_System_Int32_.md&amp;value=---%0Auid%3A%20dragonchain_sdk.IDragonchainClient.QuerySmartContracts(System.String%2CSystem.String%2CSystem.Int32%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/astinnos/dragonchain-sdk-dotnetstandard/blob/master/dragonchain-sdk/IDragonchainClient.cs/#L33">View Source</a>
+    <a href="https://github.com/astinnos/dragonchain-sdk-dotnetstandard/blob/master/dragonchain-sdk/IDragonchainClient.cs/#L32">View Source</a>
   </span>
   <a id="dragonchain_sdk_IDragonchainClient_QuerySmartContracts_" data-uid="dragonchain_sdk.IDragonchainClient.QuerySmartContracts*"></a>
   <h4 id="dragonchain_sdk_IDragonchainClient_QuerySmartContracts_System_String_System_String_System_Int32_System_Int32_" data-uid="dragonchain_sdk.IDragonchainClient.QuerySmartContracts(System.String,System.String,System.Int32,System.Int32)">QuerySmartContracts(String, String, Int32, Int32)</h4>
@@ -893,7 +846,7 @@
     <a href="https://github.com/astinnos/dragonchain-sdk-dotnetstandard/new/master/apiSpec/new?filename=dragonchain_sdk_IDragonchainClient_QueryTransactions_System_String_System_String_System_Int32_System_Int32_.md&amp;value=---%0Auid%3A%20dragonchain_sdk.IDragonchainClient.QueryTransactions(System.String%2CSystem.String%2CSystem.Int32%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/astinnos/dragonchain-sdk-dotnetstandard/blob/master/dragonchain-sdk/IDragonchainClient.cs/#L34">View Source</a>
+    <a href="https://github.com/astinnos/dragonchain-sdk-dotnetstandard/blob/master/dragonchain-sdk/IDragonchainClient.cs/#L33">View Source</a>
   </span>
   <a id="dragonchain_sdk_IDragonchainClient_QueryTransactions_" data-uid="dragonchain_sdk.IDragonchainClient.QueryTransactions*"></a>
   <h4 id="dragonchain_sdk_IDragonchainClient_QueryTransactions_System_String_System_String_System_Int32_System_Int32_" data-uid="dragonchain_sdk.IDragonchainClient.QueryTransactions(System.String,System.String,System.Int32,System.Int32)">QueryTransactions(String, String, Int32, Int32)</h4>
@@ -955,7 +908,7 @@
     <a href="https://github.com/astinnos/dragonchain-sdk-dotnetstandard/new/master/apiSpec/new?filename=dragonchain_sdk_IDragonchainClient_RegisterTransactionType_dragonchain_sdk_Transactions_Types_TransactionTypeStructure_.md&amp;value=---%0Auid%3A%20dragonchain_sdk.IDragonchainClient.RegisterTransactionType(dragonchain_sdk.Transactions.Types.TransactionTypeStructure)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/astinnos/dragonchain-sdk-dotnetstandard/blob/master/dragonchain-sdk/IDragonchainClient.cs/#L35">View Source</a>
+    <a href="https://github.com/astinnos/dragonchain-sdk-dotnetstandard/blob/master/dragonchain-sdk/IDragonchainClient.cs/#L34">View Source</a>
   </span>
   <a id="dragonchain_sdk_IDragonchainClient_RegisterTransactionType_" data-uid="dragonchain_sdk.IDragonchainClient.RegisterTransactionType*"></a>
   <h4 id="dragonchain_sdk_IDragonchainClient_RegisterTransactionType_dragonchain_sdk_Transactions_Types_TransactionTypeStructure_" data-uid="dragonchain_sdk.IDragonchainClient.RegisterTransactionType(dragonchain_sdk.Transactions.Types.TransactionTypeStructure)">RegisterTransactionType(TransactionTypeStructure)</h4>
@@ -1002,7 +955,7 @@
     <a href="https://github.com/astinnos/dragonchain-sdk-dotnetstandard/new/master/apiSpec/new?filename=dragonchain_sdk_IDragonchainClient_SetDragonchainId_System_String_System_Boolean_.md&amp;value=---%0Auid%3A%20dragonchain_sdk.IDragonchainClient.SetDragonchainId(System.String%2CSystem.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/astinnos/dragonchain-sdk-dotnetstandard/blob/master/dragonchain-sdk/IDragonchainClient.cs/#L36">View Source</a>
+    <a href="https://github.com/astinnos/dragonchain-sdk-dotnetstandard/blob/master/dragonchain-sdk/IDragonchainClient.cs/#L35">View Source</a>
   </span>
   <a id="dragonchain_sdk_IDragonchainClient_SetDragonchainId_" data-uid="dragonchain_sdk.IDragonchainClient.SetDragonchainId*"></a>
   <h4 id="dragonchain_sdk_IDragonchainClient_SetDragonchainId_System_String_System_Boolean_" data-uid="dragonchain_sdk.IDragonchainClient.SetDragonchainId(System.String,System.Boolean)">SetDragonchainId(String, Boolean)</h4>
@@ -1039,7 +992,7 @@
     <a href="https://github.com/astinnos/dragonchain-sdk-dotnetstandard/new/master/apiSpec/new?filename=dragonchain_sdk_IDragonchainClient_SetEndpoint_System_String_.md&amp;value=---%0Auid%3A%20dragonchain_sdk.IDragonchainClient.SetEndpoint(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/astinnos/dragonchain-sdk-dotnetstandard/blob/master/dragonchain-sdk/IDragonchainClient.cs/#L37">View Source</a>
+    <a href="https://github.com/astinnos/dragonchain-sdk-dotnetstandard/blob/master/dragonchain-sdk/IDragonchainClient.cs/#L36">View Source</a>
   </span>
   <a id="dragonchain_sdk_IDragonchainClient_SetEndpoint_" data-uid="dragonchain_sdk.IDragonchainClient.SetEndpoint*"></a>
   <h4 id="dragonchain_sdk_IDragonchainClient_SetEndpoint_System_String_" data-uid="dragonchain_sdk.IDragonchainClient.SetEndpoint(System.String)">SetEndpoint(String)</h4>
@@ -1071,7 +1024,7 @@
     <a href="https://github.com/astinnos/dragonchain-sdk-dotnetstandard/new/master/apiSpec/new?filename=dragonchain_sdk_IDragonchainClient_UpdateDragonnetConfig_dragonchain_sdk_DragonNet_DragonnetConfigSchema_.md&amp;value=---%0Auid%3A%20dragonchain_sdk.IDragonchainClient.UpdateDragonnetConfig(dragonchain_sdk.DragonNet.DragonnetConfigSchema)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/astinnos/dragonchain-sdk-dotnetstandard/blob/master/dragonchain-sdk/IDragonchainClient.cs/#L38">View Source</a>
+    <a href="https://github.com/astinnos/dragonchain-sdk-dotnetstandard/blob/master/dragonchain-sdk/IDragonchainClient.cs/#L37">View Source</a>
   </span>
   <a id="dragonchain_sdk_IDragonchainClient_UpdateDragonnetConfig_" data-uid="dragonchain_sdk.IDragonchainClient.UpdateDragonnetConfig*"></a>
   <h4 id="dragonchain_sdk_IDragonchainClient_UpdateDragonnetConfig_dragonchain_sdk_DragonNet_DragonnetConfigSchema_" data-uid="dragonchain_sdk.IDragonchainClient.UpdateDragonnetConfig(dragonchain_sdk.DragonNet.DragonnetConfigSchema)">UpdateDragonnetConfig(DragonnetConfigSchema)</h4>
@@ -1118,7 +1071,7 @@
     <a href="https://github.com/astinnos/dragonchain-sdk-dotnetstandard/new/master/apiSpec/new?filename=dragonchain_sdk_IDragonchainClient_UpdateMatchmakingConfig_System_Nullable_System_Decimal__System_Nullable_System_Int32__.md&amp;value=---%0Auid%3A%20dragonchain_sdk.IDragonchainClient.UpdateMatchmakingConfig(System.Nullable%7BSystem.Decimal%7D%2CSystem.Nullable%7BSystem.Int32%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/astinnos/dragonchain-sdk-dotnetstandard/blob/master/dragonchain-sdk/IDragonchainClient.cs/#L39">View Source</a>
+    <a href="https://github.com/astinnos/dragonchain-sdk-dotnetstandard/blob/master/dragonchain-sdk/IDragonchainClient.cs/#L38">View Source</a>
   </span>
   <a id="dragonchain_sdk_IDragonchainClient_UpdateMatchmakingConfig_" data-uid="dragonchain_sdk.IDragonchainClient.UpdateMatchmakingConfig*"></a>
   <h4 id="dragonchain_sdk_IDragonchainClient_UpdateMatchmakingConfig_System_Nullable_System_Decimal__System_Nullable_System_Int32__" data-uid="dragonchain_sdk.IDragonchainClient.UpdateMatchmakingConfig(System.Nullable{System.Decimal},System.Nullable{System.Int32})">UpdateMatchmakingConfig(Nullable&lt;Decimal&gt;, Nullable&lt;Int32&gt;)</h4>
@@ -1170,7 +1123,7 @@
     <a href="https://github.com/astinnos/dragonchain-sdk-dotnetstandard/new/master/apiSpec/new?filename=dragonchain_sdk_IDragonchainClient_UpdateSmartContract_System_String_System_String_System_String_System_Nullable_dragonchain_sdk_Contracts_SmartContractExecutionOrder__System_Nullable_dragonchain_sdk_Contracts_SmartContractDesiredState__System_String___System_Object_System_Object_System_Nullable_System_Int32__System_String_System_String_.md&amp;value=---%0Auid%3A%20dragonchain_sdk.IDragonchainClient.UpdateSmartContract(System.String%2CSystem.String%2CSystem.String%2CSystem.Nullable%7Bdragonchain_sdk.Contracts.SmartContractExecutionOrder%7D%2CSystem.Nullable%7Bdragonchain_sdk.Contracts.SmartContractDesiredState%7D%2CSystem.String%5B%5D%2CSystem.Object%2CSystem.Object%2CSystem.Nullable%7BSystem.Int32%7D%2CSystem.String%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/astinnos/dragonchain-sdk-dotnetstandard/blob/master/dragonchain-sdk/IDragonchainClient.cs/#L40">View Source</a>
+    <a href="https://github.com/astinnos/dragonchain-sdk-dotnetstandard/blob/master/dragonchain-sdk/IDragonchainClient.cs/#L39">View Source</a>
   </span>
   <a id="dragonchain_sdk_IDragonchainClient_UpdateSmartContract_" data-uid="dragonchain_sdk.IDragonchainClient.UpdateSmartContract*"></a>
   <h4 id="dragonchain_sdk_IDragonchainClient_UpdateSmartContract_System_String_System_String_System_String_System_Nullable_dragonchain_sdk_Contracts_SmartContractExecutionOrder__System_Nullable_dragonchain_sdk_Contracts_SmartContractDesiredState__System_String___System_Object_System_Object_System_Nullable_System_Int32__System_String_System_String_" data-uid="dragonchain_sdk.IDragonchainClient.UpdateSmartContract(System.String,System.String,System.String,System.Nullable{dragonchain_sdk.Contracts.SmartContractExecutionOrder},System.Nullable{dragonchain_sdk.Contracts.SmartContractDesiredState},System.String[],System.Object,System.Object,System.Nullable{System.Int32},System.String,System.String)">UpdateSmartContract(String, String, String, Nullable&lt;SmartContractExecutionOrder&gt;, Nullable&lt;SmartContractDesiredState&gt;, String[], Object, Object, Nullable&lt;Int32&gt;, String, String)</h4>
@@ -1267,7 +1220,7 @@
     <a href="https://github.com/astinnos/dragonchain-sdk-dotnetstandard/new/master/apiSpec/new?filename=dragonchain_sdk_IDragonchainClient_UpdateTransactionType_System_String_System_Collections_Generic_IEnumerable_dragonchain_sdk_Transactions_Types_CustomIndexStructure__.md&amp;value=---%0Auid%3A%20dragonchain_sdk.IDragonchainClient.UpdateTransactionType(System.String%2CSystem.Collections.Generic.IEnumerable%7Bdragonchain_sdk.Transactions.Types.CustomIndexStructure%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/astinnos/dragonchain-sdk-dotnetstandard/blob/master/dragonchain-sdk/IDragonchainClient.cs/#L41">View Source</a>
+    <a href="https://github.com/astinnos/dragonchain-sdk-dotnetstandard/blob/master/dragonchain-sdk/IDragonchainClient.cs/#L40">View Source</a>
   </span>
   <a id="dragonchain_sdk_IDragonchainClient_UpdateTransactionType_" data-uid="dragonchain_sdk.IDragonchainClient.UpdateTransactionType*"></a>
   <h4 id="dragonchain_sdk_IDragonchainClient_UpdateTransactionType_System_String_System_Collections_Generic_IEnumerable_dragonchain_sdk_Transactions_Types_CustomIndexStructure__" data-uid="dragonchain_sdk.IDragonchainClient.UpdateTransactionType(System.String,System.Collections.Generic.IEnumerable{dragonchain_sdk.Transactions.Types.CustomIndexStructure})">UpdateTransactionType(String, IEnumerable&lt;CustomIndexStructure&gt;)</h4>

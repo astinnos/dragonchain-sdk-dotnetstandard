@@ -61,7 +61,7 @@ namespace dragonchain_sdk.tests
             if (AreLevel1TestsConfigured())
             {
                 // register transaction type test
-                var transactionType = "apple";
+                var transactionType = "test";
                 var registerTransactionTypeResult = await _dragonchainLevel1Client.RegisterTransactionType(new TransactionTypeStructure
                 {
                     Version = "1",
@@ -98,16 +98,15 @@ namespace dragonchain_sdk.tests
                     Assert.AreEqual(201, createResult.Status);
                     Assert.IsTrue(createResult.Ok);
                     Assert.IsInstanceOf<DragonchainTransactionCreateResponse>(createResult.Response);
-                    Assert.IsNotEmpty(createResult.Response.TransactionId);                    
+                    Assert.IsNotEmpty(createResult.Response.TransactionId);
 
                     // create bulk transaction test
-                    //var createBulkResult = await _dragonchainClient.CreateBulkTransaction(new DragonchainBulkTransactions
-                    //{
-                    //    Payload = new List<DragonchainTransactionCreatePayload> { newTransaction , newTransaction, newTransaction }
-                    //});
-                    //Assert.AreEqual(201, createBulkResult.Status);
-                    //Assert.IsTrue(createBulkResult.Ok);
-                    //Assert.IsInstanceOf<DragonchainTransactionCreateResponse>(createBulkResult.Response);                   
+                    var createBulkResult = await _dragonchainLevel1Client.CreateBulkTransaction(                    
+                        new List<DragonchainTransactionCreatePayload> { newTransaction, newTransaction, newTransaction }
+                    );
+                    Assert.AreEqual(207, createBulkResult.Status);
+                    Assert.IsTrue(createBulkResult.Ok);
+                    Assert.IsInstanceOf<DragonchainTransactionCreateResponse>(createBulkResult.Response);
                 }
                 finally
                 {
@@ -176,14 +175,14 @@ namespace dragonchain_sdk.tests
                 Assert.IsTrue(queryResult.Ok);
                 Assert.IsInstanceOf<L1DragonchainTransactionQueryResult>(queryResult.Response);
 
-                if (queryResult.Response.Results.Any())
-                {
-                    // get transaction test
-                    var result = await _dragonchainLevel1Client.GetTransaction(queryResult.Response.Results.First().Header.TransactionId);
-                    Assert.AreEqual(200, result.Status);
-                    Assert.IsTrue(result.Ok);
-                    Assert.IsInstanceOf<L1DragonchainTransactionFull>(result.Response);
-                }
+                //if (queryResult.Response.Results.Any())
+                //{
+                //    // get transaction test
+                //    var result = await _dragonchainLevel1Client.GetTransaction(queryResult.Response.Results.First().Header.TransactionId);
+                //    Assert.AreEqual(200, result.Status);
+                //    Assert.IsTrue(result.Ok);
+                //    Assert.IsInstanceOf<L1DragonchainTransactionFull>(result.Response);
+                //}
             }
             else
             {

@@ -1325,6 +1325,19 @@ references:
   isSpec: "True"
   fullName: dragonchain_sdk.Contracts.ContractCreationSchema.Image
   nameWithType: ContractCreationSchema.Image
+- uid: dragonchain_sdk.Contracts.ContractCreationSchema.Name
+  name: Name
+  href: api/dragonchain_sdk.Contracts.ContractCreationSchema.html#dragonchain_sdk_Contracts_ContractCreationSchema_Name
+  commentId: P:dragonchain_sdk.Contracts.ContractCreationSchema.Name
+  fullName: dragonchain_sdk.Contracts.ContractCreationSchema.Name
+  nameWithType: ContractCreationSchema.Name
+- uid: dragonchain_sdk.Contracts.ContractCreationSchema.Name*
+  name: Name
+  href: api/dragonchain_sdk.Contracts.ContractCreationSchema.html#dragonchain_sdk_Contracts_ContractCreationSchema_Name_
+  commentId: Overload:dragonchain_sdk.Contracts.ContractCreationSchema.Name
+  isSpec: "True"
+  fullName: dragonchain_sdk.Contracts.ContractCreationSchema.Name
+  nameWithType: ContractCreationSchema.Name
 - uid: dragonchain_sdk.Contracts.ContractCreationSchema.Seconds
   name: Seconds
   href: api/dragonchain_sdk.Contracts.ContractCreationSchema.html#dragonchain_sdk_Contracts_ContractCreationSchema_Seconds
@@ -1351,6 +1364,19 @@ references:
   isSpec: "True"
   fullName: dragonchain_sdk.Contracts.ContractCreationSchema.Secrets
   nameWithType: ContractCreationSchema.Secrets
+- uid: dragonchain_sdk.Contracts.ContractCreationSchema.SmartContractType
+  name: SmartContractType
+  href: api/dragonchain_sdk.Contracts.ContractCreationSchema.html#dragonchain_sdk_Contracts_ContractCreationSchema_SmartContractType
+  commentId: P:dragonchain_sdk.Contracts.ContractCreationSchema.SmartContractType
+  fullName: dragonchain_sdk.Contracts.ContractCreationSchema.SmartContractType
+  nameWithType: ContractCreationSchema.SmartContractType
+- uid: dragonchain_sdk.Contracts.ContractCreationSchema.SmartContractType*
+  name: SmartContractType
+  href: api/dragonchain_sdk.Contracts.ContractCreationSchema.html#dragonchain_sdk_Contracts_ContractCreationSchema_SmartContractType_
+  commentId: Overload:dragonchain_sdk.Contracts.ContractCreationSchema.SmartContractType
+  isSpec: "True"
+  fullName: dragonchain_sdk.Contracts.ContractCreationSchema.SmartContractType
+  nameWithType: ContractCreationSchema.SmartContractType
 - uid: dragonchain_sdk.Contracts.ContractCreationSchema.TransactionType
   name: TransactionType
   href: api/dragonchain_sdk.Contracts.ContractCreationSchema.html#dragonchain_sdk_Contracts_ContractCreationSchema_TransactionType
@@ -3141,12 +3167,15 @@ references:
   commentId: T:dragonchain_sdk.Credentials.CredentialService
   fullName: dragonchain_sdk.Credentials.CredentialService
   nameWithType: CredentialService
-- uid: dragonchain_sdk.Credentials.CredentialService.#ctor(System.String,System.String,System.String,dragonchain_sdk.Credentials.HmacAlgorithm,dragonchain_sdk.Credentials.Manager.ICredentialManager,Microsoft.Extensions.Logging.ILogger)
-  name: CredentialService(String, String, String, HmacAlgorithm, ICredentialManager, ILogger)
-  href: api/dragonchain_sdk.Credentials.CredentialService.html#dragonchain_sdk_Credentials_CredentialService__ctor_System_String_System_String_System_String_dragonchain_sdk_Credentials_HmacAlgorithm_dragonchain_sdk_Credentials_Manager_ICredentialManager_Microsoft_Extensions_Logging_ILogger_
-  commentId: M:dragonchain_sdk.Credentials.CredentialService.#ctor(System.String,System.String,System.String,dragonchain_sdk.Credentials.HmacAlgorithm,dragonchain_sdk.Credentials.Manager.ICredentialManager,Microsoft.Extensions.Logging.ILogger)
-  fullName: dragonchain_sdk.Credentials.CredentialService.CredentialService(System.String, System.String, System.String, dragonchain_sdk.Credentials.HmacAlgorithm, dragonchain_sdk.Credentials.Manager.ICredentialManager, Microsoft.Extensions.Logging.ILogger)
-  nameWithType: CredentialService.CredentialService(String, String, String, HmacAlgorithm, ICredentialManager, ILogger)
+- uid: dragonchain_sdk.Credentials.CredentialService.#ctor(System.String,System.String,System.String,dragonchain_sdk.Credentials.HmacAlgorithm,dragonchain_sdk.Credentials.Manager.ICredentialManager,Microsoft.Extensions.Logging.ILogger{dragonchain_sdk.DragonchainClient})
+  name: CredentialService(String, String, String, HmacAlgorithm, ICredentialManager, ILogger<DragonchainClient>)
+  href: api/dragonchain_sdk.Credentials.CredentialService.html#dragonchain_sdk_Credentials_CredentialService__ctor_System_String_System_String_System_String_dragonchain_sdk_Credentials_HmacAlgorithm_dragonchain_sdk_Credentials_Manager_ICredentialManager_Microsoft_Extensions_Logging_ILogger_dragonchain_sdk_DragonchainClient__
+  commentId: M:dragonchain_sdk.Credentials.CredentialService.#ctor(System.String,System.String,System.String,dragonchain_sdk.Credentials.HmacAlgorithm,dragonchain_sdk.Credentials.Manager.ICredentialManager,Microsoft.Extensions.Logging.ILogger{dragonchain_sdk.DragonchainClient})
+  name.vb: CredentialService(String, String, String, HmacAlgorithm, ICredentialManager, ILogger(Of DragonchainClient))
+  fullName: dragonchain_sdk.Credentials.CredentialService.CredentialService(System.String, System.String, System.String, dragonchain_sdk.Credentials.HmacAlgorithm, dragonchain_sdk.Credentials.Manager.ICredentialManager, Microsoft.Extensions.Logging.ILogger<dragonchain_sdk.DragonchainClient>)
+  fullName.vb: dragonchain_sdk.Credentials.CredentialService.CredentialService(System.String, System.String, System.String, dragonchain_sdk.Credentials.HmacAlgorithm, dragonchain_sdk.Credentials.Manager.ICredentialManager, Microsoft.Extensions.Logging.ILogger(Of dragonchain_sdk.DragonchainClient))
+  nameWithType: CredentialService.CredentialService(String, String, String, HmacAlgorithm, ICredentialManager, ILogger<DragonchainClient>)
+  nameWithType.vb: CredentialService.CredentialService(String, String, String, HmacAlgorithm, ICredentialManager, ILogger(Of DragonchainClient))
 - uid: dragonchain_sdk.Credentials.CredentialService.#ctor*
   name: CredentialService
   href: api/dragonchain_sdk.Credentials.CredentialService.html#dragonchain_sdk_Credentials_CredentialService__ctor_
@@ -3408,12 +3437,15 @@ references:
   commentId: M:dragonchain_sdk.DragonchainClient.#ctor(System.String,dragonchain_sdk.Credentials.Manager.ICredentialManager,dragonchain_sdk.Credentials.ICredentialService,dragonchain_sdk.Framework.Web.IHttpService,Microsoft.Extensions.Logging.ILogger)
   fullName: dragonchain_sdk.DragonchainClient.DragonchainClient(System.String, dragonchain_sdk.Credentials.Manager.ICredentialManager, dragonchain_sdk.Credentials.ICredentialService, dragonchain_sdk.Framework.Web.IHttpService, Microsoft.Extensions.Logging.ILogger)
   nameWithType: DragonchainClient.DragonchainClient(String, ICredentialManager, ICredentialService, IHttpService, ILogger)
-- uid: dragonchain_sdk.DragonchainClient.#ctor(System.String,Microsoft.Extensions.Configuration.IConfiguration,Microsoft.Extensions.Logging.ILogger)
-  name: DragonchainClient(String, IConfiguration, ILogger)
-  href: api/dragonchain_sdk.DragonchainClient.html#dragonchain_sdk_DragonchainClient__ctor_System_String_Microsoft_Extensions_Configuration_IConfiguration_Microsoft_Extensions_Logging_ILogger_
-  commentId: M:dragonchain_sdk.DragonchainClient.#ctor(System.String,Microsoft.Extensions.Configuration.IConfiguration,Microsoft.Extensions.Logging.ILogger)
-  fullName: dragonchain_sdk.DragonchainClient.DragonchainClient(System.String, Microsoft.Extensions.Configuration.IConfiguration, Microsoft.Extensions.Logging.ILogger)
-  nameWithType: DragonchainClient.DragonchainClient(String, IConfiguration, ILogger)
+- uid: dragonchain_sdk.DragonchainClient.#ctor(System.String,Microsoft.Extensions.Configuration.IConfiguration,Microsoft.Extensions.Logging.ILogger{dragonchain_sdk.DragonchainClient})
+  name: DragonchainClient(String, IConfiguration, ILogger<DragonchainClient>)
+  href: api/dragonchain_sdk.DragonchainClient.html#dragonchain_sdk_DragonchainClient__ctor_System_String_Microsoft_Extensions_Configuration_IConfiguration_Microsoft_Extensions_Logging_ILogger_dragonchain_sdk_DragonchainClient__
+  commentId: M:dragonchain_sdk.DragonchainClient.#ctor(System.String,Microsoft.Extensions.Configuration.IConfiguration,Microsoft.Extensions.Logging.ILogger{dragonchain_sdk.DragonchainClient})
+  name.vb: DragonchainClient(String, IConfiguration, ILogger(Of DragonchainClient))
+  fullName: dragonchain_sdk.DragonchainClient.DragonchainClient(System.String, Microsoft.Extensions.Configuration.IConfiguration, Microsoft.Extensions.Logging.ILogger<dragonchain_sdk.DragonchainClient>)
+  fullName.vb: dragonchain_sdk.DragonchainClient.DragonchainClient(System.String, Microsoft.Extensions.Configuration.IConfiguration, Microsoft.Extensions.Logging.ILogger(Of dragonchain_sdk.DragonchainClient))
+  nameWithType: DragonchainClient.DragonchainClient(String, IConfiguration, ILogger<DragonchainClient>)
+  nameWithType.vb: DragonchainClient.DragonchainClient(String, IConfiguration, ILogger(Of DragonchainClient))
 - uid: dragonchain_sdk.DragonchainClient.#ctor*
   name: DragonchainClient
   href: api/dragonchain_sdk.DragonchainClient.html#dragonchain_sdk_DragonchainClient__ctor_
@@ -3421,12 +3453,15 @@ references:
   isSpec: "True"
   fullName: dragonchain_sdk.DragonchainClient.DragonchainClient
   nameWithType: DragonchainClient.DragonchainClient
-- uid: dragonchain_sdk.DragonchainClient.CreateBulkTransaction(dragonchain_sdk.Transactions.DragonchainBulkTransactions)
-  name: CreateBulkTransaction(DragonchainBulkTransactions)
-  href: api/dragonchain_sdk.DragonchainClient.html#dragonchain_sdk_DragonchainClient_CreateBulkTransaction_dragonchain_sdk_Transactions_DragonchainBulkTransactions_
-  commentId: M:dragonchain_sdk.DragonchainClient.CreateBulkTransaction(dragonchain_sdk.Transactions.DragonchainBulkTransactions)
-  fullName: dragonchain_sdk.DragonchainClient.CreateBulkTransaction(dragonchain_sdk.Transactions.DragonchainBulkTransactions)
-  nameWithType: DragonchainClient.CreateBulkTransaction(DragonchainBulkTransactions)
+- uid: dragonchain_sdk.DragonchainClient.CreateBulkTransaction(System.Collections.Generic.IEnumerable{dragonchain_sdk.Transactions.DragonchainTransactionCreatePayload})
+  name: CreateBulkTransaction(IEnumerable<DragonchainTransactionCreatePayload>)
+  href: api/dragonchain_sdk.DragonchainClient.html#dragonchain_sdk_DragonchainClient_CreateBulkTransaction_System_Collections_Generic_IEnumerable_dragonchain_sdk_Transactions_DragonchainTransactionCreatePayload__
+  commentId: M:dragonchain_sdk.DragonchainClient.CreateBulkTransaction(System.Collections.Generic.IEnumerable{dragonchain_sdk.Transactions.DragonchainTransactionCreatePayload})
+  name.vb: CreateBulkTransaction(IEnumerable(Of DragonchainTransactionCreatePayload))
+  fullName: dragonchain_sdk.DragonchainClient.CreateBulkTransaction(System.Collections.Generic.IEnumerable<dragonchain_sdk.Transactions.DragonchainTransactionCreatePayload>)
+  fullName.vb: dragonchain_sdk.DragonchainClient.CreateBulkTransaction(System.Collections.Generic.IEnumerable(Of dragonchain_sdk.Transactions.DragonchainTransactionCreatePayload))
+  nameWithType: DragonchainClient.CreateBulkTransaction(IEnumerable<DragonchainTransactionCreatePayload>)
+  nameWithType.vb: DragonchainClient.CreateBulkTransaction(IEnumerable(Of DragonchainTransactionCreatePayload))
 - uid: dragonchain_sdk.DragonchainClient.CreateBulkTransaction*
   name: CreateBulkTransaction
   href: api/dragonchain_sdk.DragonchainClient.html#dragonchain_sdk_DragonchainClient_CreateBulkTransaction_
@@ -3499,19 +3534,6 @@ references:
   isSpec: "True"
   fullName: dragonchain_sdk.DragonchainClient.GetBlock
   nameWithType: DragonchainClient.GetBlock
-- uid: dragonchain_sdk.DragonchainClient.GetSecret(System.String)
-  name: GetSecret(String)
-  href: api/dragonchain_sdk.DragonchainClient.html#dragonchain_sdk_DragonchainClient_GetSecret_System_String_
-  commentId: M:dragonchain_sdk.DragonchainClient.GetSecret(System.String)
-  fullName: dragonchain_sdk.DragonchainClient.GetSecret(System.String)
-  nameWithType: DragonchainClient.GetSecret(String)
-- uid: dragonchain_sdk.DragonchainClient.GetSecret*
-  name: GetSecret
-  href: api/dragonchain_sdk.DragonchainClient.html#dragonchain_sdk_DragonchainClient_GetSecret_
-  commentId: Overload:dragonchain_sdk.DragonchainClient.GetSecret
-  isSpec: "True"
-  fullName: dragonchain_sdk.DragonchainClient.GetSecret
-  nameWithType: DragonchainClient.GetSecret
 - uid: dragonchain_sdk.DragonchainClient.GetSmartContract(System.String)
   name: GetSmartContract(String)
   href: api/dragonchain_sdk.DragonchainClient.html#dragonchain_sdk_DragonchainClient_GetSmartContract_System_String_
@@ -4254,12 +4276,15 @@ references:
   commentId: T:dragonchain_sdk.IDragonchainClient
   fullName: dragonchain_sdk.IDragonchainClient
   nameWithType: IDragonchainClient
-- uid: dragonchain_sdk.IDragonchainClient.CreateBulkTransaction(dragonchain_sdk.Transactions.DragonchainBulkTransactions)
-  name: CreateBulkTransaction(DragonchainBulkTransactions)
-  href: api/dragonchain_sdk.IDragonchainClient.html#dragonchain_sdk_IDragonchainClient_CreateBulkTransaction_dragonchain_sdk_Transactions_DragonchainBulkTransactions_
-  commentId: M:dragonchain_sdk.IDragonchainClient.CreateBulkTransaction(dragonchain_sdk.Transactions.DragonchainBulkTransactions)
-  fullName: dragonchain_sdk.IDragonchainClient.CreateBulkTransaction(dragonchain_sdk.Transactions.DragonchainBulkTransactions)
-  nameWithType: IDragonchainClient.CreateBulkTransaction(DragonchainBulkTransactions)
+- uid: dragonchain_sdk.IDragonchainClient.CreateBulkTransaction(System.Collections.Generic.IEnumerable{dragonchain_sdk.Transactions.DragonchainTransactionCreatePayload})
+  name: CreateBulkTransaction(IEnumerable<DragonchainTransactionCreatePayload>)
+  href: api/dragonchain_sdk.IDragonchainClient.html#dragonchain_sdk_IDragonchainClient_CreateBulkTransaction_System_Collections_Generic_IEnumerable_dragonchain_sdk_Transactions_DragonchainTransactionCreatePayload__
+  commentId: M:dragonchain_sdk.IDragonchainClient.CreateBulkTransaction(System.Collections.Generic.IEnumerable{dragonchain_sdk.Transactions.DragonchainTransactionCreatePayload})
+  name.vb: CreateBulkTransaction(IEnumerable(Of DragonchainTransactionCreatePayload))
+  fullName: dragonchain_sdk.IDragonchainClient.CreateBulkTransaction(System.Collections.Generic.IEnumerable<dragonchain_sdk.Transactions.DragonchainTransactionCreatePayload>)
+  fullName.vb: dragonchain_sdk.IDragonchainClient.CreateBulkTransaction(System.Collections.Generic.IEnumerable(Of dragonchain_sdk.Transactions.DragonchainTransactionCreatePayload))
+  nameWithType: IDragonchainClient.CreateBulkTransaction(IEnumerable<DragonchainTransactionCreatePayload>)
+  nameWithType.vb: IDragonchainClient.CreateBulkTransaction(IEnumerable(Of DragonchainTransactionCreatePayload))
 - uid: dragonchain_sdk.IDragonchainClient.CreateBulkTransaction*
   name: CreateBulkTransaction
   href: api/dragonchain_sdk.IDragonchainClient.html#dragonchain_sdk_IDragonchainClient_CreateBulkTransaction_
@@ -4332,19 +4357,6 @@ references:
   isSpec: "True"
   fullName: dragonchain_sdk.IDragonchainClient.GetBlock
   nameWithType: IDragonchainClient.GetBlock
-- uid: dragonchain_sdk.IDragonchainClient.GetSecret(System.String)
-  name: GetSecret(String)
-  href: api/dragonchain_sdk.IDragonchainClient.html#dragonchain_sdk_IDragonchainClient_GetSecret_System_String_
-  commentId: M:dragonchain_sdk.IDragonchainClient.GetSecret(System.String)
-  fullName: dragonchain_sdk.IDragonchainClient.GetSecret(System.String)
-  nameWithType: IDragonchainClient.GetSecret(String)
-- uid: dragonchain_sdk.IDragonchainClient.GetSecret*
-  name: GetSecret
-  href: api/dragonchain_sdk.IDragonchainClient.html#dragonchain_sdk_IDragonchainClient_GetSecret_
-  commentId: Overload:dragonchain_sdk.IDragonchainClient.GetSecret
-  isSpec: "True"
-  fullName: dragonchain_sdk.IDragonchainClient.GetSecret
-  nameWithType: IDragonchainClient.GetSecret
 - uid: dragonchain_sdk.IDragonchainClient.GetSmartContract(System.String)
   name: GetSmartContract(String)
   href: api/dragonchain_sdk.IDragonchainClient.html#dragonchain_sdk_IDragonchainClient_GetSmartContract_System_String_
@@ -4670,25 +4682,6 @@ references:
   commentId: N:dragonchain_sdk.Transactions
   fullName: dragonchain_sdk.Transactions
   nameWithType: dragonchain_sdk.Transactions
-- uid: dragonchain_sdk.Transactions.DragonchainBulkTransactions
-  name: DragonchainBulkTransactions
-  href: api/dragonchain_sdk.Transactions.DragonchainBulkTransactions.html
-  commentId: T:dragonchain_sdk.Transactions.DragonchainBulkTransactions
-  fullName: dragonchain_sdk.Transactions.DragonchainBulkTransactions
-  nameWithType: DragonchainBulkTransactions
-- uid: dragonchain_sdk.Transactions.DragonchainBulkTransactions.Payload
-  name: Payload
-  href: api/dragonchain_sdk.Transactions.DragonchainBulkTransactions.html#dragonchain_sdk_Transactions_DragonchainBulkTransactions_Payload
-  commentId: P:dragonchain_sdk.Transactions.DragonchainBulkTransactions.Payload
-  fullName: dragonchain_sdk.Transactions.DragonchainBulkTransactions.Payload
-  nameWithType: DragonchainBulkTransactions.Payload
-- uid: dragonchain_sdk.Transactions.DragonchainBulkTransactions.Payload*
-  name: Payload
-  href: api/dragonchain_sdk.Transactions.DragonchainBulkTransactions.html#dragonchain_sdk_Transactions_DragonchainBulkTransactions_Payload_
-  commentId: Overload:dragonchain_sdk.Transactions.DragonchainBulkTransactions.Payload
-  isSpec: "True"
-  fullName: dragonchain_sdk.Transactions.DragonchainBulkTransactions.Payload
-  nameWithType: DragonchainBulkTransactions.Payload
 - uid: dragonchain_sdk.Transactions.DragonchainTransactionCreatePayload
   name: DragonchainTransactionCreatePayload
   href: api/dragonchain_sdk.Transactions.DragonchainTransactionCreatePayload.html

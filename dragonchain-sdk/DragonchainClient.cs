@@ -77,9 +77,9 @@ namespace dragonchain_sdk
         /// </summary>
         /// <param name="transactionBulkObject">array of transactions</param>
         /// <returns></returns>
-        public async Task<ApiResponse<DragonchainTransactionCreateResponse>> CreateBulkTransaction(DragonchainBulkTransactions transactionBulkObject)
+        public async Task<ApiResponse<DragonchainTransactionCreateResponse>> CreateBulkTransaction(IEnumerable<DragonchainTransactionCreatePayload> transactionObjects)
         {
-            return await _httpService.PostAsync<DragonchainTransactionCreateResponse>("/transaction_bulk", transactionBulkObject);
+            return await _httpService.PostAsync<DragonchainTransactionCreateResponse>("/transaction_bulk", transactionObjects);
         }
 
         /// <summary>
