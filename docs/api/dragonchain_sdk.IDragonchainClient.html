@@ -143,7 +143,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">Task&lt;ApiResponse&lt;DragonchainContractCreateResponse&gt;&gt; CreateContract(ContractCreationSchema body)</code></pre>
+    <pre><code class="lang-csharp hljs">Task&lt;ApiResponse&lt;DragonchainContractCreateUpdateResponse&gt;&gt; CreateContract(ContractCreationSchema body)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -172,7 +172,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<a class="xref" href="dragonchain_sdk.Framework.Web.ApiResponse-1.html">ApiResponse</a>&lt;<a class="xref" href="dragonchain_sdk.Contracts.DragonchainContractCreateResponse.html">DragonchainContractCreateResponse</a>&gt;&gt;</td>
+        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<a class="xref" href="dragonchain_sdk.Framework.Web.ApiResponse-1.html">ApiResponse</a>&lt;<a class="xref" href="dragonchain_sdk.Contracts.DragonchainContractCreateUpdateResponse.html">DragonchainContractCreateUpdateResponse</a>&gt;&gt;</td>
         <td></td>
       </tr>
     </tbody>
@@ -237,7 +237,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">Task&lt;ApiResponse&lt;UpdateResponse&gt;&gt; DeleteSmartContract(string contractId)</code></pre>
+    <pre><code class="lang-csharp hljs">Task&lt;ApiResponse&lt;SmartContractAtRest&gt;&gt; DeleteSmartContract(string contractId)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -266,7 +266,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<a class="xref" href="dragonchain_sdk.Framework.Web.ApiResponse-1.html">ApiResponse</a>&lt;<a class="xref" href="dragonchain_sdk.Shared.UpdateResponse.html">UpdateResponse</a>&gt;&gt;</td>
+        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<a class="xref" href="dragonchain_sdk.Framework.Web.ApiResponse-1.html">ApiResponse</a>&lt;<a class="xref" href="dragonchain_sdk.Contracts.SmartContractAtRest.html">SmartContractAtRest</a>&gt;&gt;</td>
         <td></td>
       </tr>
     </tbody>
@@ -414,18 +414,18 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/astinnos/dragonchain-sdk-dotnetstandard/new/master/apiSpec/new?filename=dragonchain_sdk_IDragonchainClient_GetSmartContractHeap_System_String_System_String_System_Boolean_.md&amp;value=---%0Auid%3A%20dragonchain_sdk.IDragonchainClient.GetSmartContractHeap(System.String%2CSystem.String%2CSystem.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/astinnos/dragonchain-sdk-dotnetstandard/new/master/apiSpec/new?filename=dragonchain_sdk_IDragonchainClient_GetSmartContractHeap_System_String_System_String_.md&amp;value=---%0Auid%3A%20dragonchain_sdk.IDragonchainClient.GetSmartContractHeap(System.String%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/astinnos/dragonchain-sdk-dotnetstandard/blob/master/dragonchain-sdk/IDragonchainClient.cs/#L24">View Source</a>
   </span>
   <a id="dragonchain_sdk_IDragonchainClient_GetSmartContractHeap_" data-uid="dragonchain_sdk.IDragonchainClient.GetSmartContractHeap*"></a>
-  <h4 id="dragonchain_sdk_IDragonchainClient_GetSmartContractHeap_System_String_System_String_System_Boolean_" data-uid="dragonchain_sdk.IDragonchainClient.GetSmartContractHeap(System.String,System.String,System.Boolean)">GetSmartContractHeap(String, String, Boolean)</h4>
+  <h4 id="dragonchain_sdk_IDragonchainClient_GetSmartContractHeap_System_String_System_String_" data-uid="dragonchain_sdk.IDragonchainClient.GetSmartContractHeap(System.String,System.String)">GetSmartContractHeap(String, String)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">Task&lt;ApiResponse&lt;string&gt;&gt; GetSmartContractHeap(string key, string scName, bool jsonParse = false)</code></pre>
+    <pre><code class="lang-csharp hljs">Task&lt;ApiResponse&lt;string&gt;&gt; GetSmartContractHeap(string key, string scName)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -445,11 +445,6 @@
       <tr>
         <td><span class="xref">System.String</span></td>
         <td><span class="parametername">scName</span></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td><span class="xref">System.Boolean</span></td>
-        <td><span class="parametername">jsonParse</span></td>
         <td></td>
       </tr>
     </tbody>
@@ -1131,7 +1126,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">Task&lt;ApiResponse&lt;UpdateResponse&gt;&gt; UpdateSmartContract(string contractId, string image = null, string cmd = null, SmartContractExecutionOrder? executionOrder = default(SmartContractExecutionOrder? ), SmartContractDesiredState? desiredState = default(SmartContractDesiredState? ), string[] args = null, object env = null, object secrets = null, int? seconds = default(int? ), string cron = null, string auth = null)</code></pre>
+    <pre><code class="lang-csharp hljs">Task&lt;ApiResponse&lt;DragonchainContractCreateUpdateResponse&gt;&gt; UpdateSmartContract(string contractId, string image = null, string cmd = null, SmartContractExecutionOrder? executionOrder = default(SmartContractExecutionOrder? ), SmartContractDesiredState? desiredState = default(SmartContractDesiredState? ), string[] args = null, object env = null, object secrets = null, int? seconds = default(int? ), string cron = null, string auth = null)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1210,7 +1205,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<a class="xref" href="dragonchain_sdk.Framework.Web.ApiResponse-1.html">ApiResponse</a>&lt;<a class="xref" href="dragonchain_sdk.Shared.UpdateResponse.html">UpdateResponse</a>&gt;&gt;</td>
+        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<a class="xref" href="dragonchain_sdk.Framework.Web.ApiResponse-1.html">ApiResponse</a>&lt;<a class="xref" href="dragonchain_sdk.Contracts.DragonchainContractCreateUpdateResponse.html">DragonchainContractCreateUpdateResponse</a>&gt;&gt;</td>
         <td></td>
       </tr>
     </tbody>

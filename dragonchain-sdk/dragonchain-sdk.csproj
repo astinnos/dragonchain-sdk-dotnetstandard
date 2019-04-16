@@ -6,7 +6,7 @@
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
     <PackageTags>dragonchain sdk</PackageTags>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Version>1.0.0.4-alpha</Version>
+    <Version>1.0.0.5-alpha</Version>
     <PackageId>dragonchain-sdk-dotnet</PackageId>
     <Description>Unofficial Dragonchain SDK for .Net</Description>
     <PackageProjectUrl>https://astinnos.github.io/dragonchain-sdk-dotnetstandard/</PackageProjectUrl>    

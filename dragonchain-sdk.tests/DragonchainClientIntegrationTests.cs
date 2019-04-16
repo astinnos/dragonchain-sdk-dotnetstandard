@@ -123,30 +123,55 @@ namespace dragonchain_sdk.tests
             }
         }
 
-        //[Test]
-        //public async Task CreateContract_Test()
-        //{
-        //    if (AreLevel1TestsConfigured())
-        //    {                        
-        //        var createContractResponse = await _dragonchainLevel1Client.CreateContract(new ContractCreationSchema
-        //        {
-        //            Version = "2",                    
-        //            TransactionType = "calculator",                    
-        //            Image = "image_name",
-        //            Cmd = "node",
-        //            Arguments = new string[] { "index.js" },
-        //            ExecutionOrder = SmartContractExecutionOrder.Parallel,
+        [Test]
+        public async Task CreateContract_Test()
+        {
+            // use task delay to ensure contract is ready to be retrieved and deleted
+            if (AreLevel1TestsConfigured())
+            {
+                var createContractResponse = await _dragonchainLevel1Client.CreateContract(new ContractCreationSchema
+                {
+                    Version = "3",
+                    TransactionType = "Test",
+                    Image = "ubuntu:latest",
+                    Cmd = "python3.6",
+                    Arguments = new string[] { "something" },
+                    EnvironmentVariables = new { Test = "env" },
+                    ExecutionOrder = SmartContractExecutionOrder.Serial,
+
+                });
+                Assert.AreEqual(202, createContractResponse.Status);
+                Assert.IsTrue(createContractResponse.Ok);
+                Assert.IsInstanceOf<DragonchainContractCreateUpdateResponse>(createContractResponse.Response);
+                await Task.Delay(30000);
+                try
+                {
+                    var getContractResponse = await _dragonchainLevel1Client.GetSmartContract(createContractResponse.Response.Success.Id);
+                    Assert.AreEqual(200, getContractResponse.Status);
+                    Assert.IsTrue(getContractResponse.Ok);
+                    Assert.IsInstanceOf<SmartContractAtRest>(getContractResponse.Response);
+                    Assert.AreEqual(createContractResponse.Response.Success.Id, getContractResponse.Response.Id);
                     
-        //        });
-        //        Assert.AreEqual(200, createContractResponse.Status);
-        //        Assert.IsTrue(createContractResponse.Ok);
-        //        Assert.IsInstanceOf<DragonchainContractCreateResponse>(createContractResponse.Response);                
-        //    }
-        //    else
-        //    {
-        //        Assert.Warn("User secrets - dragonchain-sdk.tests-79a3edd0-2092-40a2-a04d-dcb46d5ca9ed not available");
-        //    }
-        //}
+                    var updateContractResponse = await _dragonchainLevel1Client.UpdateSmartContract(createContractResponse.Response.Success.Id, cmd: "python3.7");
+                    Assert.AreEqual(202, updateContractResponse.Status);
+                    Assert.IsTrue(updateContractResponse.Ok);
+                    Assert.IsInstanceOf<DragonchainContractCreateUpdateResponse>(updateContractResponse.Response);
+                    Assert.AreEqual("updating", updateContractResponse.Response.Success.Status.State);
+                    await Task.Delay(30000);
+                }
+                finally
+                {
+                    var deleteContractResponse = await _dragonchainLevel1Client.DeleteSmartContract(createContractResponse.Response.Success.Id);
+                    Assert.AreEqual(202, deleteContractResponse.Status);
+                    Assert.IsTrue(deleteContractResponse.Ok);
+                    Assert.IsInstanceOf<SmartContractAtRest>(deleteContractResponse.Response);
+                }
+            }
+            else
+            {
+                Assert.Warn("User secrets - dragonchain-sdk.tests-79a3edd0-2092-40a2-a04d-dcb46d5ca9ed not available");
+            }
+        }
 
         [Test]
         public async Task GetStatus_Test()

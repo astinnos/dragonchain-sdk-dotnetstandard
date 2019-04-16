@@ -87,9 +87,9 @@ namespace dragonchain_sdk
         /// </summary>
         /// <param name="body"></param>
         /// <returns></returns>
-        public async Task<ApiResponse<DragonchainContractCreateResponse>> CreateContract(ContractCreationSchema body)
+        public async Task<ApiResponse<DragonchainContractCreateUpdateResponse>> CreateContract(ContractCreationSchema body)
         {
-            return await _httpService.PostAsync<DragonchainContractCreateResponse>("/contract", body);            
+            return await _httpService.PostAsync<DragonchainContractCreateUpdateResponse>("/contract", body);            
         }
                 
         /// <summary>
@@ -109,9 +109,9 @@ namespace dragonchain_sdk
         /// </summary>
         /// <param name="contractId"></param>
         /// <returns></returns>
-        public async Task<ApiResponse<UpdateResponse>> DeleteSmartContract(string contractId)
+        public async Task<ApiResponse<SmartContractAtRest>> DeleteSmartContract(string contractId)
         {
-            return await _httpService.DeleteAsync<UpdateResponse>($"/contract/{contractId}");
+            return await _httpService.DeleteAsync<SmartContractAtRest>($"/contract/{contractId}");
         }
 
         /// <summary>
@@ -148,11 +148,10 @@ namespace dragonchain_sdk
         /// Get from the smart contract heap This function, (unlike other SDK methods) returns raw utf-8 text by design. 
         /// If you expect the result to be parsed json pass true as the jsonParse parameter.
         /// </summary>
-        /// <param name="key"></param>
-        /// <param name="scName"></param>
-        /// <param name="jsonParse"></param>
+        /// <param name="key">the key under which data has been stored in heap</param>
+        /// <param name="scName">scName the name of smart contract</param>        
         /// <returns></returns>
-        public async Task<ApiResponse<string>> GetSmartContractHeap(string key, string scName, bool jsonParse = false)
+        public async Task<ApiResponse<string>> GetSmartContractHeap(string key, string scName)
         {
             return await _httpService.GetAsync<string>($"/get/{scName}/{key}");            
         }
@@ -350,7 +349,7 @@ namespace dragonchain_sdk
         /// <param name="cron">The rate of scheduled execution specified as a cron</param>
         /// <param name="auth">basic-auth for pulling docker images, base64 encoded (e.g. username:password)</param>
         /// <returns></returns>
-        public async Task<ApiResponse<UpdateResponse>> UpdateSmartContract(string contractId, 
+        public async Task<ApiResponse<DragonchainContractCreateUpdateResponse>> UpdateSmartContract(string contractId, 
             string image = null, 
             string cmd = null, 
             SmartContractExecutionOrder? executionOrder = null, 
@@ -379,7 +378,7 @@ namespace dragonchain_sdk
                 Auth = !string.IsNullOrWhiteSpace(auth) ? auth : null
             };           
 
-            return await _httpService.PutAsync<UpdateResponse>($"/contract/{contractId}", body);            
+            return await _httpService.PutAsync<DragonchainContractCreateUpdateResponse>($"/contract/{contractId}", body);            
         }
                 
         /// <summary>

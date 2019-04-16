@@ -148,7 +148,7 @@ namespace dragonchain_sdk.tests
         {
             var id = "banana";
             await _dragonchainClient.DeleteSmartContract(id);
-            _httpService.Verify(service => service.DeleteAsync<UpdateResponse>($"/contract/{id}"), Times.Once);
+            _httpService.Verify(service => service.DeleteAsync<SmartContractAtRest>($"/contract/{id}"), Times.Once);
         }
 
         [Test]
@@ -178,7 +178,7 @@ namespace dragonchain_sdk.tests
                 Arguments = new string[] { "-m cool" }
             };
             await _dragonchainClient.CreateContract(contractPayload);
-            _httpService.Verify(service => service.PostAsync<DragonchainContractCreateResponse>("/contract", contractPayload), Times.Once);
+            _httpService.Verify(service => service.PostAsync<DragonchainContractCreateUpdateResponse>("/contract", contractPayload), Times.Once);
         }
 
         [Test]
@@ -188,7 +188,7 @@ namespace dragonchain_sdk.tests
             var status = SmartContractDesiredState.Active;        
             
             await _dragonchainClient.UpdateSmartContract(id, null, null, null, status);
-            _httpService.Verify(service => service.PutAsync<UpdateResponse>($"/contract/{id}", It.IsAny<object>()), Times.Once);
+            _httpService.Verify(service => service.PutAsync<DragonchainContractCreateUpdateResponse>($"/contract/{id}", It.IsAny<object>()), Times.Once);
         }
     }
 }

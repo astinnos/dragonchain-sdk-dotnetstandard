@@ -1508,25 +1508,25 @@ references:
   isSpec: "True"
   fullName: dragonchain_sdk.Contracts.ContractStatus.Timestamp
   nameWithType: ContractStatus.Timestamp
-- uid: dragonchain_sdk.Contracts.DragonchainContractCreateResponse
-  name: DragonchainContractCreateResponse
-  href: api/dragonchain_sdk.Contracts.DragonchainContractCreateResponse.html
-  commentId: T:dragonchain_sdk.Contracts.DragonchainContractCreateResponse
-  fullName: dragonchain_sdk.Contracts.DragonchainContractCreateResponse
-  nameWithType: DragonchainContractCreateResponse
-- uid: dragonchain_sdk.Contracts.DragonchainContractCreateResponse.Success
+- uid: dragonchain_sdk.Contracts.DragonchainContractCreateUpdateResponse
+  name: DragonchainContractCreateUpdateResponse
+  href: api/dragonchain_sdk.Contracts.DragonchainContractCreateUpdateResponse.html
+  commentId: T:dragonchain_sdk.Contracts.DragonchainContractCreateUpdateResponse
+  fullName: dragonchain_sdk.Contracts.DragonchainContractCreateUpdateResponse
+  nameWithType: DragonchainContractCreateUpdateResponse
+- uid: dragonchain_sdk.Contracts.DragonchainContractCreateUpdateResponse.Success
   name: Success
-  href: api/dragonchain_sdk.Contracts.DragonchainContractCreateResponse.html#dragonchain_sdk_Contracts_DragonchainContractCreateResponse_Success
-  commentId: P:dragonchain_sdk.Contracts.DragonchainContractCreateResponse.Success
-  fullName: dragonchain_sdk.Contracts.DragonchainContractCreateResponse.Success
-  nameWithType: DragonchainContractCreateResponse.Success
-- uid: dragonchain_sdk.Contracts.DragonchainContractCreateResponse.Success*
+  href: api/dragonchain_sdk.Contracts.DragonchainContractCreateUpdateResponse.html#dragonchain_sdk_Contracts_DragonchainContractCreateUpdateResponse_Success
+  commentId: P:dragonchain_sdk.Contracts.DragonchainContractCreateUpdateResponse.Success
+  fullName: dragonchain_sdk.Contracts.DragonchainContractCreateUpdateResponse.Success
+  nameWithType: DragonchainContractCreateUpdateResponse.Success
+- uid: dragonchain_sdk.Contracts.DragonchainContractCreateUpdateResponse.Success*
   name: Success
-  href: api/dragonchain_sdk.Contracts.DragonchainContractCreateResponse.html#dragonchain_sdk_Contracts_DragonchainContractCreateResponse_Success_
-  commentId: Overload:dragonchain_sdk.Contracts.DragonchainContractCreateResponse.Success
+  href: api/dragonchain_sdk.Contracts.DragonchainContractCreateUpdateResponse.html#dragonchain_sdk_Contracts_DragonchainContractCreateUpdateResponse_Success_
+  commentId: Overload:dragonchain_sdk.Contracts.DragonchainContractCreateUpdateResponse.Success
   isSpec: "True"
-  fullName: dragonchain_sdk.Contracts.DragonchainContractCreateResponse.Success
-  nameWithType: DragonchainContractCreateResponse.Success
+  fullName: dragonchain_sdk.Contracts.DragonchainContractCreateUpdateResponse.Success
+  nameWithType: DragonchainContractCreateUpdateResponse.Success
 - uid: dragonchain_sdk.Contracts.DragonchainSmartContractQueryResult
   name: DragonchainSmartContractQueryResult
   href: api/dragonchain_sdk.Contracts.DragonchainSmartContractQueryResult.html
@@ -3547,12 +3547,12 @@ references:
   isSpec: "True"
   fullName: dragonchain_sdk.DragonchainClient.GetSmartContract
   nameWithType: DragonchainClient.GetSmartContract
-- uid: dragonchain_sdk.DragonchainClient.GetSmartContractHeap(System.String,System.String,System.Boolean)
-  name: GetSmartContractHeap(String, String, Boolean)
-  href: api/dragonchain_sdk.DragonchainClient.html#dragonchain_sdk_DragonchainClient_GetSmartContractHeap_System_String_System_String_System_Boolean_
-  commentId: M:dragonchain_sdk.DragonchainClient.GetSmartContractHeap(System.String,System.String,System.Boolean)
-  fullName: dragonchain_sdk.DragonchainClient.GetSmartContractHeap(System.String, System.String, System.Boolean)
-  nameWithType: DragonchainClient.GetSmartContractHeap(String, String, Boolean)
+- uid: dragonchain_sdk.DragonchainClient.GetSmartContractHeap(System.String,System.String)
+  name: GetSmartContractHeap(String, String)
+  href: api/dragonchain_sdk.DragonchainClient.html#dragonchain_sdk_DragonchainClient_GetSmartContractHeap_System_String_System_String_
+  commentId: M:dragonchain_sdk.DragonchainClient.GetSmartContractHeap(System.String,System.String)
+  fullName: dragonchain_sdk.DragonchainClient.GetSmartContractHeap(System.String, System.String)
+  nameWithType: DragonchainClient.GetSmartContractHeap(String, String)
 - uid: dragonchain_sdk.DragonchainClient.GetSmartContractHeap*
   name: GetSmartContractHeap
   href: api/dragonchain_sdk.DragonchainClient.html#dragonchain_sdk_DragonchainClient_GetSmartContractHeap_
@@ -4370,12 +4370,12 @@ references:
   isSpec: "True"
   fullName: dragonchain_sdk.IDragonchainClient.GetSmartContract
   nameWithType: IDragonchainClient.GetSmartContract
-- uid: dragonchain_sdk.IDragonchainClient.GetSmartContractHeap(System.String,System.String,System.Boolean)
-  name: GetSmartContractHeap(String, String, Boolean)
-  href: api/dragonchain_sdk.IDragonchainClient.html#dragonchain_sdk_IDragonchainClient_GetSmartContractHeap_System_String_System_String_System_Boolean_
-  commentId: M:dragonchain_sdk.IDragonchainClient.GetSmartContractHeap(System.String,System.String,System.Boolean)
-  fullName: dragonchain_sdk.IDragonchainClient.GetSmartContractHeap(System.String, System.String, System.Boolean)
-  nameWithType: IDragonchainClient.GetSmartContractHeap(String, String, Boolean)
+- uid: dragonchain_sdk.IDragonchainClient.GetSmartContractHeap(System.String,System.String)
+  name: GetSmartContractHeap(String, String)
+  href: api/dragonchain_sdk.IDragonchainClient.html#dragonchain_sdk_IDragonchainClient_GetSmartContractHeap_System_String_System_String_
+  commentId: M:dragonchain_sdk.IDragonchainClient.GetSmartContractHeap(System.String,System.String)
+  fullName: dragonchain_sdk.IDragonchainClient.GetSmartContractHeap(System.String, System.String)
+  nameWithType: IDragonchainClient.GetSmartContractHeap(String, String)
 - uid: dragonchain_sdk.IDragonchainClient.GetSmartContractHeap*
   name: GetSmartContractHeap
   href: api/dragonchain_sdk.IDragonchainClient.html#dragonchain_sdk_IDragonchainClient_GetSmartContractHeap_

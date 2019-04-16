@@ -365,11 +365,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/dragonchain_sdk.Contracts.DragonchainContractCreateResponse.yml",
+      "source_relative_path": "api/dragonchain_sdk.Contracts.DragonchainContractCreateUpdateResponse.yml",
       "output": {
         ".html": {
-          "relative_path": "api/dragonchain_sdk.Contracts.DragonchainContractCreateResponse.html",
-          "hash": "TOBGaFPONgtiiu/fBWX7ag=="
+          "relative_path": "api/dragonchain_sdk.Contracts.DragonchainContractCreateUpdateResponse.html",
+          "hash": "/yC7HtT6MHL08YyUTo2fiw=="
         }
       },
       "is_incremental": false,
@@ -777,7 +777,7 @@
       "output": {
         ".html": {
           "relative_path": "api/dragonchain_sdk.Contracts.html",
-          "hash": "RxK/6zs3TL1+AjMUW0EXlw=="
+          "hash": "fcJ/gAcb/Vl9QtHLBh7spQ=="
         }
       },
       "is_incremental": false,
@@ -981,7 +981,7 @@
       "output": {
         ".html": {
           "relative_path": "api/dragonchain_sdk.DragonchainClient.html",
-          "hash": "q1E3h6539JHFuuoaU14yBQ=="
+          "hash": "IxcTdIgQ5F5VGA28PUH6cg=="
         }
       },
       "is_incremental": false,
@@ -1101,7 +1101,7 @@
       "output": {
         ".html": {
           "relative_path": "api/dragonchain_sdk.IDragonchainClient.html",
-          "hash": "Q8a9GNbQkdS0xUbNVkFFWg=="
+          "hash": "oN2UTW65ZZt8UsXaVxG1Kw=="
         }
       },
       "is_incremental": false,
@@ -1329,7 +1329,7 @@
       "output": {
         ".html": {
           "relative_path": "api/toc.html",
-          "hash": "WvAKgc7jpW08SZ3Zbd8x2g=="
+          "hash": "upurbEF5pcEUUFtrocbJKQ=="
         }
       },
       "is_incremental": false,
@@ -1391,12 +1391,18 @@
         "skipped_file_count": 0
       },
       "processors": {
-        "TocDocumentProcessor": {
+        "ResourceDocumentProcessor": {
           "can_incremental": false,
-          "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+          "details": "Processor ResourceDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
           "incrementalPhase": "build",
           "total_file_count": 0,
           "skipped_file_count": 0
+        },
+        "ManagedReferenceDocumentProcessor": {
+          "can_incremental": true,
+          "incrementalPhase": "build",
+          "total_file_count": 110,
+          "skipped_file_count": 106
         },
         "ConceptualDocumentProcessor": {
           "can_incremental": true,
@@ -1404,15 +1410,9 @@
           "total_file_count": 1,
           "skipped_file_count": 1
         },
-        "ManagedReferenceDocumentProcessor": {
-          "can_incremental": true,
-          "incrementalPhase": "build",
-          "total_file_count": 110,
-          "skipped_file_count": 105
-        },
-        "ResourceDocumentProcessor": {
+        "TocDocumentProcessor": {
           "can_incremental": false,
-          "details": "Processor ResourceDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+          "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
           "incrementalPhase": "build",
           "total_file_count": 0,
           "skipped_file_count": 0
