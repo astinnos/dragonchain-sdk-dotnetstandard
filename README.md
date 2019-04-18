@@ -264,3 +264,6 @@ You can also create your own implemnations of ILogger
 var logger = new MyLogger();
 var client = new DragonchainClient(myDcId, config, logger);                
 ```
+
+## Official Github
+https://github.com/dragonchain-inc
