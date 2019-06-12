@@ -51,15 +51,11 @@ var totalTransactionsCount = searchResult.Response.Total;
 var transactions = searchResult.Response.Results;
 ```
 
-#### Register Transaction Type
+#### Create Transaction Type
 
 ```csharp
-var registerTransactionTypeResult = await _dragonchainLevel1Client.RegisterTransactionType(
-new TransactionTypeStructure
-{
-    Version = "1",
-    TransactionType = "apple",
-    CustomIndexes = new List<CustomIndexStructure>
+var transactionTypeSimpleResponse = await _dragonchainLevel1Client.CreateTransactionType("NewType", 
+    new List<CustomIndexStructure>
     {
         new CustomIndexStructure{ Key ="SomeKey", Path="SomePath" }
     }
@@ -69,14 +65,7 @@ new TransactionTypeStructure
 #### Create a Transaction
 
 ```csharp
-var newTransaction = new DragonchainTransactionCreatePayload
-{
-    TransactionType = "apple",
-    Version = "1",
-    Tag = "pottery",
-    Payload = new {}
-};
-var createResult = await _dragonchainLevel1Client.CreateTransaction(newTransaction);
+var transactionCreateResponse = await _dragonchainLevel1Client.CreateTransaction("apple", new {}, "pottery", "http://mycallbackUrl");
 ```
 #### Inject into Asp.net Core Web App
 
