@@ -20,15 +20,6 @@ using dragonchain_sdk;
 using dragonchain_sdk.Framework.Web;
 ```
 
-#### OverrideCredentials
-
-This is fine for quick tests. For actual production use, you should inject an implementation of Microsoft.Extensions.Configuration.IConfiguration. Read here for more information [Mircosoft Configuration Docs](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/configuration/?view=aspnetcore-2.2).   
-[Examples](#configuration)
-
-```csharp
-client.OverrideCredentials("AUTH_KEY_ID", "AUTH_KEY");
-```
-
 #### GetBlock
 
 ```csharp
