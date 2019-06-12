@@ -1,17 +1,18 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Configuration;
 using NUnit.Framework;
-using dragonchain_sdk.Credentials;
-using dragonchain_sdk.Status;
-using dragonchain_sdk.Transactions.L1;
 using dragonchain_sdk.Blocks;
 using dragonchain_sdk.Contracts;
+using dragonchain_sdk.Credentials;
+using dragonchain_sdk.Framework.Web;
+using dragonchain_sdk.Status;
 using dragonchain_sdk.Transactions;
-using dragonchain_sdk.Shared;
+using dragonchain_sdk.Transactions.Bulk;
+using dragonchain_sdk.Transactions.L1;
 using dragonchain_sdk.Transactions.Types;
-using dragonchain_sdk.DragonNet;
 
 namespace dragonchain_sdk.tests
 {
@@ -62,51 +63,46 @@ namespace dragonchain_sdk.tests
             {
                 // register transaction type test
                 var transactionType = "test";
-                var registerTransactionTypeResult = await _dragonchainLevel1Client.RegisterTransactionType(new TransactionTypeStructure
-                {
-                    Version = "1",
-                    TransactionType = transactionType,
-                    CustomIndexes = new List<CustomIndexStructure>
+                var registerTransactionTypeResult = await _dragonchainLevel1Client.CreateTransactionType(transactionType, new List<TransactionTypeCustomIndex>
                     {
-                        new CustomIndexStructure{ Key ="TestKey", Path="TestPath" }
+                        new TransactionTypeCustomIndex{ Key ="TestKey", Path="TestPath" }
                     }
-                });
+                );
                 Assert.AreEqual(200, registerTransactionTypeResult.Status);
                 Assert.IsTrue(registerTransactionTypeResult.Ok);
-                Assert.IsInstanceOf<UpdateResponse>(registerTransactionTypeResult.Response);
+                Assert.IsInstanceOf<TransactionTypeSimpleResponse>(registerTransactionTypeResult.Response);
 
                 try
                 {
                     // update transaction type test
-                    var updateTransactionTypeResult = await _dragonchainLevel1Client.UpdateTransactionType(transactionType, new List<CustomIndexStructure>
+                    var updateTransactionTypeResult = await _dragonchainLevel1Client.UpdateTransactionType(transactionType, new List<TransactionTypeCustomIndex>
                     {
-                        new CustomIndexStructure{ Key ="NewTestKey", Path="NewTestPath" }
+                        new TransactionTypeCustomIndex{ Key ="NewTestKey", Path="NewTestPath" }
                     });
                     Assert.AreEqual(200, updateTransactionTypeResult.Status);
                     Assert.IsTrue(updateTransactionTypeResult.Ok);
-                    Assert.IsInstanceOf<UpdateResponse>(updateTransactionTypeResult.Response);
+                    Assert.IsInstanceOf<TransactionTypeSimpleResponse>(updateTransactionTypeResult.Response);
 
-                    // create transaction test
-                    var newTransaction = new DragonchainTransactionCreatePayload
-                    {
-                        TransactionType = transactionType,
-                        Version = "1",
-                        Tag = "pottery",
-                        Payload = new {}
-                    };
-                    var createResult = await _dragonchainLevel1Client.CreateTransaction(newTransaction);
+                    // create transaction test                    
+                    var createResult = await _dragonchainLevel1Client.CreateTransaction(transactionType, new { }, "pottery");
                     Assert.AreEqual(201, createResult.Status);
                     Assert.IsTrue(createResult.Ok);
                     Assert.IsInstanceOf<DragonchainTransactionCreateResponse>(createResult.Response);
                     Assert.IsNotEmpty(createResult.Response.TransactionId);
 
                     // create bulk transaction test
+                    var newBulkTransaction = new BulkTransactionPayload
+                    {
+                        TransactionType = transactionType,                        
+                        Tag = "pottery",
+                        Payload = new { }
+                    };
                     var createBulkResult = await _dragonchainLevel1Client.CreateBulkTransaction(                    
-                        new List<DragonchainTransactionCreatePayload> { newTransaction, newTransaction, newTransaction }
+                        new List<BulkTransactionPayload> { newBulkTransaction, newBulkTransaction, newBulkTransaction }
                     );
                     Assert.AreEqual(207, createBulkResult.Status);
                     Assert.IsTrue(createBulkResult.Ok);
-                    Assert.IsInstanceOf<DragonchainTransactionCreateResponse>(createBulkResult.Response);
+                    Assert.IsInstanceOf<DragonchainBulkTransactionCreateResponse>(createBulkResult.Response);
                 }
                 finally
                 {
@@ -114,7 +110,7 @@ namespace dragonchain_sdk.tests
                     var deleteResult = await _dragonchainLevel1Client.DeleteTransactionType(transactionType);
                     Assert.AreEqual(200, deleteResult.Status);
                     Assert.IsTrue(deleteResult.Ok);
-                    Assert.IsInstanceOf<UpdateResponse>(deleteResult.Response);
+                    Assert.IsInstanceOf<TransactionTypeSimpleResponse>(deleteResult.Response);
                 }
             }
             else
@@ -129,24 +125,15 @@ namespace dragonchain_sdk.tests
             // use task delay to ensure contract is ready to be retrieved and deleted
             if (AreLevel1TestsConfigured())
             {
-                var createContractResponse = await _dragonchainLevel1Client.CreateContract(new ContractCreationSchema
-                {
-                    Version = "3",
-                    TransactionType = "Test",
-                    Image = "ubuntu:latest",
-                    Cmd = "python3.6",
-                    Arguments = new string[] { "something" },
-                    EnvironmentVariables = new { Test = "env" },
-                    ExecutionOrder = SmartContractExecutionOrder.Serial,
-
-                });
+                var createContractResponse = await _dragonchainLevel1Client.CreateSmartContract("Test", "ubuntu:latest", "python3.6", new string[] { "something" },
+                    SmartContractExecutionOrder.Serial, new { Test = "env" });
                 Assert.AreEqual(202, createContractResponse.Status);
                 Assert.IsTrue(createContractResponse.Ok);
-                Assert.IsInstanceOf<DragonchainContractCreateUpdateResponse>(createContractResponse.Response);
+                Assert.IsInstanceOf<DragonchainContractResponse>(createContractResponse.Response);
                 await Task.Delay(30000);
                 try
                 {
-                    var getContractResponse = await _dragonchainLevel1Client.GetSmartContract(createContractResponse.Response.Success.Id);
+                    var getContractResponse = await _dragonchainLevel1Client.GetSmartContract(createContractResponse.Response.Success.Id, null);
                     Assert.AreEqual(200, getContractResponse.Status);
                     Assert.IsTrue(getContractResponse.Ok);
                     Assert.IsInstanceOf<SmartContractAtRest>(getContractResponse.Response);
@@ -155,7 +142,7 @@ namespace dragonchain_sdk.tests
                     var updateContractResponse = await _dragonchainLevel1Client.UpdateSmartContract(createContractResponse.Response.Success.Id, cmd: "python3.7");
                     Assert.AreEqual(202, updateContractResponse.Status);
                     Assert.IsTrue(updateContractResponse.Ok);
-                    Assert.IsInstanceOf<DragonchainContractCreateUpdateResponse>(updateContractResponse.Response);
+                    Assert.IsInstanceOf<DragonchainContractResponse>(updateContractResponse.Response);
                     Assert.AreEqual("updating", updateContractResponse.Response.Success.Status.State);
                     await Task.Delay(30000);
                 }
@@ -198,7 +185,7 @@ namespace dragonchain_sdk.tests
                 var queryResult = await _dragonchainLevel1Client.QueryTransactions();
                 Assert.AreEqual(200, queryResult.Status);
                 Assert.IsTrue(queryResult.Ok);
-                Assert.IsInstanceOf<L1DragonchainTransactionQueryResult>(queryResult.Response);
+                Assert.IsInstanceOf<QueryResult<L1DragonchainTransactionFull>>(queryResult.Response);
 
                 //if (queryResult.Response.Results.Any())
                 //{
@@ -224,7 +211,7 @@ namespace dragonchain_sdk.tests
                 var queryResult = await _dragonchainLevel1Client.QueryBlocks();
                 Assert.AreEqual(200, queryResult.Status);
                 Assert.IsTrue(queryResult.Ok);
-                Assert.IsInstanceOf<DragonchainBlockQueryResult>(queryResult.Response);
+                Assert.IsInstanceOf<QueryResult<BlockSchemaType>>(queryResult.Response);
 
                 if (queryResult.Response.Results.Any())
                 {
@@ -250,12 +237,12 @@ namespace dragonchain_sdk.tests
                 var queryResult = await _dragonchainLevel1Client.QuerySmartContracts();
                 Assert.AreEqual(200, queryResult.Status);
                 Assert.IsTrue(queryResult.Ok);
-                Assert.IsInstanceOf<DragonchainSmartContractQueryResult>(queryResult.Response);
+                Assert.IsInstanceOf<QueryResult<SmartContractAtRest>>(queryResult.Response);
 
                 if (queryResult.Response.Results.Any())
                 {
                     // get contract test
-                    var result = await _dragonchainLevel1Client.GetSmartContract(queryResult.Response.Results.First().Id);
+                    var result = await _dragonchainLevel1Client.GetSmartContract(queryResult.Response.Results.First().Id, null);
                     Assert.AreEqual(200, result.Status);
                     Assert.IsTrue(result.Ok);
                     Assert.IsInstanceOf<SmartContractAtRest>(result.Response);
@@ -266,7 +253,12 @@ namespace dragonchain_sdk.tests
                 Assert.Warn("User secrets - dragonchain-sdk.tests-79a3edd0-2092-40a2-a04d-dcb46d5ca9ed not available");
             }
         }
-        
+
+        private int QueryResult<T>(QueryResult<T> response)
+        {
+            throw new NotImplementedException();
+        }
+
         [Test]
         public async Task GetVerifications_Test()
         {
@@ -302,7 +294,7 @@ namespace dragonchain_sdk.tests
                 var result = await _dragonchainLevel1Client.ListTransactionTypes();
                 Assert.AreEqual(200, result.Status);
                 Assert.IsTrue(result.Ok);
-                Assert.IsInstanceOf<DragonchainTransactionTypeQueryResult>(result.Response);
+                Assert.IsInstanceOf<TransactionTypeListResponse>(result.Response);
             }
             else
             {

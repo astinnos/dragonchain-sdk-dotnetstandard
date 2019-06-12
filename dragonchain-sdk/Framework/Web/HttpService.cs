@@ -31,10 +31,10 @@ namespace dragonchain_sdk.Framework.Web
             return await HandleResponseAsync<T>(await _httpClient.SendAsync(request));            
         }
 
-        public async Task<ApiResponse<T>> PostAsync<T>(string path, object body)
+        public async Task<ApiResponse<T>> PostAsync<T>(string path, object body, string callbackURL = "")
         {
             var jsonBody = JsonConvert.SerializeObject(body, CreateJsonSerializerSettings());
-            var request = await CreateRequest(HttpMethod.Post, path, jsonBody);                           
+            var request = await CreateRequest(HttpMethod.Post, path, jsonBody, callbackURL: callbackURL);                           
             return await HandleResponseAsync<T>(await _httpClient.SendAsync(request));                                        
         }
 

@@ -4,12 +4,18 @@ namespace dragonchain_sdk.Framework.Errors
 {
     public class FailureByDesignException : Exception
     {
-        public string Code { get; set; }
+        public FailureCode Code { get; set; }
 
-        public FailureByDesignException(string code = "FAILURE_BY_DESIGN", string message = "Failure By Design")
+        public FailureByDesignException(FailureCode code, string message = "Failure By Design")
             :base(message)
         {
             Code = code;
         }
+    }
+
+    public enum FailureCode
+    {
+        PARAM_ERROR,
+        NOT_FOUND
     }
 }

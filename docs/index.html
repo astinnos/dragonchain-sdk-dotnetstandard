@@ -62,17 +62,17 @@
             <article class="content wrap" id="_content" data-uid="">
 <h1 id="dragonchain-net-sdk">Dragonchain .Net SDK</h1>
 
+<p><a href="https://www.nuget.org/packages/dragonchain-sdk-dotnet/"><img src="https://img.shields.io/badge/nuget-v1.0.0.5--alpha-blue.svg" alt="NuGet"></a></p>
 <p>Talk to your dragonchain.</p>
-<p>Under construction</p>
+<h3 id="installation">Installation</h3>
+<p>First, <a href="http://docs.nuget.org/docs/start-here/installing-nuget">install NuGet</a>. Then, install <a href="https://www.nuget.org/packages/dragonchain-sdk-dotnet/">Dragonchain .Net SDK</a> from the package manager console:</p>
+<p>Pre -release</p>
+<pre><code>PM&gt; Install-Package dragonchain-sdk-dotnet -Version 1.0.0-alpha
+</code></pre>
 <h3 id="examples">Examples</h3>
 <h3 id="import">Import</h3>
 <pre><code class="lang-csharp">using dragonchain_sdk;
 using dragonchain_sdk.Framework.Web;
-</code></pre>
-<h4 id="overridecredentials">OverrideCredentials</h4>
-<p>This is fine for quick tests. For actual production use, you should inject an implementation of Microsoft.Extensions.Configuration.IConfiguration. Read here for more information <a href="https://docs.microsoft.com/en-us/aspnet/core/fundamentals/configuration/?view=aspnetcore-2.2">Mircosoft Configuration Docs</a>.<br>
-<a href="#configuration">Examples</a></p>
-<pre><code class="lang-csharp">client.OverrideCredentials(&quot;AUTH_KEY_ID&quot;, &quot;AUTH_KEY&quot;);
 </code></pre>
 <h4 id="getblock">GetBlock</h4>
 <pre><code class="lang-csharp">var myDcId = &quot;3f2fef78-0000-0000-0000-9f2971607130&quot;;
@@ -100,7 +100,8 @@ var totalTransactionsCount = searchResult.Response.Total;
 var transactions = searchResult.Response.Results;
 </code></pre>
 <h4 id="register-transaction-type">Register Transaction Type</h4>
-<pre><code class="lang-csharp">var registerTransactionTypeResult = await _dragonchainLevel1Client.RegisterTransactionType(new TransactionTypeStructure
+<pre><code class="lang-csharp">var registerTransactionTypeResult = await _dragonchainLevel1Client.RegisterTransactionType(
+new TransactionTypeStructure
 {
     Version = &quot;1&quot;,
     TransactionType = &quot;apple&quot;,
@@ -119,6 +120,53 @@ var transactions = searchResult.Response.Results;
     Payload = new {}
 };
 var createResult = await _dragonchainLevel1Client.CreateTransaction(newTransaction);
+</code></pre>
+<h4 id="inject-into-aspnet-core-web-app">Inject into Asp.net Core Web App</h4>
+<h5 id="programcs">Program.cs</h5>
+<p>Configure logging and configuration choices.</p>
+<pre><code class="lang-csharp">public class Program
+{
+    public static void Main(string[] args)
+    {
+        BuildWebHost(args).Run();
+    }
+
+    public static IWebHost BuildWebHost(string[] args) =&gt;
+        WebHost.CreateDefaultBuilder(args)
+            .UseSerilog()
+            .ConfigureAppConfiguration((hostingContext, config) =&gt;
+            {
+                config.SetBasePath(Directory.GetCurrentDirectory());
+                config.AddJsonFile(&quot;config.json&quot;, optional: true, reloadOnChange: true);
+            })
+            .UseStartup&lt;Startup&gt;()
+            .Build();
+}
+</code></pre>
+<h5 id="startupcs">Startup.cs</h5>
+<p>Add the dragonchain client service using the ConfigureServices method</p>
+<pre><code class="lang-csharp">public void ConfigureServices(IServiceCollection services)
+{
+    services.AddSingleton&lt;IDragonchainClient, DragonchainClient&gt;();
+    services.AddMvc();            
+}
+</code></pre>
+<h5 id="controllercs">Controller.cs</h5>
+<p>Consume the service in controllers or middleware</p>
+<pre><code class="lang-csharp">public class HomeController : Controller
+{
+    private IDragonchainClient _client;
+
+    public HomeController(IDragonchainClient client)
+    {
+        _client = client;
+    }
+
+    public IActionResult Index()
+    {
+        var transactionTypes = _client.ListTransactionTypes();
+        return View(transactionTypes);
+    }
 </code></pre>
 <h2 id="configuration">Configuration</h2>
 <p>In order to use this SDK, you need to have an Auth Key as well as an Auth Key ID for a given dragonchain.
@@ -147,6 +195,7 @@ This can be loaded into the sdk in various ways using an IConfiguration provider
 </code></pre>
 <p>or</p>
 <pre><code class="lang-json">{
+ &quot;dragonchainId&quot;: &quot;3f2fef78-0000-0000-0000-9f2971607130&quot;,
  &quot;3f2fef78-0000-0000-0000-9f2971607130&quot;: {
    &quot;AUTH_KEY&quot;: &quot;MyAuthKey&quot;,
    &quot;AUTH_KEY_ID&quot;: &quot;MyAuthKeyId&quot;
@@ -164,7 +213,8 @@ AUTH_KEY=MyAuthKey
 AUTH_KEY_ID=MyAuthKeyId
 </code></pre>
 <p>or</p>
-<pre><code class="lang-ini">[3f2fef78-0000-0000-0000-9f2971607130]
+<pre><code class="lang-ini">dragonchainId=3f2fef78-0000-0000-0000-9f2971607130
+[3f2fef78-0000-0000-0000-9f2971607130]
 AUTH_KEY=MyAuthKey
 AUTH_KEY_ID=MyAuthKeyId
 </code></pre>
@@ -184,6 +234,7 @@ AUTH_KEY_ID=MyAuthKeyId
 <p>or</p>
 <pre><code class="lang-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot; ?&gt;
 &lt;configuration&gt;  
+  &lt;dragonchainId&gt;3f2fef78-0000-0000-0000-9f2971607130&lt;/dragonchainId&gt;
   &lt;3f2fef78-0000-0000-0000-9f2971607130&gt;
     &lt;AUTH_KEY&gt;MyAuthKey&lt;/AUTH_KEY&gt;
     &lt;AUTH_KEY_ID&gt;MyAuthKeyId&lt;/AUTH_KEY_ID&gt;  
@@ -192,7 +243,7 @@ AUTH_KEY_ID=MyAuthKeyId
 </code></pre>
 <h2 id="logging">Logging</h2>
 <p>In order to get the logging output of the sdk, a logger must be set (by default all logging is thrown away).</p>
-<p>In order to set the logger, simply inject a Microsoft.Extensions.Logging implementation <code>.setLogger</code> on the root of the require/import.
+<p>In order to set the logger, simply inject a Microsoft.Extensions.Logging implementation.
 Read here for more information <a href="https://docs.microsoft.com/en-us/aspnet/core/fundamentals/logging/?view=aspnetcore-2.2">Microsoft Logging Docs</a>.
 For example, if you just wanted to log to the console you can set the logger like the following:</p>
 <pre><code class="lang-csharp">var webHost = new WebHostBuilder()        
@@ -207,6 +258,8 @@ For example, if you just wanted to log to the console you can set the logger lik
 <pre><code class="lang-csharp">var logger = new MyLogger();
 var client = new DragonchainClient(myDcId, config, logger);                
 </code></pre>
+<h2 id="official-github">Official Github</h2>
+<p><a href="https://github.com/dragonchain-inc">https://github.com/dragonchain-inc</a></p>
 </article>
           </div>
           

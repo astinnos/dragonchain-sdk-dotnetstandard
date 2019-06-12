@@ -17,10 +17,10 @@ namespace dragonchain_sdk.Credentials.Manager
         /// </summary>  
         public string GetDragonchainId()
         {
-            if (_config == null) { throw new FailureByDesignException("NOT_FOUND", "No configuration provider set"); }
+            if (_config == null) { throw new FailureByDesignException(FailureCode.NOT_FOUND, "No configuration provider set"); }
             var id = _config["dragonchainId"];
             if (!string.IsNullOrWhiteSpace(id)) { return id; }
-            throw new FailureByDesignException("NOT_FOUND", "Config does not contain key 'dragonchainId'");
+            throw new FailureByDesignException(FailureCode.NOT_FOUND, "Config does not contain key 'dragonchainId'");
         }
 
         /// <summary>
@@ -31,14 +31,14 @@ namespace dragonchain_sdk.Credentials.Manager
         {
             var authKeyIdentifier = string.IsNullOrWhiteSpace(dragonchainId) ? "AUTH_KEY" : $"{dragonchainId}:AUTH_KEY";
             var authKeyIdIdentifier = string.IsNullOrWhiteSpace(dragonchainId) ? "AUTH_KEY_ID" : $"{dragonchainId}:AUTH_KEY_ID";
-            if (_config == null) { throw new FailureByDesignException("NOT_FOUND", "No configuration provider set"); }
+            if (_config == null) { throw new FailureByDesignException(FailureCode.NOT_FOUND, "No configuration provider set"); }
             var authKey = _config[authKeyIdentifier];
             var authKeyId = _config[authKeyIdIdentifier];
             if (!string.IsNullOrWhiteSpace(authKey) && !string.IsNullOrWhiteSpace(authKeyId))
             {
                 return new DragonchainCredentials { AuthKey = authKey, AuthKeyId = authKeyId };
             }
-            throw new FailureByDesignException("NOT_FOUND", $"Config does not contain both keys '{authKeyIdentifier}' and '{authKeyIdIdentifier}'");
+            throw new FailureByDesignException(FailureCode.NOT_FOUND, $"Config does not contain both keys '{authKeyIdentifier}' and '{authKeyIdIdentifier}'");
         }
     }
 }

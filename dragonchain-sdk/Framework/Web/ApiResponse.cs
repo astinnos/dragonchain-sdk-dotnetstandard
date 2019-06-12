@@ -1,15 +1,17 @@
 ﻿namespace dragonchain_sdk.Framework.Web
 {
+    /// <summary>
+    /// Response returned from a `DragonchainClient` call to a dragonchain
+    /// </summary>    
     public class ApiResponse<T>
     {
         /// <summary>
-        /// Boolean result passed from the fetch library.
-        /// This can be used to quickly determine if the status code is 2xx.
+        /// Boolean result if the response from the dragonchain was a 2XX status code, indicating a successful call        
         /// </summary>
         public bool Ok { get; set; }
 
         /// <summary>
-        /// HTTP Status Code        
+        /// HTTP status code returned from this call
         /// </summary>
         public int Status { get; set; }
 

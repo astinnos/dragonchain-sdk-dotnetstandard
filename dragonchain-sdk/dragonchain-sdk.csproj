@@ -26,8 +26,4 @@
     <Reference Include="System.Web" />    
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Framework\Logging\" />
-  </ItemGroup>
-
 </Project>

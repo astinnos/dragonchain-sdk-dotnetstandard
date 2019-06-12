@@ -4,7 +4,7 @@ namespace dragonchain_sdk.Contracts
 {
     public class ContractStatus
     {
-        public string State { get; set; }
+        public Status State { get; set; }
 
         [JsonProperty(PropertyName = "msg")]
         public string Message { get; set; }
@@ -14,10 +14,9 @@ namespace dragonchain_sdk.Contracts
 
     public enum Status
     {
-        Approved,
-        Rejected,
-        Pending
-    }
-
-    
+        [JsonProperty(PropertyName = "active")]
+        Active,
+        [JsonProperty(PropertyName = "inactive")]
+        Inactive        
+    }    
 }

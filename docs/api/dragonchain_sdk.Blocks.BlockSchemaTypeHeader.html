@@ -84,22 +84,22 @@
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
     <div>
-      <a class="xref" href="dragonchain_sdk.Blocks.Common.Header.html#dragonchain_sdk_Blocks_Common_Header_BlockId">Header.BlockId</a>
+      <a class="xref" href="dragonchain_sdk.Blocks.Common.Header.html#dragonchain_sdk_Blocks_Common_Header_DcId">Header.DcId</a>
     </div>
     <div>
       <a class="xref" href="dragonchain_sdk.Blocks.Common.Header.html#dragonchain_sdk_Blocks_Common_Header_CurrentDDSS">Header.CurrentDDSS</a>
     </div>
     <div>
-      <a class="xref" href="dragonchain_sdk.Blocks.Common.Header.html#dragonchain_sdk_Blocks_Common_Header_DcId">Header.DcId</a>
-    </div>
-    <div>
       <a class="xref" href="dragonchain_sdk.Blocks.Common.Header.html#dragonchain_sdk_Blocks_Common_Header_Level">Header.Level</a>
     </div>
     <div>
-      <a class="xref" href="dragonchain_sdk.Blocks.Common.Header.html#dragonchain_sdk_Blocks_Common_Header_PreviousProof">Header.PreviousProof</a>
+      <a class="xref" href="dragonchain_sdk.Blocks.Common.Header.html#dragonchain_sdk_Blocks_Common_Header_BlockId">Header.BlockId</a>
     </div>
     <div>
       <a class="xref" href="dragonchain_sdk.Blocks.Common.Header.html#dragonchain_sdk_Blocks_Common_Header_Timestamp">Header.Timestamp</a>
+    </div>
+    <div>
+      <a class="xref" href="dragonchain_sdk.Blocks.Common.Header.html#dragonchain_sdk_Blocks_Common_Header_PreviousProof">Header.PreviousProof</a>
     </div>
     <div>
       <span class="xref">System.Object.Equals(System.Object)</span>
@@ -136,7 +136,7 @@
     <a href="https://github.com/astinnos/dragonchain-sdk-dotnetstandard/new/master/apiSpec/new?filename=dragonchain_sdk_Blocks_BlockSchemaTypeHeader_L1BlockId.md&amp;value=---%0Auid%3A%20dragonchain_sdk.Blocks.BlockSchemaTypeHeader.L1BlockId%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/astinnos/dragonchain-sdk-dotnetstandard/blob/master/dragonchain-sdk/Blocks/BlockSchemaType.cs/#L39">View Source</a>
+    <a href="https://github.com/astinnos/dragonchain-sdk-dotnetstandard/blob/master/dragonchain-sdk/Blocks/BlockSchemaType.cs/#L34">View Source</a>
   </span>
   <a id="dragonchain_sdk_Blocks_BlockSchemaTypeHeader_L1BlockId_" data-uid="dragonchain_sdk.Blocks.BlockSchemaTypeHeader.L1BlockId*"></a>
   <h4 id="dragonchain_sdk_Blocks_BlockSchemaTypeHeader_L1BlockId" data-uid="dragonchain_sdk.Blocks.BlockSchemaTypeHeader.L1BlockId">L1BlockId</h4>
@@ -144,7 +144,8 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public int L1BlockId { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;l1_block_id&quot;)]
+public int L1BlockId { get; set; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -166,7 +167,7 @@
     <a href="https://github.com/astinnos/dragonchain-sdk-dotnetstandard/new/master/apiSpec/new?filename=dragonchain_sdk_Blocks_BlockSchemaTypeHeader_L1DcId.md&amp;value=---%0Auid%3A%20dragonchain_sdk.Blocks.BlockSchemaTypeHeader.L1DcId%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/astinnos/dragonchain-sdk-dotnetstandard/blob/master/dragonchain-sdk/Blocks/BlockSchemaType.cs/#L40">View Source</a>
+    <a href="https://github.com/astinnos/dragonchain-sdk-dotnetstandard/blob/master/dragonchain-sdk/Blocks/BlockSchemaType.cs/#L36">View Source</a>
   </span>
   <a id="dragonchain_sdk_Blocks_BlockSchemaTypeHeader_L1DcId_" data-uid="dragonchain_sdk.Blocks.BlockSchemaTypeHeader.L1DcId*"></a>
   <h4 id="dragonchain_sdk_Blocks_BlockSchemaTypeHeader_L1DcId" data-uid="dragonchain_sdk.Blocks.BlockSchemaTypeHeader.L1DcId">L1DcId</h4>
@@ -174,7 +175,8 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public int L1DcId { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;l1_dc_id&quot;)]
+public int L1DcId { get; set; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -196,7 +198,7 @@
     <a href="https://github.com/astinnos/dragonchain-sdk-dotnetstandard/new/master/apiSpec/new?filename=dragonchain_sdk_Blocks_BlockSchemaTypeHeader_L1Proof.md&amp;value=---%0Auid%3A%20dragonchain_sdk.Blocks.BlockSchemaTypeHeader.L1Proof%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/astinnos/dragonchain-sdk-dotnetstandard/blob/master/dragonchain-sdk/Blocks/BlockSchemaType.cs/#L41">View Source</a>
+    <a href="https://github.com/astinnos/dragonchain-sdk-dotnetstandard/blob/master/dragonchain-sdk/Blocks/BlockSchemaType.cs/#L38">View Source</a>
   </span>
   <a id="dragonchain_sdk_Blocks_BlockSchemaTypeHeader_L1Proof_" data-uid="dragonchain_sdk.Blocks.BlockSchemaTypeHeader.L1Proof*"></a>
   <h4 id="dragonchain_sdk_Blocks_BlockSchemaTypeHeader_L1Proof" data-uid="dragonchain_sdk.Blocks.BlockSchemaTypeHeader.L1Proof">L1Proof</h4>
@@ -204,7 +206,8 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public int L1Proof { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;l1_proof&quot;)]
+public int L1Proof { get; set; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -226,7 +229,7 @@
     <a href="https://github.com/astinnos/dragonchain-sdk-dotnetstandard/new/master/apiSpec/new?filename=dragonchain_sdk_Blocks_BlockSchemaTypeHeader_PreviousId.md&amp;value=---%0Auid%3A%20dragonchain_sdk.Blocks.BlockSchemaTypeHeader.PreviousId%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/astinnos/dragonchain-sdk-dotnetstandard/blob/master/dragonchain-sdk/Blocks/BlockSchemaType.cs/#L36">View Source</a>
+    <a href="https://github.com/astinnos/dragonchain-sdk-dotnetstandard/blob/master/dragonchain-sdk/Blocks/BlockSchemaType.cs/#L31">View Source</a>
   </span>
   <a id="dragonchain_sdk_Blocks_BlockSchemaTypeHeader_PreviousId_" data-uid="dragonchain_sdk.Blocks.BlockSchemaTypeHeader.PreviousId*"></a>
   <h4 id="dragonchain_sdk_Blocks_BlockSchemaTypeHeader_PreviousId" data-uid="dragonchain_sdk.Blocks.BlockSchemaTypeHeader.PreviousId">PreviousId</h4>
@@ -263,7 +266,7 @@ public string PreviousId { get; set; }</code></pre>
                     <a href="https://github.com/astinnos/dragonchain-sdk-dotnetstandard/new/master/apiSpec/new?filename=dragonchain_sdk_Blocks_BlockSchemaTypeHeader.md&amp;value=---%0Auid%3A%20dragonchain_sdk.Blocks.BlockSchemaTypeHeader%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
-                    <a href="https://github.com/astinnos/dragonchain-sdk-dotnetstandard/blob/master/dragonchain-sdk/Blocks/BlockSchemaType.cs/#L33" class="contribution-link">View Source</a>
+                    <a href="https://github.com/astinnos/dragonchain-sdk-dotnetstandard/blob/master/dragonchain-sdk/Blocks/BlockSchemaType.cs/#L28" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>

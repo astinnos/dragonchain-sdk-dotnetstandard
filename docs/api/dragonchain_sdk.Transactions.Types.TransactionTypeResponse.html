@@ -117,15 +117,17 @@
     <a href="https://github.com/astinnos/dragonchain-sdk-dotnetstandard/new/master/apiSpec/new?filename=dragonchain_sdk_Transactions_Types_TransactionTypeResponse_ContractData.md&amp;value=---%0Auid%3A%20dragonchain_sdk.Transactions.Types.TransactionTypeResponse.ContractData%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/astinnos/dragonchain-sdk-dotnetstandard/blob/master/dragonchain-sdk/Transactions/Types/TransactionTypeResponse.cs/#L11">View Source</a>
+    <a href="https://github.com/astinnos/dragonchain-sdk-dotnetstandard/blob/master/dragonchain-sdk/Transactions/Types/TransactionTypeResponse.cs/#L17">View Source</a>
   </span>
   <a id="dragonchain_sdk_Transactions_Types_TransactionTypeResponse_ContractData_" data-uid="dragonchain_sdk.Transactions.Types.TransactionTypeResponse.ContractData*"></a>
   <h4 id="dragonchain_sdk_Transactions_Types_TransactionTypeResponse_ContractData" data-uid="dragonchain_sdk.Transactions.Types.TransactionTypeResponse.ContractData">ContractData</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>If this is a ledger contract type, (not assigned to a contract), then this field will simply be the boolean false,
+otherwise this will be the string of the associated contract id</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;contract_data&quot;)]
+    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;contract_id&quot;)]
 public object ContractData { get; set; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
@@ -148,7 +150,7 @@ public object ContractData { get; set; }</code></pre>
     <a href="https://github.com/astinnos/dragonchain-sdk-dotnetstandard/new/master/apiSpec/new?filename=dragonchain_sdk_Transactions_Types_TransactionTypeResponse_CustomIndexes.md&amp;value=---%0Auid%3A%20dragonchain_sdk.Transactions.Types.TransactionTypeResponse.CustomIndexes%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/astinnos/dragonchain-sdk-dotnetstandard/blob/master/dragonchain-sdk/Transactions/Types/TransactionTypeResponse.cs/#L8">View Source</a>
+    <a href="https://github.com/astinnos/dragonchain-sdk-dotnetstandard/blob/master/dragonchain-sdk/Transactions/Types/TransactionTypeResponse.cs/#L11">View Source</a>
   </span>
   <a id="dragonchain_sdk_Transactions_Types_TransactionTypeResponse_CustomIndexes_" data-uid="dragonchain_sdk.Transactions.Types.TransactionTypeResponse.CustomIndexes*"></a>
   <h4 id="dragonchain_sdk_Transactions_Types_TransactionTypeResponse_CustomIndexes" data-uid="dragonchain_sdk.Transactions.Types.TransactionTypeResponse.CustomIndexes">CustomIndexes</h4>
@@ -157,7 +159,7 @@ public object ContractData { get; set; }</code></pre>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;custom_indexes&quot;)]
-public IEnumerable&lt;CustomIndexStructure&gt; CustomIndexes { get; set; }</code></pre>
+public IEnumerable&lt;TransactionTypeCustomIndex&gt; CustomIndexes { get; set; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -169,38 +171,7 @@ public IEnumerable&lt;CustomIndexStructure&gt; CustomIndexes { get; set; }</code
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<a class="xref" href="dragonchain_sdk.Transactions.Types.CustomIndexStructure.html">CustomIndexStructure</a>&gt;</td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/astinnos/dragonchain-sdk-dotnetstandard/new/master/apiSpec/new?filename=dragonchain_sdk_Transactions_Types_TransactionTypeResponse_IsContract.md&amp;value=---%0Auid%3A%20dragonchain_sdk.Transactions.Types.TransactionTypeResponse.IsContract%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/astinnos/dragonchain-sdk-dotnetstandard/blob/master/dragonchain-sdk/Transactions/Types/TransactionTypeResponse.cs/#L14">View Source</a>
-  </span>
-  <a id="dragonchain_sdk_Transactions_Types_TransactionTypeResponse_IsContract_" data-uid="dragonchain_sdk.Transactions.Types.TransactionTypeResponse.IsContract*"></a>
-  <h4 id="dragonchain_sdk_Transactions_Types_TransactionTypeResponse_IsContract" data-uid="dragonchain_sdk.Transactions.Types.TransactionTypeResponse.IsContract">IsContract</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;is_contract&quot;)]
-public bool IsContract { get; set; }</code></pre>
-  </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<a class="xref" href="dragonchain_sdk.Transactions.Types.TransactionTypeCustomIndex.html">TransactionTypeCustomIndex</a>&gt;</td>
         <td></td>
       </tr>
     </tbody>
@@ -210,7 +181,7 @@ public bool IsContract { get; set; }</code></pre>
     <a href="https://github.com/astinnos/dragonchain-sdk-dotnetstandard/new/master/apiSpec/new?filename=dragonchain_sdk_Transactions_Types_TransactionTypeResponse_TxnType.md&amp;value=---%0Auid%3A%20dragonchain_sdk.Transactions.Types.TransactionTypeResponse.TxnType%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/astinnos/dragonchain-sdk-dotnetstandard/blob/master/dragonchain-sdk/Transactions/Types/TransactionTypeResponse.cs/#L17">View Source</a>
+    <a href="https://github.com/astinnos/dragonchain-sdk-dotnetstandard/blob/master/dragonchain-sdk/Transactions/Types/TransactionTypeResponse.cs/#L9">View Source</a>
   </span>
   <a id="dragonchain_sdk_Transactions_Types_TransactionTypeResponse_TxnType_" data-uid="dragonchain_sdk.Transactions.Types.TransactionTypeResponse.TxnType*"></a>
   <h4 id="dragonchain_sdk_Transactions_Types_TransactionTypeResponse_TxnType" data-uid="dragonchain_sdk.Transactions.Types.TransactionTypeResponse.TxnType">TxnType</h4>
@@ -241,7 +212,7 @@ public string TxnType { get; set; }</code></pre>
     <a href="https://github.com/astinnos/dragonchain-sdk-dotnetstandard/new/master/apiSpec/new?filename=dragonchain_sdk_Transactions_Types_TransactionTypeResponse_Version.md&amp;value=---%0Auid%3A%20dragonchain_sdk.Transactions.Types.TransactionTypeResponse.Version%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/astinnos/dragonchain-sdk-dotnetstandard/blob/master/dragonchain-sdk/Transactions/Types/TransactionTypeResponse.cs/#L20">View Source</a>
+    <a href="https://github.com/astinnos/dragonchain-sdk-dotnetstandard/blob/master/dragonchain-sdk/Transactions/Types/TransactionTypeResponse.cs/#L8">View Source</a>
   </span>
   <a id="dragonchain_sdk_Transactions_Types_TransactionTypeResponse_Version_" data-uid="dragonchain_sdk.Transactions.Types.TransactionTypeResponse.Version*"></a>
   <h4 id="dragonchain_sdk_Transactions_Types_TransactionTypeResponse_Version" data-uid="dragonchain_sdk.Transactions.Types.TransactionTypeResponse.Version">Version</h4>
