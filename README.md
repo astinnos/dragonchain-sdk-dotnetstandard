@@ -1,6 +1,6 @@
 # Dragonchain .Net SDK
 
-[![NuGet](https://img.shields.io/badge/nuget-v1.0.0.4--alpha-blue.svg)](https://www.nuget.org/packages/dragonchain-sdk-dotnet/)
+[![NuGet](https://img.shields.io/badge/nuget-v1.0.0.5--alpha-blue.svg)](https://www.nuget.org/packages/dragonchain-sdk-dotnet/)
 
 Talk to your dragonchain.
 
@@ -264,3 +264,6 @@ You can also create your own implemnations of ILogger
 var logger = new MyLogger();
 var client = new DragonchainClient(myDcId, config, logger);                
 ```
+
+## Official Github
+https://github.com/dragonchain-inc
