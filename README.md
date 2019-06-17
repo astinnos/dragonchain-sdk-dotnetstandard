@@ -1,6 +1,6 @@
 # Dragonchain .Net SDK
 
-[![NuGet](https://img.shields.io/badge/nuget-v1.0.0.5--alpha-blue.svg)](https://www.nuget.org/packages/dragonchain-sdk-dotnet/)
+[![NuGet](https://img.shields.io/badge/nuget-v1.0.0.6--alpha-blue.svg)](https://www.nuget.org/packages/dragonchain-sdk-dotnet/)
 
 Talk to your dragonchain.
 
